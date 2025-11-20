@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hosmer Tagalog Class – Verb Emoji Trainer</title>
+
+    <!-- Tailwind CDN (for layout & styling) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+
+  body {
+    box-sizing: border-box;
+    background: #fef3e2;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    font-size: 18px; /* bigger base font */
+  }
+
+  /* Make Tailwind's small text classes larger for readability */
+  .text-xs {
+    font-size: 16px; /* helper text, footer, small labels */
+  }
+
+  .text-sm {
+    font-size: 18px; /* English label, section labels, etc. */
+  }
+
+  /* Ensure all instructional texts are comfortably big */
+  #helper-text-1,
+  #helper-text-2,
+  #helper-text-3,
+  #footer-text,
+  #example-sentence-text {
+    font-size: 18px;
+  }
+
+  /* Emoji bounce */
+  @keyframes gentle-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
+
+  .emoji-bounce {
+    animation: gentle-bounce 0.8s ease-in-out infinite;
+  }
+
+  /* Focus outline */
+  .focus-outline {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+  }
+</style>
+
+  </head>
+  <body class="h-full flex items-center justify-center">
+    <div
+      id="app-container"
+      class="w-full max-w-4xl h-full max-h-[90%] mx-auto rounded-3xl shadow-xl flex flex-col overflow-hidden bg-[#f5f3ed]"
+    >
+      <!-- Header -->
+      <header
+        class="px-6 py-4 flex items-center justify-between border-b bg-[#fef3e2]"
+        aria-label="Tagalog verb game header"
+      >
+        <div class="flex-1 text-center">
+          <p
+            id="class-name"
+            class="text-xl font-bold mb-2 flex items-center justify-center gap-2 text-[#f97316]"
+          >
+            <svg
+              id="class-icon"
+              width="60"
+              height="60"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <circle
+                cx="50"
+                cy="50"
+                r="48"
+                fill="#FFF8E7"
+                stroke="#f97316"
+                stroke-width="3"
+              />
+              <circle
+                cx="50"
+                cy="50"
+                r="32"
+                fill="none"
+                stroke="#f97316"
+                stroke-width="2.5"
+              />
+              <ellipse
+                cx="50"
+                cy="50"
+                rx="32"
+                ry="12"
+                fill="none"
+                stroke="#f97316"
+                stroke-width="1.5"
+                opacity="0.6"
+              />
+              <ellipse
+                cx="50"
+                cy="50"
+                rx="32"
+                ry="22"
+                fill="none"
+                stroke="#f97316"
+                stroke-width="1.5"
+                opacity="0.4"
+              />
+              <ellipse
+                cx="50"
+                cy="50"
+                rx="12"
+                ry="32"
+                fill="none"
+                stroke="#f97316"
+                stroke-width="1.5"
+                opacity="0.6"
+              />
+              <text
+                x="50"
+                y="56"
+                font-size="18"
+                fill="#f97316"
+                font-weight="bold"
+                font-family="Arial, sans-serif"
+                text-anchor="middle"
+              >
+                HTC
+              </text>
+            </svg>
+            <span>Hosmer Tagalog Class</span>
+          </p>
+          <h1
+            id="main-title"
+            class="font-semibold tracking-tight text-[#2d2a26]"
+          >
+            Tagalog Verb Emoji Trainer
+          </h1>
+          <p
+            id="subtitle-text"
+            class="mt-1 opacity-90 text-[#2d2a26]"
+          >
+            Guess the action, see the Tagalog verb, then use it in a sentence.
+          </p>
+        </div>
+
+        <div
+          class="px-3 py-1 rounded-full text-xs font-medium bg-[#cbd5e1] text-[#2d2a26]"
+          id="verb-counter-pill"
+        >
+          <span id="verb-index">1</span>/<span id="verb-total">30</span> verbs
+        </div>
+      </header>
+
+      <!-- Main content -->
+      <main
+        id="main-content"
+        class="flex-1 px-6 pb-6 pt-4 flex flex-col gap-4 overflow-y-auto"
+        aria-label="Tagalog verb training steps"
+      >
+        <!-- Step 1: Emoji + Question -->
+        <section
+          aria-label="Guess the action"
+          class="rounded-2xl px-4 py-4 flex flex-col md:flex-row items-center gap-4 bg-[#fde68a]"
+          id="step1-section"
+        >
+          <div
+            class="flex-1 flex flex-col items-center justify-center gap-2"
+          >
+            <div
+              id="emoji-display"
+              class="emoji-bounce text-5xl md:text-6xl"
+              aria-hidden="true"
+            >
+              🏃‍♂️
+            </div>
+            <div class="mt-2 text-center">
+              <p
+                id="what-is-he-doing-question"
+                class="font-medium text-[#2d2a26]"
+              >
+                Ano ang ginagawa niya sa Tagalog?
+              </p>
+              <p
+                id="helper-text-1"
+                class="text-xs mt-1 opacity-80 text-[#2d2a26]"
+              >
+                Look at the emoji and think of the Tagalog verb.
+              </p>
+            </div>
+          </div>
+          <div class="flex flex-col items-center gap-2">
+            <button
+              id="show-answer-btn"
+              type="button"
+              class="px-4 py-2 rounded-full font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#f97316] text-[#2d2a26]"
+            >
+              Ipakita ang pandiwa
+            </button>
+            <p
+              id="english-verb-label"
+              class="text-sm opacity-90 mt-1 text-[#2d2a26]"
+            >
+              English verb:
+              <span
+                id="english-verb-text"
+                class="font-semibold"
+              >
+                run
+              </span>
+            </p>
+          </div>
+        </section>
+
+        <!-- Step 2: Tagalog verb forms -->
+        <section
+          aria-label="Tagalog verb forms"
+          id="step2-section"
+          class="rounded-2xl px-4 py-4 flex flex-col gap-3 bg-[#f5f3ed]"
+        >
+          <div class="flex flex-col gap-1">
+            <p class="text-sm font-medium text-[#2d2a26]">
+              Tagalog verb forms
+            </p>
+            <p
+              id="helper-text-2"
+              class="text-xs opacity-80 text-[#2d2a26]"
+            >
+              These are basic forms (root, past, progressive).
+            </p>
+          </div>
+          <div
+            id="tagalog-answer-box"
+            class="flex flex-wrap items-center gap-2"
+          >
+            <span
+              id="tagalog-root"
+              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              aria-label="root form"
+            >
+              tumakbo
+            </span>
+            <span
+              id="tagalog-past"
+              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              aria-label="past form"
+            >
+              tumakbo (past)
+            </span>
+            <span
+              id="tagalog-prog"
+              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              aria-label="progressive form"
+            >
+              tumatakbo
+            </span>
+
+            <div
+              id="tagalog-main-verb-wrapper"
+              class="flex-1 flex items-center justify-center"
+            >
+              <p
+                id="tagalog-main-verb"
+                class="text-center font-bold uppercase tracking-wide text-[#2d2a26]"
+                aria-live="polite"
+              >
+                ​
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Step 3: Use it in Tagalog -->
+        <section
+          aria-label="Use the verb in Tagalog"
+          id="step3-section"
+          class="rounded-2xl px-4 py-4 flex flex-col gap-3 bg-[#f5f3ed]"
+        >
+          <div class="flex flex-col gap-1">
+            <p
+              id="use-it-in-question"
+              class="font-medium text-[#2d2a26]"
+            >
+              Gamitin mo sa Tagalog:
+            </p>
+            <p
+              id="helper-text-3"
+              class="text-xs opacity-80 text-[#2d2a26]"
+            >
+              Piliin kung root, past, o progressive form.
+            </p>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button
+              type="button"
+              id="btn-present"
+              class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+            >
+              Root / base
+            </button>
+            <button
+              type="button"
+              id="btn-past"
+              class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+            >
+              Past
+            </button>
+            <button
+              type="button"
+              id="btn-prog"
+              class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+            >
+              Progressive
+            </button>
+          </div>
+          <div
+            id="sentence-panel"
+            class="mt-2 rounded-2xl px-3 py-2 text-sm flex flex-col gap-1 bg-[#cbd5e1] text-[#2d2a26]"
+          >
+            <p
+              id="example-sentence-label"
+              class="font-semibold text-xs uppercase tracking-wide opacity-90"
+            >
+              Example sentence
+            </p>
+            <p id="example-sentence-text" class="mt-1">
+              Click a form above to see a sample Tagalog sentence.
+            </p>
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer -->
+      <footer
+        class="px-6 py-3 border-t flex items-center justify-between gap-2 bg-[#fef3e2]"
+        aria-label="Footer controls"
+      >
+        <div
+          class="text-xs opacity-80 text-[#2d2a26]"
+          id="footer-text"
+        >
+          30 high-frequency English verbs with simple Tagalog equivalents.
+        </div>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="exit-btn"
+            type="button"
+            class="px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#e5e7eb] text-[#2d2a26]"
+          >
+            Exit
+          </button>
+          <button
+            id="prev-verb-btn"
+            type="button"
+            class="px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+          >
+            Previous verb
+          </button>
+          <button
+            id="next-verb-btn"
+            type="button"
+            class="px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#f97316] text-[#2d2a26]"
+          >
+            Next verb
+          </button>
+        </div>
+      </footer>
+    </div>
+
+    <!-- ALL LOGIC IS HERE (NO SEPARATE JS FILE) -->
+    <script>
+      const verbs = [
+        {
+          english: "run",
+          emoji: "🏃‍♂️",
+          root: "takbo",
+          past: "tumakbo",
+          prog: "tumatakbo",
+          exampleRoot: "Gusto kong tumakbo sa umaga.",
+          examplePast: "Kanina, tumakbo siya sa parke.",
+          exampleProg: "Tumatakbo siya papunta sa eskuwela ngayon.",
+        },
+        {
+          english: "jump",
+          emoji: "🦘",
+          root: "talon",
+          past: "tumalon",
+          prog: "tumatalon",
+          exampleRoot: "Gusto kong tumalon sa trampoline.",
+          examplePast: "Tumalon siya sa tuwa.",
+          exampleProg: "Tumatalon sila sa laro.",
+        },
+        {
+          english: "eat",
+          emoji: "🍽️😋",
+          root: "kain",
+          past: "kumain",
+          prog: "kumakain",
+          exampleRoot: "Gusto kong kumain ng saging.",
+          examplePast: "Kumain kami ng hapunan kagabi.",
+          exampleProg: "Kumakain siya ngayon.",
+        },
+        {
+          english: "drink",
+          emoji: "🥤",
+          root: "inom",
+          past: "uminom",
+          prog: "umiinom",
+          exampleRoot: "Kailangan mong uminom ng tubig.",
+          examplePast: "Uminom siya ng gatas kanina.",
+          exampleProg: "Umiinom sila ng juice.",
+        },
+        {
+          english: "sleep",
+          emoji: "😴",
+          root: "tulog",
+          past: "natulog",
+          prog: "natutulog",
+          exampleRoot: "Gusto kong matulog nang maaga.",
+          examplePast: "Natulog siya nang maaga kagabi.",
+          exampleProg: "Natutulog pa ang bata.",
+        },
+        {
+          english: "read",
+          emoji: "👓📖",
+          root: "basa",
+          past: "nagbasa",
+          prog: "nagbabasa",
+          exampleRoot: "Gusto kong magbasa ng libro.",
+          examplePast: "Nagbasa siya ng komiks kahapon.",
+          exampleProg: "Nagbabasa sila ng kuwento.",
+        },
+        {
+          english: "write",
+          emoji: "✍️",
+          root: "sulat",
+          past: "sumulat",
+          prog: "sumusulat",
+          exampleRoot: "Kailangan kong sumulat ng liham.",
+          examplePast: "Sumulat siya ng liham.",
+          exampleProg: "Sumusulat siya sa kuwaderno.",
+        },
+        {
+          english: "sing",
+          emoji: "🎤🎵",
+          root: "kanta",
+          past: "kumanta",
+          prog: "kumakanta",
+          exampleRoot: "Gusto niyang kumanta sa entablado.",
+          examplePast: "Kumanta sila sa programa.",
+          exampleProg: "Kumakanta ang bata sa entablado.",
+        },
+        {
+          english: "dance",
+          emoji: "💃",
+          root: "sayaw",
+          past: "sumayaw",
+          prog: "sumasayaw",
+          exampleRoot: "Gusto nilang sumayaw sa pista.",
+          examplePast: "Sumayaw sila kagabi.",
+          exampleProg: "Sumasayaw siya sa harap.",
+        },
+        {
+          english: "walk",
+          emoji: "🚶‍♂️",
+          root: "lakad",
+          past: "naglakad",
+          prog: "naglalakad",
+          exampleRoot: "Gusto kong maglakad sa parke.",
+          examplePast: "Naglakad kami kahapon.",
+          exampleProg: "Naglalakad siya papunta sa bahay.",
+        },
+        {
+          english: "play",
+          emoji: "⚽🧒👧",
+          root: "laro",
+          past: "naglaro",
+          prog: "naglalaro",
+          exampleRoot: "Gusto nilang maglaro sa labas.",
+          examplePast: "Naglaro sila sa labas.",
+          exampleProg: "Naglalaro ang mga bata.",
+        },
+        {
+          english: "swim",
+          emoji: "🏊‍♂️",
+          root: "langoy",
+          past: "lumangoy",
+          prog: "lumalangoy",
+          exampleRoot: "Gusto niyang lumangoy sa dagat.",
+          examplePast: "Lumangoy kami sa dagat.",
+          exampleProg: "Lumalangoy siya sa pool.",
+        },
+        {
+          english: "talk",
+          emoji: "🗣️💬👂",
+          root: "usap",
+          past: "nag-usap",
+          prog: "nag-uusap",
+          exampleRoot: "Kailangan nating mag-usap mamaya.",
+          examplePast: "Nag-usap sila kagabi.",
+          exampleProg: "Nag-uusap ang magkaibigan.",
+        },
+        {
+          english: "listen",
+          emoji: "🎧👂",
+          root: "kinig",
+          past: "nakinig",
+          prog: "nakikinig",
+          exampleRoot: "Kailangan mong makinig sa klase.",
+          examplePast: "Nakinig siya sa guro.",
+          exampleProg: "Nakikinig sila sa musika.",
+        },
+        {
+          english: "watch",
+          emoji: "📺",
+          root: "nood",
+          past: "nanood",
+          prog: "nanonood",
+          exampleRoot: "Gusto kong manood ng pelikula.",
+          examplePast: "Nanood kami ng sine.",
+          exampleProg: "Nanonood sila ng TV.",
+        },
+        {
+          english: "cook",
+          emoji: "🍳",
+          root: "luto",
+          past: "nagluto",
+          prog: "nagluluto",
+          exampleRoot: "Gusto kong magluto ng adobo.",
+          examplePast: "Nagluto siya ng adobo.",
+          exampleProg: "Nagluluto sila sa kusina.",
+        },
+        {
+          english: "draw",
+          emoji: "✏️🎨",
+          root: "guhit",
+          past: "gumuhit",
+          prog: "gumuguhit",
+          exampleRoot: "Gusto niyang gumuhit ng larawan.",
+          examplePast: "Gumuhit siya ng puso.",
+          exampleProg: "Gumuguhit ang bata ngayon.",
+        },
+        {
+          english: "open",
+          emoji: "🚪➡️",
+          root: "bukas",
+          past: "binuksan",
+          prog: "binubuksan",
+          exampleRoot: "Paki-buksan ang pinto.",
+          examplePast: "Binuksan niya ang bintana.",
+          exampleProg: "Binubuksan niya ang kahon.",
+        },
+        {
+          english: "close",
+          emoji: "🚪⬅️",
+          root: "sara",
+          past: "sinara",
+          prog: "sinasara",
+          exampleRoot: "Paki-sara ang pinto.",
+          examplePast: "Sinara niya ang libro.",
+          exampleProg: "Sinasara niya ang bag.",
+        },
+        {
+          english: "help",
+          emoji: "🙋‍♂️🤝🙋‍♀️",
+          root: "tulong",
+          past: "tumulong",
+          prog: "tumutulong",
+          exampleRoot: "Gusto kong tumulong sa inyo.",
+          examplePast: "Tumulong siya sa kapitbahay.",
+          exampleProg: "Tumutulong sila sa paglilinis.",
+        },
+        {
+          english: "clean",
+          emoji: "🧽🧹💦",
+          root: "linis",
+          past: "naglinis",
+          prog: "naglilinis",
+          exampleRoot: "Kailangan kong maglinis ng kuwarto.",
+          examplePast: "Naglinis sila ng kuwarto.",
+          exampleProg: "Naglilinis siya ng mesa.",
+        },
+        {
+          english: "buy",
+          emoji: "🛒",
+          root: "bili",
+          past: "bumili",
+          prog: "bumibili",
+          exampleRoot: "Gusto kong bumili ng tinapay.",
+          examplePast: "Bumili siya ng tinapay.",
+          exampleProg: "Bumibili sila sa palengke.",
+        },
+        {
+          english: "sell",
+          emoji: "🏪💰🛍️",
+          root: "benta",
+          past: "nagbenta",
+          prog: "nagbebenta",
+          exampleRoot: "Gusto niyang magbenta ng prutas.",
+          examplePast: "Nagbenta siya ng prutas.",
+          exampleProg: "Nagbebenta sila ng isda.",
+        },
+        {
+          english: "sit",
+          emoji: "🪑",
+          root: "upo",
+          past: "umupo",
+          prog: "umuupo",
+          exampleRoot: "Kailangan mong umupo rito.",
+          examplePast: "Umupo siya sa silya.",
+          exampleProg: "Umuupo ang mga bata sa sahig.",
+        },
+        {
+          english: "stand",
+          emoji: "🧍‍♂️",
+          root: "tayo",
+          past: "tumayo",
+          prog: "tumatayo",
+          exampleRoot: "Kailangan nating tumayo ngayon.",
+          examplePast: "Tumayo siya sa harapan.",
+          exampleProg: "Tumatayo sila sa pila.",
+        },
+        {
+          english: "smile",
+          emoji: "😊",
+          root: "ngiti",
+          past: "ngumiti",
+          prog: "ngumingiti",
+          exampleRoot: "Gusto kong ngumiti sa iyo.",
+          examplePast: "Ngumiti siya sa iyo.",
+          exampleProg: "Ngumingiti sila sa larawan.",
+        },
+        {
+          english: "laugh",
+          emoji: "😂",
+          root: "tawa",
+          past: "tumawa",
+          prog: "tumatawa",
+          exampleRoot: "Gusto kong tumawa sa biro.",
+          examplePast: "Tumawa sila sa biro.",
+          exampleProg: "Tumatawa siya ngayon.",
+        },
+        {
+          english: "drive",
+          emoji: "🚗",
+          root: "maneho",
+          past: "nagmaneho",
+          prog: "nagmamaneho",
+          exampleRoot: "Gusto niyang matutong magmaneho.",
+          examplePast: "Nagmaneho siya kahapon.",
+          exampleProg: "Nagmamaneho siya papunta sa bayan.",
+        },
+        {
+          english: "study",
+          emoji: "👨‍🎓📚",
+          root: "aral",
+          past: "nag-aral",
+          prog: "nag-aaral",
+          exampleRoot: "Kailangan kong mag-aral ngayon.",
+          examplePast: "Nag-aral siya kagabi.",
+          exampleProg: "Nag-aaral sila ngayon.",
+        },
+        {
+          english: "work",
+          emoji: "💼⌨️📊",
+          root: "trabaho",
+          past: "nagtrabaho",
+          prog: "nagtatrabaho",
+          exampleRoot: "Kailangan niyang magtrabaho bukas.",
+          examplePast: "Nagtrabaho siya buong araw.",
+          exampleProg: "Nagtatrabaho sila ngayon.",
+        },
+      ];
+
+      let currentIndex = 0;
+      let answerShown = false;
+
+      // DOM elements
+      const emojiDisplay = document.getElementById("emoji-display");
+      const englishVerbText = document.getElementById("english-verb-text");
+      const verbIndexEl = document.getElementById("verb-index");
+      const verbTotalEl = document.getElementById("verb-total");
+      const showAnswerBtn = document.getElementById("show-answer-btn");
+      const tagalogRootChip = document.getElementById("tagalog-root");
+      const tagalogPastChip = document.getElementById("tagalog-past");
+      const tagalogProgChip = document.getElementById("tagalog-prog");
+      const tagalogMainVerbEl = document.getElementById("tagalog-main-verb");
+      const btnPresent = document.getElementById("btn-present");
+      const btnPast = document.getElementById("btn-past");
+      const btnProg = document.getElementById("btn-prog");
+      const exampleSentenceTextEl = document.getElementById(
+        "example-sentence-text"
+      );
+      const nextVerbBtn = document.getElementById("next-verb-btn");
+      const prevVerbBtn = document.getElementById("prev-verb-btn");
+      const exitBtn = document.getElementById("exit-btn");
+
+      function loadVerb(index) {
+        const v = verbs[index];
+        if (!v) return;
+
+        answerShown = false;
+
+        emojiDisplay.textContent = v.emoji;
+        englishVerbText.textContent = v.english;
+        verbIndexEl.textContent = index + 1;
+        verbTotalEl.textContent = verbs.length.toString();
+
+        tagalogRootChip.textContent = v.root;
+        tagalogPastChip.textContent = v.past;
+        tagalogProgChip.textContent = v.prog;
+        tagalogMainVerbEl.textContent = "";
+        tagalogMainVerbEl.setAttribute("aria-label", "");
+
+        exampleSentenceTextEl.textContent =
+          "Click a form above to see a sample Tagalog sentence.";
+
+        showAnswerBtn.disabled = false;
+        showAnswerBtn.textContent = "Ipakita ang pandiwa";
+
+        [btnPresent, btnPast, btnProg].forEach((btn) => {
+          btn.disabled = true;
+          btn.classList.add("opacity-50", "cursor-not-allowed");
+        });
+      }
+
+      function showSentenceForForm(form) {
+        const v = verbs[currentIndex];
+        if (!v) return;
+        if (form === "root") exampleSentenceTextEl.textContent = v.exampleRoot;
+        if (form === "past") exampleSentenceTextEl.textContent = v.examplePast;
+        if (form === "prog") exampleSentenceTextEl.textContent = v.exampleProg;
+      }
+
+      showAnswerBtn.addEventListener("click", () => {
+        const v = verbs[currentIndex];
+        if (!v) return;
+        answerShown = true;
+        tagalogMainVerbEl.textContent = v.root.toUpperCase();
+        tagalogMainVerbEl.setAttribute(
+          "aria-label",
+          "Tagalog verb " + v.root
+        );
+        [btnPresent, btnPast, btnProg].forEach((btn) => {
+          btn.disabled = false;
+          btn.classList.remove("opacity-50", "cursor-not-allowed");
+        });
+      });
+
+      btnPresent.addEventListener("click", () => {
+        if (!answerShown) return;
+        const v = verbs[currentIndex];
+        tagalogMainVerbEl.textContent = v.root.toUpperCase();
+        showSentenceForForm("root");
+      });
+
+      btnPast.addEventListener("click", () => {
+        if (!answerShown) return;
+        const v = verbs[currentIndex];
+        tagalogMainVerbEl.textContent = v.past.toUpperCase();
+        showSentenceForForm("past");
+      });
+
+      btnProg.addEventListener("click", () => {
+        if (!answerShown) return;
+        const v = verbs[currentIndex];
+        tagalogMainVerbEl.textContent = v.prog.toUpperCase();
+        showSentenceForForm("prog");
+      });
+
+      nextVerbBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % verbs.length;
+        loadVerb(currentIndex);
+      });
+
+      prevVerbBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + verbs.length) % verbs.length;
+        loadVerb(currentIndex);
+      });
+
+      exitBtn.addEventListener("click", () => {
+        // Go back to previous page (e.g., class site / LMS)
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          // If no history, just stay or redirect to a home page if you want
+          alert("You can now close this tab or window.");
+        }
+      });
+
+      // Focus outline helper
+      [
+        showAnswerBtn,
+        btnPresent,
+        btnPast,
+        btnProg,
+        nextVerbBtn,
+        prevVerbBtn,
+        exitBtn,
+      ].forEach((btn) => {
+        btn.addEventListener("focus", () =>
+          btn.classList.add("focus-outline")
+        );
+        btn.addEventListener("blur", () =>
+          btn.classList.remove("focus-outline")
+        );
+      });
+
+      // Init
+      loadVerb(currentIndex);
+    </script>
+  </body>
+</html>
