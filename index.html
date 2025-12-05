@@ -2,10 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Hosmer Tagalog Class – Verb Emoji Trainer</title>
-
-    <!-- Make it responsive on phones -->
+    <!-- IMPORTANT: make it mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hosmer Tagalog Class – Verb Emoji Trainer</title>
 
     <!-- Tailwind CDN (for layout & styling) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -65,10 +64,10 @@
       }
     </style>
   </head>
-  <body class="min-h-screen flex items-center justify-center px-2 sm:px-4">
+  <body class="h-full flex items-center justify-center px-2">
     <div
       id="app-container"
-      class="w-full max-w-md sm:max-w-2xl mx-auto my-3 sm:my-6 rounded-3xl shadow-xl flex flex-col overflow-hidden bg-[#f5f3ed]"
+      class="w-full max-w-4xl h-full max-h-[90%] mx-auto rounded-3xl shadow-xl flex flex-col overflow-hidden bg-[#f5f3ed]"
     >
       <!-- Header -->
       <header
@@ -252,6 +251,7 @@
             id="tagalog-answer-box"
             class="flex flex-wrap items-center gap-2"
           >
+            <!-- CHANGED: visible even on phone -->
             <span
               id="tagalog-root"
               class="inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
@@ -752,7 +752,7 @@
         if (form === "prog") exampleSentenceTextEl.textContent = v.exampleProg;
       }
 
-      // Show Tagalog verb + scroll on phone
+      // Show Tagalog verb + scroll on phone + change button text
       showAnswerBtn.addEventListener("click", () => {
         const v = verbs[currentIndex];
         if (!v) return;
@@ -763,7 +763,8 @@
           "Tagalog verb " + v.root
         );
 
-        // On small screens, scroll Step 2 into view so students see the answer
+        showAnswerBtn.textContent = "Nakita na ang pandiwa";
+
         const step2 = document.getElementById("step2-section");
         if (step2 && window.innerWidth < 768) {
           step2.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -775,7 +776,6 @@
         });
       });
 
-      // Root / base
       btnPresent.addEventListener("click", () => {
         if (!answerShown) return;
         const v = verbs[currentIndex];
@@ -783,7 +783,6 @@
         showSentenceForForm("root");
       });
 
-      // Past
       btnPast.addEventListener("click", () => {
         if (!answerShown) return;
         const v = verbs[currentIndex];
@@ -791,7 +790,6 @@
         showSentenceForForm("past");
       });
 
-      // Progressive
       btnProg.addEventListener("click", () => {
         if (!answerShown) return;
         const v = verbs[currentIndex];
@@ -799,7 +797,6 @@
         showSentenceForForm("prog");
       });
 
-      // Next / Previous
       nextVerbBtn.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % verbs.length;
         loadVerb(currentIndex);
@@ -810,7 +807,6 @@
         loadVerb(currentIndex);
       });
 
-      // Exit
       exitBtn.addEventListener("click", () => {
         if (window.history.length > 1) {
           window.history.back();
@@ -819,7 +815,6 @@
         }
       });
 
-      // Focus outline helper
       [
         showAnswerBtn,
         btnPresent,
@@ -837,8 +832,8 @@
         );
       });
 
-      // Init
       loadVerb(currentIndex);
     </script>
   </body>
 </html>
+
