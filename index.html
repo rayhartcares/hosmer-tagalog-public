@@ -175,12 +175,10 @@
         <!-- STEP 1: Emoji + Question (GUESS PAGE) -->
         <section
           aria-label="Guess the action"
-          class="rounded-2xl px-4 py-4 flex flex-col md:flex-row items-center gap-4 bg-[#fde68a]"
+          class="rounded-2xl px-4 py-4 bg-[#fde68a]"
           id="step1-section"
         >
-          <div
-            class="flex-1 flex flex-col items-center justify-center gap-2"
-          >
+          <div class="flex flex-col items-center justify-center gap-3 text-center">
             <div
               id="emoji-display"
               class="emoji-bounce text-5xl md:text-6xl"
@@ -188,29 +186,30 @@
             >
               🏃‍♂️
             </div>
-            <div class="mt-2 text-center">
-              <p
-                id="what-is-he-doing-question"
-                class="font-medium text-[#2d2a26]"
-              >
-                Ano ang ginagawa niya sa Tagalog?
-              </p>
-              <p
-                id="helper-text-1"
-                class="text-xs mt-1 opacity-80 text-[#2d2a26]"
-              >
-                Look at the emoji and think of the Tagalog verb.
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-col items-center gap-2">
+
+            <p
+              id="what-is-he-doing-question"
+              class="font-medium text-[#2d2a26]"
+            >
+              Ano ang ginagawa niya sa Tagalog?
+            </p>
+            <p
+              id="helper-text-1"
+              class="text-xs mt-1 opacity-80 text-[#2d2a26]"
+            >
+              Look at the emoji and think of the Tagalog verb.
+            </p>
+
+            <!-- BUTTON NOW INSIDE THE YELLOW CARD -->
             <button
               id="show-answer-btn"
               type="button"
-              class="px-4 py-2 rounded-full font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#f97316] text-[#2d2a26]"
+              class="mt-2 px-5 py-2 rounded-full font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#f97316] text-[#2d2a26]"
             >
               Ipakita ang pandiwa
             </button>
+
+            <!-- Optional: English cue for teacher / students -->
             <p
               id="english-verb-label"
               class="text-sm opacity-90 mt-1 text-[#2d2a26]"
@@ -247,7 +246,6 @@
             id="tagalog-answer-box"
             class="flex flex-wrap items-center gap-2"
           >
-            <!-- NOW HIDDEN UNTIL ANSWER IS SHOWN -->
             <span
               id="tagalog-root"
               class="hidden px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
@@ -770,7 +768,6 @@
 
         showAnswerBtn.textContent = "Nakita na ang pandiwa";
 
-        // Show Step 2 + Step 3 (as if it's a second page)
         step2Section.classList.remove("hidden");
         step3Section.classList.remove("hidden");
         tagalogRootChip.classList.remove("hidden");
