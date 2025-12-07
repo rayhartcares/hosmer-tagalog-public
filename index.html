@@ -2,9 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <!-- Mobile responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <title>Tagalog Mastery Lab – Verb Tutor</title>
+    <title>Tagalog Mastery Lab – Verb Tutor</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -71,88 +70,87 @@
         aria-label="Tagalog verb game header"
       >
         <div class="flex-1 text-center">
-         <p
-  <p
-  id="class-name"
-  class="text-2xl md:text-3xl font-extrabold mb-1 flex items-center justify-center gap-3"
->
-  <!-- LANGUAGE / READING LOGO -->
-  <svg
-    width="60"
-    height="60"
-    viewBox="0 0 100 100"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-hidden="true"
-  >
-    <!-- Outer circle -->
-    <circle
-      cx="50"
-      cy="50"
-      r="48"
-      fill="#FFF8E7"
-      stroke="#f97316"
-      stroke-width="3"
-    />
+          <!-- BRAND + LOGO -->
+          <p
+            id="class-name"
+            class="text-2xl md:text-3xl font-extrabold mb-1 flex items-center justify-center gap-3"
+          >
+            <!-- LANGUAGE / READING LOGO -->
+            <svg
+              width="60"
+              height="60"
+              viewBox="0 0 100 100"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <!-- Outer circle -->
+              <circle
+                cx="50"
+                cy="50"
+                r="48"
+                fill="#FFF8E7"
+                stroke="#f97316"
+                stroke-width="3"
+              />
 
-    <!-- Open book -->
-    <path
-      d="M25 38 C33 34 41 34 49 38 C57 34 65 34 73 38 V68 C65 64 57 64 49 68 C41 64 33 64 25 68 Z"
-      fill="#fde68a"
-      stroke="#f97316"
-      stroke-width="2"
-    />
+              <!-- Open book -->
+              <path
+                d="M25 38 C33 34 41 34 49 38 C57 34 65 34 73 38 V68 C65 64 57 64 49 68 C41 64 33 64 25 68 Z"
+                fill="#fde68a"
+                stroke="#f97316"
+                stroke-width="2"
+              />
 
-    <!-- Left page letter A -->
-    <text
-      x="38"
-      y="54"
-      font-size="16"
-      fill="#f97316"
-      font-weight="bold"
-      font-family="Arial, sans-serif"
-      text-anchor="middle"
-    >
-      A
-    </text>
+              <!-- Left page letter A -->
+              <text
+                x="38"
+                y="54"
+                font-size="16"
+                fill="#f97316"
+                font-weight="bold"
+                font-family="Arial, sans-serif"
+                text-anchor="middle"
+              >
+                A
+              </text>
 
-    <!-- Right page: simple speech bubble (language) -->
-    <rect
-      x="56"
-      y="42"
-      width="18"
-      height="14"
-      rx="3"
-      ry="3"
-      fill="#fff"
-      stroke="#f97316"
-      stroke-width="1.5"
-    />
-    <path
-      d="M60 58 L62 54 L64 58 Z"
-      fill="#fff"
-      stroke="#f97316"
-      stroke-width="1"
-    />
-  </svg>
+              <!-- Right page: speech bubble -->
+              <rect
+                x="56"
+                y="42"
+                width="18"
+                height="14"
+                rx="3"
+                ry="3"
+                fill="#fff"
+                stroke="#f97316"
+                stroke-width="1.5"
+              />
+              <path
+                d="M60 58 L62 54 L64 58 Z"
+                fill="#fff"
+                stroke="#f97316"
+                stroke-width="1"
+              />
+            </svg>
 
-  <!-- MAIN BRAND TITLE -->
-  <span
-    class="bg-gradient-to-r from-[#f97316] to-[#ea580c] text-transparent bg-clip-text drop-shadow-sm"
-  >
-    Tagalog Mastery Lab
-  </span>
-</p>
+            <span
+              class="bg-gradient-to-r from-[#f97316] to-[#ea580c] text-transparent bg-clip-text drop-shadow-sm"
+            >
+              Tagalog Mastery Lab
+            </span>
+          </p>
 
-<!-- MODULE SUBTITLE (DIFFERENT COLOR) -->
-<h1
-  id="main-title"
-  class="text-lg md:text-xl font-semibold tracking-tight text-[#1e293b]"
->
-  Verb Tutor – Action Characters
-</h1>
+          <!-- MODULE TITLE -->
+          <h1
+            id="main-title"
+            class="text-lg md:text-xl font-semibold tracking-tight text-[#1e293b]"
+          >
+            Verb Tutor – Action Characters
+          </h1>
 
-         
+          <!-- TAGLINE -->
           <p
             id="subtitle-text"
             class="mt-1 opacity-90 text-[#2d2a26]"
@@ -175,7 +173,7 @@
         class="flex-1 px-4 sm:px-6 pb-6 pt-4 flex flex-col gap-4 overflow-y-auto"
         aria-label="Tagalog verb training steps"
       >
-        <!-- STEP 1: Emoji + Question (GUESS PAGE) -->
+        <!-- STEP 1: Emoji + Question -->
         <section
           aria-label="Guess the action"
           class="rounded-2xl px-4 py-4 bg-[#fde68a]"
@@ -203,7 +201,6 @@
               Look at the character and think of the Tagalog verb.
             </p>
 
-            <!-- BUTTON NOW INSIDE THE YELLOW CARD -->
             <button
               id="show-answer-btn"
               type="button"
@@ -212,7 +209,6 @@
               Ipakita ang pandiwa
             </button>
 
-            <!-- Optional: English cue for teacher / students -->
             <p
               id="english-verb-label"
               class="text-sm opacity-90 mt-1 text-[#2d2a26]"
@@ -228,7 +224,7 @@
           </div>
         </section>
 
-        <!-- STEP 2: Tagalog verb forms (ANSWER PAGE – HIDDEN INITIALLY) -->
+        <!-- STEP 2: Tagalog verb forms -->
         <section
           aria-label="Tagalog verb forms"
           id="step2-section"
@@ -239,12 +235,11 @@
               Tagalog verb forms
             </p>
             <p
-          id="helper-text-3"
-          class="text-xs opacity-80 text-[#2d2a26]"
-        >
-          Piliin kung basic, past, o ongoing form.
-        </p>
-
+              id="helper-text-2"
+              class="text-xs opacity-80 text-[#2d2a26]"
+            >
+              These are basic forms (basic, past, ongoing).
+            </p>
           </div>
           <div
             id="tagalog-answer-box"
@@ -253,7 +248,7 @@
             <span
               id="tagalog-root"
               class="hidden px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
-              aria-label="root form"
+              aria-label="basic form"
             >
               tumakbo
             </span>
@@ -267,7 +262,7 @@
             <span
               id="tagalog-prog"
               class="hidden px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
-              aria-label="progressive form"
+              aria-label="ongoing form"
             >
               tumatakbo
             </span>
@@ -287,7 +282,7 @@
           </div>
         </section>
 
-        <!-- STEP 3: Use it in Tagalog (PRACTICE – HIDDEN INITIALLY) -->
+        <!-- STEP 3: Use it in Tagalog -->
         <section
           aria-label="Use the verb in Tagalog"
           id="step3-section"
@@ -304,32 +299,31 @@
               id="helper-text-3"
               class="text-xs opacity-80 text-[#2d2a26]"
             >
-              Piliin kung root, past, o progressive form.
+              Piliin kung basic, past, o ongoing form.
             </p>
           </div>
           <div class="flex flex-wrap gap-2">
-           <button
-            type="button"
-            id="btn-present"
-            class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
-          >
-            Basic
-          </button>
-          <button
-            type="button"
-            id="btn-past"
-            class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
-          >
-            Past
-          </button>
-          <button
-            type="button"
-            id="btn-prog"
-            class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
-          >
-            Ongoing
-          </button>
-
+            <button
+              type="button"
+              id="btn-present"
+              class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+            >
+              Basic
+            </button>
+            <button
+              type="button"
+              id="btn-past"
+              class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+            >
+              Past
+            </button>
+            <button
+              type="button"
+              id="btn-prog"
+              class="px-3 py-1.5 rounded-full text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+            >
+              Ongoing
+            </button>
           </div>
           <div
             id="sentence-panel"
@@ -353,15 +347,12 @@
         class="px-4 sm:px-6 py-3 border-t flex items-center justify-between gap-2 bg-[#fef3e2]"
         aria-label="Footer controls"
       >
-                 
-          <p
-            id="subtitle-text"
-            class="mt-1 opacity-90 text-[#2d2a26]"
-          >
-            Guess the action, see the Tagalog verb, then use it in a sentence.
-          </p>
+        <div
+          id="footer-text"
+          class="text-[11px] sm:text-xs opacity-60 text-[#64748b] leading-snug"
+        >
+          30 everyday verbs with simple Tagalog forms.
         </div>
-
 
         <div class="flex items-center gap-2">
           <button
@@ -741,7 +732,6 @@
         showAnswerBtn.disabled = false;
         showAnswerBtn.textContent = "Ipakita ang pandiwa";
 
-        // Hide answer + practice sections on each new verb
         step2Section.classList.add("hidden");
         step3Section.classList.add("hidden");
         tagalogRootChip.classList.add("hidden");
@@ -757,12 +747,12 @@
       function showSentenceForForm(form) {
         const v = verbs[currentIndex];
         if (!v) return;
-        if (form === "root") exampleSentenceTextEl.textContent = v.exampleRoot;
+        if (form === "basic") exampleSentenceTextEl.textContent = v.exampleRoot;
         if (form === "past") exampleSentenceTextEl.textContent = v.examplePast;
-        if (form === "prog") exampleSentenceTextEl.textContent = v.exampleProg;
+        if (form === "ongoing")
+          exampleSentenceTextEl.textContent = v.exampleProg;
       }
 
-      // Reveal answer "page"
       showAnswerBtn.addEventListener("click", () => {
         const v = verbs[currentIndex];
         if (!v) return;
@@ -782,9 +772,8 @@
         tagalogPastChip.classList.remove("hidden");
         tagalogProgChip.classList.remove("hidden");
 
-        const step2 = document.getElementById("step2-section");
-        if (step2 && window.innerWidth < 768) {
-          step2.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (window.innerWidth < 768) {
+          step2Section.scrollIntoView({ behavior: "smooth", block: "start" });
         }
 
         [btnPresent, btnPast, btnProg].forEach((btn) => {
@@ -797,7 +786,7 @@
         if (!answerShown) return;
         const v = verbs[currentIndex];
         tagalogMainVerbEl.textContent = v.root.toUpperCase();
-        showSentenceForForm("root");
+        showSentenceForForm("basic");
       });
 
       btnPast.addEventListener("click", () => {
@@ -811,7 +800,7 @@
         if (!answerShown) return;
         const v = verbs[currentIndex];
         tagalogMainVerbEl.textContent = v.prog.toUpperCase();
-        showSentenceForForm("prog");
+        showSentenceForForm("ongoing");
       });
 
       nextVerbBtn.addEventListener("click", () => {
@@ -849,9 +838,7 @@
         );
       });
 
-      // Initialize first verb
       loadVerb(currentIndex);
     </script>
   </body>
 </html>
-
