@@ -754,38 +754,67 @@
       }
 
       showAnswerBtn.addEventListener("click", () => {
-        const v = verbs[currentIndex];
-        if (!v) return;
-        answerShown = true;
+  const v = verbs[currentIndex];
+  if (!v) return;
+  answerShown = true;
 
-        tagalogMainVerbEl.textContent = v.root.toUpperCase();
-        tagalogMainVerbEl.setAttribute(
-          "aria-label",
-          "Tagalog verb " + v.root
-        );
+  // Show the basic Tagalog verb in big letters
+  tagalogMainVerbEl.textContent = v.root.toUpperCase();
+  tagalogMainVerbEl.setAttribute(
+    "aria-label",
+    "Tagalog verb " + v.root
+  );
 
-       showAnswerBtn.addEventListener("click", () => {
+  // Change button label after showing the verb
+  showAnswerBtn.textContent = "Nakita na ang pandiwa";
 
-      btnPresent.addEventListener("click", () => {
-        if (!answerShown) return;
-        const v = verbs[currentIndex];
-        tagalogMainVerbEl.textContent = v.root.toUpperCase();
-        showSentenceForForm("basic");
-      });
+  // Reveal Step 2 + Step 3 and the small chips
+  step2Section.classList.remove("hidden");
+  step3Section.classList.remove("hidden");
+  tagalogRootChip.classList.remove("hidden");
+  tagalogPastChip.classList.remove("hidden");
+  tagalogProgChip.classList.remove("hidden");
 
-      btnPast.addEventListener("click", () => {
-        if (!answerShown) return;
-        const v = verbs[currentIndex];
-        tagalogMainVerbEl.textContent = v.past.toUpperCase();
-        showSentenceForForm("past");
-      });
+  // Reset helper text for the example sentence
+  exampleSentenceTextEl.textContent =
+    "Click a form above to see a sample Tagalog sentence.";
 
-      btnProg.addEventListener("click", () => {
-        if (!answerShown) return;
-        const v = verbs[currentIndex];
-        tagalogMainVerbEl.textContent = v.prog.toUpperCase();
-        showSentenceForForm("ongoing");
-      });
+  // Enable the Basic / Past / Ongoing buttons
+  [btnPresent, btnPast, btnProg].forEach((btn) => {
+    btn.disabled = false;
+    btn.classList.remove("opacity-50", "cursor-not-allowed");
+  });
+
+  // On phones, scroll straight to the buttons + example sentence
+  const sentencePanel = document.getElementById("sentence-panel");
+  if (sentencePanel && window.innerWidth < 768) {
+    sentencePanel.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});
+
+btnPresent.addEventListener("click", () => {
+  if (!answerShown) return;
+  const v = verbs[currentIndex];
+  if (!v) return;
+  tagalogMainVerbEl.textContent = v.root.toUpperCase();
+  showSentenceForForm("basic");
+});
+
+btnPast.addEventListener("click", () => {
+  if (!answerShown) return;
+  const v = verbs[currentIndex];
+  if (!v) return;
+  tagalogMainVerbEl.textContent = v.past.toUpperCase();
+  showSentenceForForm("past");
+});
+
+btnProg.addEventListener("click", () => {
+  if (!answerShown) return;
+  const v = verbs[currentIndex];
+  if (!v) return;
+  tagalogMainVerbEl.textContent = v.prog.toUpperCase();
+  showSentenceForForm("ongoing");
+});
 
       nextVerbBtn.addEventListener("click", () => {
         currentIndex = (currentIndex + 1) % verbs.length;
