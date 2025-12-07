@@ -827,13 +827,11 @@
         loadVerb(currentIndex);
       });
 
-      exitBtn.addEventListener("click", () => {
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          alert("You can now close this tab or window.");
-        }
-      });
+    exitBtn.addEventListener("click", () => {
+  // Go to a simple thank-you / exit page
+  window.location.href = "goodbye.html";
+});
+
 
       // Focus outline helper
       [
