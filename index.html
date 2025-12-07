@@ -764,23 +764,7 @@
           "Tagalog verb " + v.root
         );
 
-        showAnswerBtn.textContent = "Nakita na ang pandiwa";
-
-        step2Section.classList.remove("hidden");
-        step3Section.classList.remove("hidden");
-        tagalogRootChip.classList.remove("hidden");
-        tagalogPastChip.classList.remove("hidden");
-        tagalogProgChip.classList.remove("hidden");
-
-        if (window.innerWidth < 768) {
-          step2Section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
-
-        [btnPresent, btnPast, btnProg].forEach((btn) => {
-          btn.disabled = false;
-          btn.classList.remove("opacity-50", "cursor-not-allowed");
-        });
-      });
+       showAnswerBtn.addEventListener("click", () => {
 
       btnPresent.addEventListener("click", () => {
         if (!answerShown) return;
