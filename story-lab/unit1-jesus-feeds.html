@@ -1,0 +1,906 @@
+<!doctype html>
+<html lang="tl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Unit 1 – Jesus Feeds the Crowd | Tagalog Mastery Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #fef3e2;
+      }
+
+      /* Slight card shadow and rounding */
+      .tml-card {
+        border-radius: 1.5rem;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+      }
+
+      /* Focus outline for buttons */
+      .focus-outline {
+        outline: 2px solid #f97316;
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body class="flex items-center justify-center">
+    <div
+      class="tml-card w-full max-w-3xl mx-3 my-4 bg-[#f5f3ed] flex flex-col overflow-hidden"
+    >
+      <!-- HEADER -->
+      <header
+        class="px-5 py-4 border-b bg-[#fef3e2] flex items-center justify-between gap-3"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="flex items-center justify-center w-11 h-11 rounded-full border-2 border-[#f97316] bg-[#fff7ed]"
+          >
+            <span class="text-2xl" aria-hidden="true">📚</span>
+          </div>
+          <div>
+            <h1
+              class="text-xl md:text-2xl font-extrabold tracking-tight text-[#f97316]"
+            >
+              Tagalog Mastery Lab
+            </h1>
+            <p class="text-sm text-[#2d2a26]">
+              Level 1 – Bible Story Verb Lab
+            </p>
+          </div>
+        </div>
+
+        <div class="hidden sm:flex flex-col items-end">
+          <span class="text-xs uppercase tracking-wide text-[#64748b]">
+            Unit 1
+          </span>
+          <span class="text-sm font-semibold text-[#1e293b]">
+            Jesus Feeds the Crowd
+          </span>
+        </div>
+      </header>
+
+      <!-- MAIN -->
+      <main
+        class="flex-1 px-5 py-4 overflow-y-auto space-y-5 text-[#111827]"
+      >
+        <!-- SCREEN 1: INTRO -->
+        <section id="screen-1" class="space-y-4">
+          <div>
+            <h2 class="text-lg font-bold text-[#111827] mb-1">
+              Unit 1 – Jesus Feeds the Crowd
+            </h2>
+            <p class="text-sm text-[#374151]">
+              Focus verbs:
+              <span class="font-semibold">kumain, umupo, maglakad</span>.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-4">
+            <p class="mb-2">
+              Sa lesson na ito, babasahin mo ang isang maikling kuwento tungkol
+              kay Jesus at sa maraming tao.
+            </p>
+            <p class="mb-2">
+              Pagkatapos, aaralin mo ang tatlong pandiwa:
+              <span class="font-semibold">kumain</span>,
+              <span class="font-semibold">umupo</span>,
+              <span class="font-semibold">maglakad</span>.
+            </p>
+            <p>
+              Sa dulo, susubukan mong gumawa ng sarili mong simpleng
+              pangungusap tungkol sa sarili mo.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center pt-1">
+            <button
+              type="button"
+              data-next="2"
+              id="btn-start-story"
+              class="px-4 py-2 rounded-full font-semibold bg-[#f97316] text-[#1f2937]"
+            >
+              Simulan ang kuwento
+            </button>
+
+            <a
+              href="index.html"
+              class="text-xs text-[#64748b] hover:text-[#0f172a] underline"
+            >
+              Bumalik sa Tagalog Mastery Lab
+            </a>
+          </div>
+        </section>
+
+        <!-- SCREEN 2: STORY VIEWER -->
+        <section id="screen-2" class="space-y-4 hidden">
+          <div>
+            <h2 class="text-lg font-bold mb-1">Tagalog Story</h2>
+            <p class="text-sm text-[#374151]">
+              Basahin ang pangungusap. Pagkatapos, puwede mong ipakita ang
+              English kung kailangan mo.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-2xl p-4 space-y-3">
+            <p
+              id="story-sentence-tl"
+              class="text-base font-semibold text-[#111827]"
+            >
+              <!-- filled by JS -->
+            </p>
+            <p
+              id="story-sentence-en"
+              class="text-sm text-[#4b5563] italic hidden"
+            >
+              <!-- filled by JS -->
+            </p>
+
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button
+                type="button"
+                id="btn-toggle-english"
+                class="px-3 py-1.5 rounded-full text-sm font-semibold bg-[#e5e7eb] text-[#111827]"
+              >
+                Ipakita ang English
+              </button>
+              <button
+                type="button"
+                id="btn-prev-sentence"
+                class="px-3 py-1.5 rounded-full text-sm bg-[#cbd5e1] text-[#111827]"
+              >
+                Nakaraang pangungusap
+              </button>
+              <button
+                type="button"
+                id="btn-next-sentence"
+                class="px-3 py-1.5 rounded-full text-sm bg-[#f97316] text-[#111827]"
+              >
+                Susunod na pangungusap
+              </button>
+            </div>
+
+            <p
+              id="story-progress"
+              class="text-xs text-[#6b7280] pt-1"
+            ></p>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <button
+              type="button"
+              data-next="1"
+              class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827]"
+            >
+              Balik sa simula
+            </button>
+            <button
+              type="button"
+              data-next="3"
+              id="btn-to-verbs"
+              class="px-4 py-2 rounded-full text-sm font-semibold bg-[#f97316] text-[#1f2937]"
+            >
+              Tapos na ako sa kuwento
+            </button>
+          </div>
+        </section>
+
+        <!-- SCREEN 3: VERB EXPLORER -->
+        <section id="screen-3" class="space-y-4 hidden">
+          <div>
+            <h2 class="text-lg font-bold mb-1">Verb Explorer</h2>
+            <p class="text-sm text-[#374151]">
+              I-click ang bawat pandiwa para makita ang basic, past, at ongoing
+              na anyo.
+            </p>
+          </div>
+
+          <div class="space-y-3">
+            <!-- KUMAIN -->
+            <div class="bg-white rounded-2xl p-4">
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <p class="text-base font-semibold">
+                    kumain – <span class="text-sm font-normal">to eat</span>
+                  </p>
+                  <p class="text-xs text-[#6b7280]">
+                    Sino ang kumain sa kuwento?
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] verb-toggle"
+                  data-target="verb-kumain"
+                >
+                  Ipakita ang forms
+                </button>
+              </div>
+
+              <div
+                id="verb-kumain"
+                class="mt-3 space-y-2 text-sm text-[#111827] hidden"
+              >
+                <p>
+                  <span class="font-semibold">Basic:</span> kumain – “to eat”
+                </p>
+                <p>
+                  <span class="font-semibold">Past:</span> Kumain sila ng
+                  tinapay at isda.
+                </p>
+                <p>
+                  <span class="font-semibold">Ongoing:</span> Kumakain sila
+                  ngayon.
+                </p>
+                <p class="text-xs text-[#6b7280] mt-1">
+                  Subukan mong sabihin: <br />
+                  <span class="italic"
+                    >“Kumakain ako ng ________ ngayon.”</span
+                  >
+                </p>
+              </div>
+            </div>
+
+            <!-- UMUPO -->
+            <div class="bg-white rounded-2xl p-4">
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <p class="text-base font-semibold">
+                    umupo – <span class="text-sm font-normal">to sit, sit down</span>
+                  </p>
+                  <p class="text-xs text-[#6b7280]">
+                    Saan umupo ang mga tao sa kuwento?
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] verb-toggle"
+                  data-target="verb-umupo"
+                >
+                  Ipakita ang forms
+                </button>
+              </div>
+
+              <div
+                id="verb-umupo"
+                class="mt-3 space-y-2 text-sm text-[#111827] hidden"
+              >
+                <p>
+                  <span class="font-semibold">Past:</span> Umupo sila sa
+                  damuhan.
+                </p>
+                <p>
+                  <span class="font-semibold">Ongoing:</span> Umuupo ang mga tao
+                  sa damuhan.
+                </p>
+                <p class="text-xs text-[#6b7280] mt-1">
+                  Subukan mong sabihin: <br />
+                  <span class="italic">“Umuupo ako sa ________.”</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- MAGLAKAD / NAGLAKAD -->
+            <div class="bg-white rounded-2xl p-4">
+              <div class="flex items-center justify-between gap-2">
+                <div>
+                  <p class="text-base font-semibold">
+                    maglakad – <span class="text-sm font-normal">to walk</span>
+                  </p>
+                  <p class="text-xs text-[#6b7280]">
+                    Saan naglakad ang mga tao sa kuwento?
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] verb-toggle"
+                  data-target="verb-maglakad"
+                >
+                  Ipakita ang forms
+                </button>
+              </div>
+
+              <div
+                id="verb-maglakad"
+                class="mt-3 space-y-2 text-sm text-[#111827] hidden"
+              >
+                <p>
+                  <span class="font-semibold">Basic:</span> maglakad – “to walk”
+                </p>
+                <p>
+                  <span class="font-semibold">Past:</span> Naglakad sila
+                  papunta kay Jesus.
+                </p>
+                <p>
+                  <span class="font-semibold">Ongoing:</span> Naglalakad sila
+                  papunta sa burol.
+                </p>
+                <p class="text-xs text-[#6b7280] mt-1">
+                  Subukan mong sabihin: <br />
+                  <span class="italic"
+                    >“Naglalakad ako papunta sa ________.”</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <button
+              type="button"
+              data-next="2"
+              class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827]"
+            >
+              Balik sa kuwento
+            </button>
+            <button
+              type="button"
+              data-next="4"
+              class="px-4 py-2 rounded-full text-sm font-semibold bg-[#f97316] text-[#1f2937]"
+            >
+              Practice mode
+            </button>
+          </div>
+        </section>
+
+        <!-- SCREEN 4: PRACTICE (MCQ + FILL-IN) -->
+        <section id="screen-4" class="space-y-4 hidden">
+          <div>
+            <h2 class="text-lg font-bold mb-1">Practice – Piliin ang tamang pandiwa</h2>
+            <p class="text-sm text-[#374151]">
+              Pindutin ang tamang sagot. Basahin ang feedback sa ibaba ng bawat
+              tanong.
+            </p>
+          </div>
+
+          <!-- Q1 -->
+          <div class="bg-white rounded-2xl p-4 space-y-2">
+            <p class="text-sm font-semibold">
+              1. Ano ang tamang pandiwa?<br />
+              <span class="font-normal"
+                >________ ang mga tao papunta kay Jesus.</span
+              >
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="1"
+                data-correct="false"
+              >
+                Kumain
+              </button>
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="1"
+                data-correct="true"
+              >
+                Naglakad
+              </button>
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="1"
+                data-correct="false"
+              >
+                Umupo
+              </button>
+            </div>
+            <p
+              id="feedback-1"
+              class="text-xs text-[#6b7280] pt-1"
+            ></p>
+          </div>
+
+          <!-- Q2 -->
+          <div class="bg-white rounded-2xl p-4 space-y-2">
+            <p class="text-sm font-semibold">
+              2. Ano ang tamang pandiwa?<br />
+              <span class="font-normal">________ sila sa damuhan.</span>
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="2"
+                data-correct="false"
+              >
+                Kumain
+              </button>
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="2"
+                data-correct="true"
+              >
+                Umupo
+              </button>
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="2"
+                data-correct="false"
+              >
+                Naglakad
+              </button>
+            </div>
+            <p
+              id="feedback-2"
+              class="text-xs text-[#6b7280] pt-1"
+            ></p>
+          </div>
+
+          <!-- Q3 -->
+          <div class="bg-white rounded-2xl p-4 space-y-2">
+            <p class="text-sm font-semibold">
+              3. Ano ang tamang pandiwa?<br />
+              <span class="font-normal"
+                >________ sila ng tinapay at isda.</span
+              >
+            </p>
+            <div class="flex flex-wrap gap-2 pt-1">
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="3"
+                data-correct="true"
+              >
+                Kumain
+              </button>
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="3"
+                data-correct="false"
+              >
+                Umupo
+              </button>
+              <button
+                type="button"
+                class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] mcq-option"
+                data-question="3"
+                data-correct="false"
+              >
+                Naglakad
+              </button>
+            </div>
+            <p
+              id="feedback-3"
+              class="text-xs text-[#6b7280] pt-1"
+            ></p>
+          </div>
+
+          <!-- Fill-in -->
+          <div class="bg-white rounded-2xl p-4 space-y-2">
+            <p class="text-sm font-semibold">
+              4. Punan ang patlang (isipin o isulat sa papel):
+            </p>
+            <p class="text-sm">
+              <span class="font-normal"
+                >Naglakad ang maraming tao papunta sa ________.</span
+              >
+            </p>
+            <button
+              type="button"
+              id="btn-show-fill-example"
+              class="mt-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827]"
+            >
+              Ipakita ang halimbawa
+            </button>
+            <p
+              id="fill-example"
+              class="text-xs text-[#6b7280] pt-1 hidden"
+            >
+              Halimbawa: <span class="italic">“Naglakad ang maraming tao
+              papunta sa parke.”</span>
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <button
+              type="button"
+              data-next="3"
+              class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827]"
+            >
+              Balik sa Verb Explorer
+            </button>
+            <button
+              type="button"
+              data-next="5"
+              class="px-4 py-2 rounded-full text-sm font-semibold bg-[#f97316] text-[#1f2937]"
+            >
+              Last step
+            </button>
+          </div>
+        </section>
+
+        <!-- SCREEN 5: SAY IT YOURSELF + MINI-DIALOGUE + SUMMARY -->
+        <section id="screen-5" class="space-y-4 hidden">
+          <div>
+            <h2 class="text-lg font-bold mb-1">
+              Gamitin sa sarili mong pangungusap
+            </h2>
+            <p class="text-sm text-[#374151]">
+              Subukan mong sabihin nang malakas ang iyong mga sagot. Maaari ka
+              ring sumulat sa kuwaderno.
+            </p>
+          </div>
+
+          <!-- Say it yourself -->
+          <div class="bg-white rounded-2xl p-4 space-y-2">
+            <p class="text-sm font-semibold">
+              A. Sabihin ang tatlong pangungusap tungkol sa sarili mo:
+            </p>
+            <ol class="list-decimal list-inside text-sm space-y-1">
+              <li>“Naglakad ako papunta sa ________.”</li>
+              <li>“Umupo ako sa ________.”</li>
+              <li>“Kumakain ako ng ________ ngayon.”</li>
+            </ol>
+
+            <button
+              type="button"
+              id="btn-show-examples-say"
+              class="mt-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827]"
+            >
+              Ipakita ang mga halimbawa
+            </button>
+
+            <div
+              id="examples-say"
+              class="text-xs text-[#6b7280] pt-1 hidden space-y-1"
+            >
+              <p class="italic">“Naglakad ako papunta sa klase.”</p>
+              <p class="italic">“Umupo ako sa harap.”</p>
+              <p class="italic">“Kumakain ako ng tinapay ngayon.”</p>
+            </div>
+          </div>
+
+          <!-- Mini-dialogue -->
+          <div class="bg-white rounded-2xl p-4 space-y-2">
+            <p class="text-sm font-semibold">
+              B. Mini-dialogue – Pumili ng sagot
+            </p>
+
+            <!-- Dialogue 1 -->
+            <div class="space-y-1">
+              <p class="text-sm">
+                1. Tanong: <span class="font-semibold">Ano ang ginawa ng mga tao bago kumain?</span>
+              </p>
+              <div class="flex flex-col sm:flex-row gap-2 pt-1">
+                <button
+                  type="button"
+                  class="flex-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] dialog-option"
+                  data-dialog="1"
+                  data-correct="true"
+                >
+                  Naglakad sila papunta kay Jesus.
+                </button>
+                <button
+                  type="button"
+                  class="flex-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] dialog-option"
+                  data-dialog="1"
+                  data-correct="false"
+                >
+                  Natulog sila sa bangka.
+                </button>
+                <button
+                  type="button"
+                  class="flex-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] dialog-option"
+                  data-dialog="1"
+                  data-correct="false"
+                >
+                  Lumangoy sila sa dagat.
+                </button>
+              </div>
+              <p
+                id="dialog-feedback-1"
+                class="text-xs text-[#6b7280] pt-1"
+              ></p>
+            </div>
+
+            <!-- Dialogue 2 -->
+            <div class="space-y-1 pt-3">
+              <p class="text-sm">
+                2. Tanong: <span class="font-semibold">Naglakad ka ba papunta sa klase o umupo ka lang sa bahay?</span>
+              </p>
+              <div class="flex flex-col sm:flex-row gap-2 pt-1">
+                <button
+                  type="button"
+                  class="flex-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] dialog-option"
+                  data-dialog="2"
+                  data-correct="true"
+                >
+                  Naglakad ako papunta sa klase.
+                </button>
+                <button
+                  type="button"
+                  class="flex-1 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827] dialog-option"
+                  data-dialog="2"
+                  data-correct="true"
+                >
+                  Umupo lang ako sa bahay.
+                </button>
+              </div>
+              <p
+                id="dialog-feedback-2"
+                class="text-xs text-[#6b7280] pt-1"
+              ></p>
+            </div>
+          </div>
+
+          <!-- Summary -->
+          <div class="bg-white rounded-2xl p-4 space-y-2">
+            <p class="text-sm font-semibold">Quick Check</p>
+            <p class="text-xs text-[#6b7280]">
+              Alam mo na ba ang Tagalog ng:
+            </p>
+            <ul class="list-disc list-inside text-sm space-y-1">
+              <li>“to eat” → <span class="font-semibold">kumain</span></li>
+              <li>“to sit” → <span class="font-semibold">umupo</span></li>
+              <li>
+                “to walk” → <span class="font-semibold">maglakad /
+                naglakad / naglalakad</span>
+              </li>
+            </ul>
+            <p class="text-sm pt-2">
+              Natapos mo ang Unit 1 – <span class="font-semibold"
+                >Jesus Feeds the Crowd</span
+              >. Maganda! Maaari mong ulitin ang lesson o bumalik sa Tagalog
+              Mastery Lab.
+            </p>
+          </div>
+
+          <div class="flex justify-between items-center">
+            <button
+              type="button"
+              data-repeat-unit="1"
+              class="px-3 py-1.5 rounded-full text-xs font-semibold bg-[#e5e7eb] text-[#111827]"
+            >
+              Ulitin ang Unit 1
+            </button>
+            <a
+              href="index.html"
+              class="px-4 py-2 rounded-full text-sm font-semibold bg-[#f97316] text-[#1f2937]"
+            >
+              Bumalik sa Tagalog Mastery Lab
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        // ----- Screen handling -----
+        const screens = {
+          1: document.getElementById("screen-1"),
+          2: document.getElementById("screen-2"),
+          3: document.getElementById("screen-3"),
+          4: document.getElementById("screen-4"),
+          5: document.getElementById("screen-5"),
+        };
+
+        function showScreen(n) {
+          Object.values(screens).forEach((s) => s.classList.add("hidden"));
+          if (screens[n]) screens[n].classList.remove("hidden");
+        }
+
+        // Generic "next screen" buttons
+        document.querySelectorAll("[data-next]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const target = parseInt(btn.dataset.next, 10);
+            if (!isNaN(target)) {
+              showScreen(target);
+              if (target === 2) resetStory();
+            }
+          });
+        });
+
+        // Repeat unit -> back to screen 1 and reset
+        document.querySelectorAll("[data-repeat-unit]").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            resetStory();
+            // clear feedback
+            for (let i = 1; i <= 3; i++) {
+              const fb = document.getElementById("feedback-" + i);
+              if (fb) fb.textContent = "";
+            }
+            const fill = document.getElementById("fill-example");
+            if (fill) fill.classList.add("hidden");
+
+            const exSay = document.getElementById("examples-say");
+            if (exSay) exSay.classList.add("hidden");
+
+            document
+              .querySelectorAll("[id^='dialog-feedback-']")
+              .forEach((el) => (el.textContent = ""));
+
+            showScreen(1);
+          });
+        });
+
+        // ----- Story viewer -----
+        const storySentences = [
+          {
+            tl: "Naglakad ang maraming tao papunta kay Jesus.",
+            en: "Many people walked to Jesus.",
+          },
+          {
+            tl: "Umupo sila sa damuhan at nakinig sa kaniya.",
+            en: "They sat on the grass and listened to him.",
+          },
+          {
+            tl: "Kumain sila ng tinapay at isda.",
+            en: "They ate bread and fish.",
+          },
+          {
+            tl: "Masaya silang kumakain at nakikinig kay Jesus.",
+            en: "They were happily eating and listening to Jesus.",
+          },
+        ];
+
+        let storyIndex = 0;
+        const tlEl = document.getElementById("story-sentence-tl");
+        const enEl = document.getElementById("story-sentence-en");
+        const progressEl = document.getElementById("story-progress");
+        const btnToggleEnglish = document.getElementById("btn-toggle-english");
+        const btnPrevSentence = document.getElementById("btn-prev-sentence");
+        const btnNextSentence = document.getElementById("btn-next-sentence");
+
+        function renderStorySentence() {
+          const s = storySentences[storyIndex];
+          if (!s) return;
+          tlEl.textContent = s.tl;
+          enEl.textContent = s.en;
+          enEl.classList.add("hidden");
+          btnToggleEnglish.textContent = "Ipakita ang English";
+          progressEl.textContent =
+            "Pangungusap " +
+            (storyIndex + 1) +
+            " ng " +
+            storySentences.length +
+            ".";
+        }
+
+        function resetStory() {
+          storyIndex = 0;
+          renderStorySentence();
+        }
+
+        if (btnToggleEnglish) {
+          btnToggleEnglish.addEventListener("click", () => {
+            const hidden = enEl.classList.contains("hidden");
+            if (hidden) {
+              enEl.classList.remove("hidden");
+              btnToggleEnglish.textContent = "Itago ang English";
+            } else {
+              enEl.classList.add("hidden");
+              btnToggleEnglish.textContent = "Ipakita ang English";
+            }
+          });
+        }
+
+        if (btnPrevSentence) {
+          btnPrevSentence.addEventListener("click", () => {
+            storyIndex = (storyIndex - 1 + storySentences.length) % storySentences.length;
+            renderStorySentence();
+          });
+        }
+
+        if (btnNextSentence) {
+          btnNextSentence.addEventListener("click", () => {
+            storyIndex = (storyIndex + 1) % storySentences.length;
+            renderStorySentence();
+          });
+        }
+
+        // When we first arrive on screen 2 from screen 1, make sure story is reset
+        const btnStartStory = document.getElementById("btn-start-story");
+        if (btnStartStory) {
+          btnStartStory.addEventListener("click", () => {
+            resetStory();
+          });
+        }
+
+        // ----- Verb toggles -----
+        document.querySelectorAll(".verb-toggle").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const targetId = btn.dataset.target;
+            if (!targetId) return;
+            const box = document.getElementById(targetId);
+            if (!box) return;
+            const isHidden = box.classList.contains("hidden");
+            box.classList.toggle("hidden");
+            btn.textContent = isHidden ? "Itago ang forms" : "Ipakita ang forms";
+          });
+        });
+
+        // ----- MCQ handling -----
+        document.querySelectorAll(".mcq-option").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const q = btn.dataset.question;
+            const isCorrect = btn.dataset.correct === "true";
+            const feedback = document.getElementById("feedback-" + q);
+            if (!feedback) return;
+
+            if (isCorrect) {
+              feedback.textContent = "Tama! Magaling.";
+              feedback.classList.remove("text-red-500");
+              feedback.classList.add("text-green-600");
+            } else {
+              feedback.textContent = "Subukan ulit. Basahin ang kuwento nang mabuti.";
+              feedback.classList.remove("text-green-600");
+              feedback.classList.add("text-red-500");
+            }
+          });
+        });
+
+        // Fill-in example
+        const btnShowFillExample = document.getElementById("btn-show-fill-example");
+        const fillExample = document.getElementById("fill-example");
+        if (btnShowFillExample && fillExample) {
+          btnShowFillExample.addEventListener("click", () => {
+            fillExample.classList.remove("hidden");
+          });
+        }
+
+        // Examples for "Say it yourself"
+        const btnShowExamplesSay = document.getElementById("btn-show-examples-say");
+        const examplesSay = document.getElementById("examples-say");
+        if (btnShowExamplesSay && examplesSay) {
+          btnShowExamplesSay.addEventListener("click", () => {
+            examplesSay.classList.remove("hidden");
+          });
+        }
+
+        // Dialogue options
+        document.querySelectorAll(".dialog-option").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const dialogId = btn.dataset.dialog;
+            const isCorrect = btn.dataset.correct === "true";
+            const feedback = document.getElementById("dialog-feedback-" + dialogId);
+            if (!feedback) return;
+
+            if (dialogId === "1") {
+              if (isCorrect) {
+                feedback.textContent = "Tama! Naglakad sila papunta kay Jesus.";
+                feedback.classList.remove("text-red-500");
+                feedback.classList.add("text-green-600");
+              } else {
+                feedback.textContent = "Hindi ito ang nangyari sa kuwento.";
+                feedback.classList.remove("text-green-600");
+                feedback.classList.add("text-red-500");
+              }
+            } else if (dialogId === "2") {
+              // Both answers can be correct here (depende sa estudyante)
+              if (isCorrect) {
+                feedback.textContent =
+                  "Magaling! Iyon ang sagot na akma sa sarili mong sitwasyon.";
+                feedback.classList.remove("text-red-500");
+                feedback.classList.add("text-green-600");
+              }
+            }
+          });
+        });
+
+        // Focus outline helper
+        document
+          .querySelectorAll("button")
+          .forEach((btn) => {
+            btn.addEventListener("focus", () => btn.classList.add("focus-outline"));
+            btn.addEventListener("blur", () => btn.classList.remove("focus-outline"));
+          });
+
+        // Start at screen 1
+        showScreen(1);
+      });
+    </script>
+  </body>
+</html>
