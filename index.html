@@ -753,7 +753,7 @@
           exampleSentenceTextEl.textContent = v.exampleProg;
       }
 
-      showAnswerBtn.addEventListener("click", () => {
+     showAnswerBtn.addEventListener("click", () => {
   const v = verbs[currentIndex];
   if (!v) return;
   answerShown = true;
@@ -764,6 +764,35 @@
     "aria-label",
     "Tagalog verb " + v.root
   );
+
+  // Change button label after showing the verb
+  showAnswerBtn.textContent = "Nakita na ang pandiwa";
+
+  // Reveal Step 2 + Step 3 and the small chips
+  step2Section.classList.remove("hidden");
+  step3Section.classList.remove("hidden");
+  tagalogRootChip.classList.remove("hidden");
+  tagalogPastChip.classList.remove("hidden");
+  tagalogProgChip.classList.remove("hidden");
+
+  // Enable the Basic / Past / Ongoing buttons
+  [btnPresent, btnPast, btnProg].forEach((btn) => {
+    btn.disabled = false;
+    btn.classList.remove("opacity-50", "cursor-not-allowed");
+  });
+
+  // Immediately show the BASIC example sentence
+  showSentenceForForm("basic");
+
+  // Smooth scroll to the Example Sentence panel on ALL devices
+  const sentencePanel = document.getElementById("sentence-panel");
+  if (sentencePanel) {
+    // tiny delay so layout can update before scrolling (helps on phones)
+    setTimeout(() => {
+      sentencePanel.scrollIntoView({ behavior: "smooth", block: "center" });
+    }, 50);
+  }
+});
 
   // Change button label after showing the verb
   showAnswerBtn.textContent = "Nakita na ang pandiwa";
