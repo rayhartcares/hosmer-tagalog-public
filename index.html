@@ -29,13 +29,60 @@
         <!-- HERO: centered logo + level + title -->
         <header class="flex flex-col items-center text-center mb-8">
           <!-- logo -->
-          <div
-            class="flex items-center justify-center w-16 h-16 rounded-3xl bg-white shadow-md shadow-[#f97316]/30 border border-[#fed7aa] mb-3"
-          >
-            <span class="text-2xl font-bold text-[#f97316]" aria-hidden="true"
-              >A</span
-            >
-          </div>
+          <!-- TML logo badge -->
+<div
+  class="relative w-16 h-16 mb-3 flex items-center justify-center"
+  aria-hidden="true"
+>
+  <div
+    class="absolute inset-0 rounded-full bg-gradient-to-br from-[#f97316] via-[#facc15] to-[#6366f1] opacity-90 shadow-lg shadow-[#f97316]/40"
+  ></div>
+
+  <div
+    class="relative inset-0 m-[3px] flex items-center justify-center rounded-full bg-white border border-white/80"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
+      class="w-11 h-11"
+    >
+      <!-- soft inner circle -->
+      <circle cx="32" cy="32" r="30" fill="#fef9f5" />
+
+      <!-- open book / speech mark -->
+      <path
+        d="M20 23c4.5-2.5 8.5-2.5 13 0 4.5-2.5 8.5-2.5 13 0v14c-4.5-2.5-8.5-2.5-13 0-4.5-2.5-8.5-2.5-13 0V23z"
+        fill="#f97316"
+        fill-opacity="0.9"
+      />
+      <path
+        d="M22 25.5v9.5c3.6-1.7 7.1-1.7 11 0v-9.5c-3.9-1.7-7.4-1.7-11 0z"
+        fill="#fff7ed"
+      />
+
+      <!-- tiny speech bubble coming from the book -->
+      <path
+        d="M43 20c3.2 0 5.5 2.2 5.5 5s-2.3 5-5.5 5a6.6 6.6 0 0 1-1.7-.2l-2.1 1.7.5-2.7A4.8 4.8 0 0 1 37.5 25c0-2.8 2.3-5 5.5-5z"
+        fill="#6366f1"
+        fill-opacity="0.95"
+      />
+
+      <!-- T M L letters -->
+      <text
+        x="17"
+        y="49"
+        font-size="9"
+        font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+        fill="#111827"
+        font-weight="700"
+        letter-spacing="1"
+      >
+        TML
+      </text>
+    </svg>
+  </div>
+</div>
+
 
           <!-- level label -->
           <p
