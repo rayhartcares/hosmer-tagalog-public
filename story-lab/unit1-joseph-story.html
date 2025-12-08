@@ -1,1 +1,461 @@
-test
+<!DOCTYPE html>
+<html lang="tl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Story Lab – Joseph – Punan ang Patlang</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen bg-[#fff7ed]">
+    <main
+      class="max-w-4xl mx-auto my-6 md:my-10 rounded-3xl bg-white shadow-xl shadow-orange-100 border border-orange-100"
+    >
+      <!-- Top ribbon -->
+      <header
+        class="rounded-t-3xl bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-500 px-6 py-4 text-sm text-orange-50 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="h-9 w-9 rounded-full bg-orange-100/90 flex items-center justify-center text-orange-700 font-bold text-xs"
+          >
+            TML
+          </div>
+          <div>
+            <div class="uppercase tracking-wide text-[11px] font-semibold">
+              Story Lab · Unit 1
+            </div>
+            <div class="text-xs opacity-90">
+              Joseph – Punan ang Patlang
+            </div>
+          </div>
+        </div>
+
+        <p class="hidden sm:block text-[11px] font-medium">
+          Tagalog Mastery Lab
+        </p>
+      </header>
+
+      <section class="px-6 md:px-10 pt-6 pb-8 md:pb-10">
+        <!-- Title + nav -->
+        <div class="mb-6 md:mb-8">
+          <h1
+            class="text-xl md:text-2xl font-extrabold text-slate-900 text-center"
+          >
+            Joseph – Punan ang Patlang
+          </h1>
+          <p
+            class="mt-3 text-sm md:text-base text-slate-700 max-w-2xl mx-auto text-center"
+          >
+            Basahin ang pangungusap at isulat ang kulang na salita. Pindutin ang
+            <span class="font-semibold">“Suriin”</span>. Hindi ipapakita ang
+            sagot hangga’t hindi ka nagsusuri.
+          </p>
+
+          <nav
+            class="mt-4 flex flex-wrap justify-center gap-2 text-[11px] md:text-xs"
+          >
+            <a
+              href="unit1-joseph-story.html"
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
+              >Kuwento</a
+            >
+            <a
+              href="unit1-joseph-questions.html"
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
+              >Tanong</a
+            >
+            <span
+              class="px-3 py-1 rounded-full bg-slate-900 text-slate-50 font-semibold"
+              >Punan ang Patlang</span
+            >
+            <a
+              href="unit1-joseph-quiz.html"
+              class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
+              >Quiz</a
+            >
+          </nav>
+        </div>
+
+        <!-- Blanks -->
+        <section class="space-y-4 text-sm md:text-base">
+          <!-- b1 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b1" class="block mb-2">
+              1. Binigyan ni Jacob si Joseph ng isang damit na ________ ang
+              kulay.
+            </label>
+            <input
+              id="b1"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang salita"
+            />
+            <button
+              data-blank="b1"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b1" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b2 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b2" class="block mb-2">
+              2. Dahil espesyal si Joseph, ________ ang mga kuya niya sa kaniya.
+            </label>
+            <input
+              id="b2"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang salita (pandiwa)"
+            />
+            <button
+              data-blank="b2"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b2" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b3 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b3" class="block mb-2">
+              3. Dalawang beses ________ si Joseph ng kakaibang panaginip.
+            </label>
+            <input
+              id="b3"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang pandiwa"
+            />
+            <button
+              data-blank="b3"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b3" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b4 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b4" class="block mb-2">
+              4. Hinubaran nila si Joseph ng kaniyang ________ na damit bago
+              siya ihulog sa hukay.
+            </label>
+            <input
+              id="b4"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang salita"
+            />
+            <button
+              data-blank="b4"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b4" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b5 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b5" class="block mb-2">
+              5. Inihulog nila si Joseph sa isang malalim na ________ na
+              walang tubig.
+            </label>
+            <input
+              id="b5"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang salita"
+            />
+            <button
+              data-blank="b5"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b5" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b6 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b6" class="block mb-2">
+              6. Ipinagbili nila si Joseph sa mga ________ na papunta sa Ehipto.
+            </label>
+            <input
+              id="b6"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang salita"
+            />
+            <button
+              data-blank="b6"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b6" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b7 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b7" class="block mb-2">
+              7. Sa Ehipto, ipinagbili si Joseph kay ________, isang opisyal ni
+              Paraon.
+            </label>
+            <input
+              id="b7"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Pangalan"
+            />
+            <button
+              data-blank="b7"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b7" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b8 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b8" class="block mb-2">
+              8. Laging ________ si Joseph sa kaniyang gawain kaya pinagkatiwalaan
+              siya ni Potiphar.
+            </label>
+            <input
+              id="b8"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang pandiwa (hal. nagtatagumpay)"
+            />
+            <button
+              data-blank="b8"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b8" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b9 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b9" class="block mb-2">
+              9. Dahil sa maling akusasyon, si Joseph ay ipinatapon sa
+              ________.
+            </label>
+            <input
+              id="b9"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Lugar"
+            />
+            <button
+              data-blank="b9"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b9" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b10 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b10" class="block mb-2">
+              10. Sinabi ni Joseph na ang pagpapaliwanag ng panaginip ay galing
+              kay ________.
+            </label>
+            <input
+              id="b10"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Sino?"
+            />
+            <button
+              data-blank="b10"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b10" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b11 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b11" class="block mb-2">
+              11. Ang panaginip ni Paraon ay tungkol sa pitong taon ng
+              kasaganaan at pitong taon ng ________.
+            </label>
+            <input
+              id="b11"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang salita"
+            />
+            <button
+              data-blank="b11"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b11" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b12 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b12" class="block mb-2">
+              12. Ginawang tagapamahala ni Paraon si Joseph sa buong ________.
+            </label>
+            <input
+              id="b12"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Bansa"
+            />
+            <button
+              data-blank="b12"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b12" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b13 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b13" class="block mb-2">
+              13. Nang pumunta ang mga kapatid niya sa Ehipto, hindi nila
+              ________ si Joseph.
+            </label>
+            <input
+              id="b13"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang pandiwa"
+            />
+            <button
+              data-blank="b13"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b13" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b14 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b14" class="block mb-2">
+              14. Sa halip na maghiganti, pinili ni Joseph na ________ ang mga
+              kapatid niya.
+            </label>
+            <input
+              id="b14"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Isulat ang pandiwa"
+            />
+            <button
+              data-blank="b14"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b14" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+
+          <!-- b15 -->
+          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+            <label for="b15" class="block mb-2">
+              15. Sinabi ni Joseph na ginamit ni ________ ang lahat ng nangyari
+              para sa mabuti at para maligtas ang maraming tao.
+            </label>
+            <input
+              id="b15"
+              type="text"
+              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+              placeholder="Sino?"
+            />
+            <button
+              data-blank="b15"
+              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+            >
+              Suriin
+            </button>
+            <p id="fb-b15" class="mt-2 text-xs md:text-sm"></p>
+          </div>
+        </section>
+
+        <!-- Back to main lab -->
+        <p class="mt-6 text-center">
+          <a
+            href="../index.html"
+            class="inline-flex items-center text-xs md:text-sm font-semibold text-sky-700 hover:text-sky-900"
+          >
+            Bumalik sa Tagalog Mastery Lab
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <script>
+      const blankAnswers = {
+        b1: ["makulay"],
+        b2: ["nagselos"],
+        b3: ["nanaginip"],
+        b4: ["makulay"],
+        b5: ["hukay"],
+        b6: ["mangangalakal", "mga mangangalakal"],
+        b7: ["potiphar"],
+        b8: ["nagtatagumpay"],
+        b9: ["bilangguan"],
+        b10: ["diyos", "jehovah"],
+        b11: ["taggutom"],
+        b12: ["ehipto"],
+        b13: ["nakilala"],
+        b14: ["magpatawad", "pinatawad"],
+        b15: ["jehovah"],
+      };
+
+      document.querySelectorAll("[data-blank]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-blank");
+          const input = document.getElementById(id);
+          const fb = document.getElementById("fb-" + id);
+          if (!input || !fb) return;
+
+          const user = input.value.trim().toLowerCase();
+          const expected = blankAnswers[id] || [];
+          const model = expected[0] || "";
+          if (!user) {
+            fb.textContent = "Mag-type muna ng sagot.";
+            fb.className = "mt-2 text-xs md:text-sm text-amber-700";
+            return;
+          }
+
+          const isCorrect = expected.includes(user);
+          if (isCorrect) {
+            fb.textContent = "Tama! Halimbawa ng sagot: " + model + ".";
+            fb.className = "mt-2 text-xs md:text-sm text-emerald-700";
+          } else {
+            fb.textContent =
+              "Hindi eksakto, pero puwede pa rin kung tama ang ideya. Halimbawa ng sagot: " +
+              model +
+              ".";
+            fb.className = "mt-2 text-xs md:text-sm text-rose-700";
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
