@@ -2,8 +2,9 @@
 <html lang="tl">
   <head>
     <meta charset="UTF-8" />
-    <title>Story Lab – Joseph – Punan ang Patlang</title>
+    <title>Story Lab – Unit 1: Joseph – Mula sa Hukay Hanggang sa Palasyo</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       body {
@@ -27,11 +28,13 @@
             TML
           </div>
           <div>
-            <div class="uppercase tracking-wide text-[11px] font-semibold">
+            <div
+              class="uppercase tracking-wide text-[11px] font-semibold"
+            >
               Story Lab · Unit 1
             </div>
             <div class="text-xs opacity-90">
-              Joseph – Punan ang Patlang
+              Joseph – Mula sa Hukay Hanggang sa Palasyo
             </div>
           </div>
         </div>
@@ -42,362 +45,223 @@
       </header>
 
       <section class="px-6 md:px-10 pt-6 pb-8 md:pb-10">
-        <!-- Title + nav -->
-        <div class="mb-6 md:mb-8">
-          <h1
-            class="text-xl md:text-2xl font-extrabold text-slate-900 text-center"
-          >
-            Joseph – Punan ang Patlang
+        <!-- Title -->
+        <div class="text-center mb-6 md:mb-8">
+          <h1 class="text-xl md:text-2xl font-extrabold text-slate-900">
+            Joseph – Mula sa Hukay Hanggang sa Palasyo
           </h1>
           <p
-            class="mt-3 text-sm md:text-base text-slate-700 max-w-2xl mx-auto text-center"
+            class="mt-3 text-sm md:text-base text-slate-700 max-w-2xl mx-auto"
           >
-            Basahin ang pangungusap at isulat ang kulang na salita. Pindutin ang
-            <span class="font-semibold">“Suriin”</span>. Hindi ipapakita ang
-            sagot hangga’t hindi ka nagsusuri.
+            Ito ay mahabang kuwento tungkol kay Joseph. Simple ang mga
+            pangungusap para mas madaling basahin ng mga nag-aaral ng Tagalog,
+            pero puno ng aksiyon, takot, pag-asa, at pagtitiwala kay
+            <span class="font-semibold">Jehovah</span>.
           </p>
-
-          <nav
-            class="mt-4 flex flex-wrap justify-center gap-2 text-[11px] md:text-xs"
-          >
-            <a
-              href="unit1-joseph-story.html"
-              class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
-              >Kuwento</a
-            >
-            <a
-              href="unit1-joseph-questions.html"
-              class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
-              >Tanong</a
-            >
-            <span
-              class="px-3 py-1 rounded-full bg-slate-900 text-slate-50 font-semibold"
-              >Punan ang Patlang</span
-            >
-            <a
-              href="unit1-joseph-quiz.html"
-              class="px-3 py-1 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
-              >Quiz</a
-            >
-          </nav>
         </div>
 
-        <!-- Blanks -->
-        <section class="space-y-4 text-sm md:text-base">
-          <!-- b1 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b1" class="block mb-2">
-              1. Binigyan ni Jacob si Joseph ng isang damit na ________ ang
-              kulay.
-            </label>
-            <input
-              id="b1"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang salita"
-            />
-            <button
-              data-blank="b1"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b1" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+        <!-- Long Story -->
+        <section class="mb-10 text-sm md:text-base leading-relaxed text-slate-800 space-y-3">
+          <p>
+            Mahal ni Jacob ang anak niyang si Joseph. Bata pa si Joseph, pero
+            may espesyal na damit siya na makulay. Dahil dito, nagselos ang
+            mga kuya niya. Lagi nilang nakikita na parang paborito si Joseph.
+          </p>
 
-          <!-- b2 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b2" class="block mb-2">
-              2. Dahil espesyal si Joseph, ________ ang mga kuya niya sa kaniya.
-            </label>
-            <input
-              id="b2"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang salita (pandiwa)"
-            />
-            <button
-              data-blank="b2"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b2" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Isang gabi, nanaginip si Joseph. Sa panaginip, parang yumuyuko sa
+            kaniya ang mga bigkis ng trigo ng mga kapatid niya. Ikinuwento ni
+            Joseph ang panaginip. Lalo pang nagalit ang mga kuya niya. Akala
+            nila, gusto ni Joseph na siya ang maging pinuno nila.
+          </p>
 
-          <!-- b3 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b3" class="block mb-2">
-              3. Dalawang beses ________ si Joseph ng kakaibang panaginip.
-            </label>
-            <input
-              id="b3"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang pandiwa"
-            />
-            <button
-              data-blank="b3"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b3" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Muli pang nanaginip si Joseph. Ngayon naman, parang yumuyuko
+            sa kaniya ang araw, buwan, at labing-isang bituin. Pinagalitan
+            siya ni Jacob dahil sa kuwento niya, pero alam ni Jacob na may
+            kahulugan ang panaginip. Ang mga kuya niya, lalo pang
+            nagdilim ang loob kay Joseph.
+          </p>
 
-          <!-- b4 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b4" class="block mb-2">
-              4. Hinubaran nila si Joseph ng kaniyang ________ na damit bago
-              siya ihulog sa hukay.
-            </label>
-            <input
-              id="b4"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang salita"
-            />
-            <button
-              data-blank="b4"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b4" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Isang araw, pinapunta ni Jacob si Joseph para tingnan ang mga
+            kuya niya na nagbabantay ng kawan. Malayo ang lakad. Naglakad si
+            Joseph sa parang. Naglakad siya sa init ng araw. Sa wakas,
+            natanaw niya ang mga kuya niya.
+          </p>
 
-          <!-- b5 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b5" class="block mb-2">
-              5. Inihulog nila si Joseph sa isang malalim na ________ na
-              walang tubig.
-            </label>
-            <input
-              id="b5"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang salita"
-            />
-            <button
-              data-blank="b5"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b5" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Nakita rin siya ng mga kuya. Bago pa siya lumapit, nagplano na
+            sila. Sinabi ng ilan, “Patayin natin siya.” Pero tumutol si Ruben.
+            Sinabi ni Ruben, “Huwag natin siyang patayin. Ihulog na lang natin
+            siya sa hukay.” Gusto niyang iligtas si Joseph mamaya.
+          </p>
 
-          <!-- b6 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b6" class="block mb-2">
-              6. Ipinagbili nila si Joseph sa mga ________ na papunta sa Ehipto.
-            </label>
-            <input
-              id="b6"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang salita"
-            />
-            <button
-              data-blank="b6"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b6" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Nang dumating si Joseph, hinubaran nila siya ng makulay na
+            damit. Kinuha nila siya at inihulog sa isang malalim na hukay.
+            Walang tubig doon. Malamig at madilim sa loob. Maaaring natakot
+            si Joseph. Pero si Jehovah ay nakamasid.
+          </p>
 
-          <!-- b7 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b7" class="block mb-2">
-              7. Sa Ehipto, ipinagbili si Joseph kay ________, isang opisyal ni
-              Paraon.
-            </label>
-            <input
-              id="b7"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Pangalan"
-            />
-            <button
-              data-blank="b7"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b7" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Habang kumakain ang mga kuya, may dumaan na mga mangangalakal.
+            Papunta sila sa Ehipto. Nagbago ang isip ng mga kapatid. Sinabi
+            nila, “Huwag natin siyang patayin. Ibenta na lang natin siya.”
+            Inilabas nila si Joseph sa hukay at ipinagbili siya bilang alipin.
+          </p>
 
-          <!-- b8 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b8" class="block mb-2">
-              8. Laging ________ si Joseph sa kaniyang gawain kaya pinagkatiwalaan
-              siya ni Potiphar.
-            </label>
-            <input
-              id="b8"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang pandiwa (hal. nagtatagumpay)"
-            />
-            <button
-              data-blank="b8"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b8" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Umalis si Joseph kasama ng mga mangangalakal. Malayo ang
+            biyahe. Puwede siyang maawa sa sarili. Puwede siyang mag-isip,
+            “Nakalimutan na ba ako ni Jehovah?” Pero nanatili siyang tapat.
+            Maaari nating isipin na nagdadasal siya kay Jehovah habang
+            naglalakbay.
+          </p>
 
-          <!-- b9 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b9" class="block mb-2">
-              9. Dahil sa maling akusasyon, si Joseph ay ipinatapon sa
-              ________.
-            </label>
-            <input
-              id="b9"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Lugar"
-            />
-            <button
-              data-blank="b9"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b9" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Pagdating sa Ehipto, ipinagbili si Joseph kay Potiphar, isang opisyal
+            ni Paraon. Sa bahay ni Potiphar, nagtrabaho si Joseph nang
+            tapat. Sa paglipas ng panahon, napansin ni Potiphar na laging
+            nagtatagumpay si Joseph. Nasa kaniya ang pagpapala ni Jehovah.
+          </p>
 
-          <!-- b10 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b10" class="block mb-2">
-              10. Sinabi ni Joseph na ang pagpapaliwanag ng panaginip ay galing
-              kay ________.
-            </label>
-            <input
-              id="b10"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Sino?"
-            />
-            <button
-              data-blank="b10"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b10" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Unti-unti, si Joseph ang inatasan sa maraming bagay. Siya ang
+            namahala sa bahay. Siya ang nag-aayos ng mga ari-arian. Si Joseph
+            ay hindi tamad. Hindi rin siya mapagmataas. Mahirap ang sitwasyon
+            niya, pero nanatili siyang malinis at matapat kay Jehovah.
+          </p>
 
-          <!-- b11 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b11" class="block mb-2">
-              11. Ang panaginip ni Paraon ay tungkol sa pitong taon ng
-              kasaganaan at pitong taon ng ________.
-            </label>
-            <input
-              id="b11"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang salita"
-            />
-            <button
-              data-blank="b11"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b11" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Isang araw, may masamang akusasyon laban kay Joseph. Wala
+            siyang ginawang mali, pero inakusahan siya na gumawa ng masama.
+            Nagalit si Potiphar at ipinatapon si Joseph sa bilangguan.
+          </p>
 
-          <!-- b12 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b12" class="block mb-2">
-              12. Ginawang tagapamahala ni Paraon si Joseph sa buong ________.
-            </label>
-            <input
-              id="b12"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Bansa"
-            />
-            <button
-              data-blank="b12"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b12" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Sa bilangguan, muling puwedeng sumuko si Joseph. Malayo sa
+            pamilya. Mali ang paratang sa kaniya. Pero hindi siya tumalikod
+            kay Jehovah. Kahit sa kulungan, nakita ng bantay na maaasahan
+            si Joseph. Inatasan siyang tumulong sa pag-aalaga ng ibang bilanggo.
+          </p>
 
-          <!-- b13 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b13" class="block mb-2">
-              13. Nang pumunta ang mga kapatid niya sa Ehipto, hindi nila
-              ________ si Joseph.
-            </label>
-            <input
-              id="b13"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang pandiwa"
-            />
-            <button
-              data-blank="b13"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b13" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Isang araw, may dalawang opisyal ni Paraon na ibinilanggo: ang
+            tagapagdala ng kopa at ang panadero. Nanaginip sila. Hindi nila
+            alam ang kahulugan. Napansin ni Joseph na malungkot sila. Tinanong
+            niya, “Bakit malungkot ang mukha ninyo?”
+          </p>
 
-          <!-- b14 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b14" class="block mb-2">
-              14. Sa halip na maghiganti, pinili ni Joseph na ________ ang mga
-              kapatid niya.
-            </label>
-            <input
-              id="b14"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Isulat ang pandiwa"
-            />
-            <button
-              data-blank="b14"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b14" class="mt-2 text-xs md:text-sm"></p>
-          </div>
+          <p>
+            Ikinuwento nila ang kani-kanilang panaginip. Sinabi ni Joseph,
+            “Kay Diyos nagmumula ang pagpapaliwanag ng panaginip.” Ipinakita
+            ni Joseph na umaasa siya kay Jehovah, hindi sa sarili. Ipinaliwanag
+            niya ang mga panaginip. Nangyari nga ang sinabi ni Joseph.
+          </p>
 
-          <!-- b15 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <label for="b15" class="block mb-2">
-              15. Sinabi ni Joseph na ginamit ni ________ ang lahat ng nangyari
-              para sa mabuti at para maligtas ang maraming tao.
-            </label>
-            <input
-              id="b15"
-              type="text"
-              class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
-              placeholder="Sino?"
-            />
-            <button
-              data-blank="b15"
-              class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
-            >
-              Suriin
-            </button>
-            <p id="fb-b15" class="mt-2 text-xs md:text-sm"></p>
+          <p>
+            Pagkalipas ng ilang panahon, si Paraon naman ang nanaginip.
+            Walang makapagpaliwanag. Naalala ng tagapagdala ng kopa si
+            Joseph. Ipinatawag si Joseph mula sa bilangguan. Mabilis siyang
+            inayos. Nilinis ang sarili. Pumaroon siya kay Paraon.
+          </p>
+
+          <p>
+            Tinanong siya ni Paraon tungkol sa panaginip. Sa harap ng napaka-
+            makapangyarihang hari, hindi nagmataas si Joseph. Sinabi niya,
+            “Hindi po ako. Ang Diyos ang magbibigay ng sagot na kapayapaan.”
+            Muling pinarangalan ni Joseph si Jehovah.
+          </p>
+
+          <p>
+            Ipinaliwanag ni Joseph ang panaginip. Magkakaroon ng pitong
+            taon ng kasaganaan. Susundan ito ng pitong taon ng matinding
+            taggutom. Nagmungkahi si Joseph ng praktikal na plano. Mag-ipon
+            ng pagkain sa mabubuting taon para may makain sa taggutom.
+          </p>
+
+          <p>
+            Nagustuhan ni Paraon ang payo ni Joseph. Ginawa niya si Joseph
+            na tagapamahala sa buong bansa. Mula sa bilangguan, napunta siya
+            sa palasyo. Mula sa pagiging alipin, naging mataas na lingkod siya
+            ng hari. Pero nanatili pa rin siyang tapat kay Jehovah.
+          </p>
+
+          <p>
+            Dumating ang taggutom. Maraming tao ang nagugutom, pati na sa
+            lupain ng Canaan. Narinig ng pamilya ni Jacob na may pagkain sa
+            Ehipto. Nagpadala si Jacob ng mga anak niya. Pumunta sila kay
+            Joseph, pero hindi nila siya nakilala. Matagal na ang lumipas.
+          </p>
+
+          <p>
+            Nakilala ni Joseph ang mga kuya niya. Maaari siyang maghiganti.
+            Maaari niyang ikulong sila. Pero sinubok muna niya sila. Gusto
+            niyang makita kung nagbago na sila. Sa huli, nakita niya na nagsisisi
+            na sila at nagmamalasakit na sila sa ama nila at sa nakababatang si
+            Benjamin.
+          </p>
+
+          <p>
+            Hindi na napigilan ni Joseph ang emosyon. Umiyak siya nang malakas.
+            Ipinakilala niya ang sarili. “Ako si Joseph, ang kapatid ninyo.”
+            Natakot ang mga kuya niya. Inakala nilang babawi si Joseph.
+          </p>
+
+          <p>
+            Pero sinabi ni Joseph ang isang mahalagang katotohanan tungkol kay
+            Jehovah. Sinabi niya na binalak nilang gumawa ng masama, pero
+            ginamit iyon ni Jehovah para sa mabuti. Dahil sa plano ni Jehovah,
+            nailigtas ang maraming buhay sa panahon ng taggutom.
+          </p>
+
+          <p>
+            Pinatawad ni Joseph ang mga kapatid niya. Inalagaan niya ang buong
+            pamilya. Inilipat sila sa Ehipto, sa isang mabuting lugar. Doon sila
+            nagkaroon ng pagkain at tirahan. Patuloy na nakita sa buhay ni
+            Joseph na si Jehovah ay tapat sa kaniyang pangako.
+          </p>
+        </section>
+
+        <!-- Lessons -->
+        <section class="mb-6 md:mb-8">
+          <h2 class="text-base md:text-lg font-semibold text-slate-900 mb-3">
+            Aral at Pakinabang mula sa Kuwento ni Joseph
+          </h2>
+          <div class="space-y-2 text-sm md:text-base text-slate-800">
+            <p>
+              Una, makikita natin na kahit may selos, inggit, at malupit na
+              pagtrato, hindi iniwan ni Jehovah si Joseph. Nasa hukay man siya,
+              bahay ni Potiphar, bilangguan, o palasyo, alam ni Jehovah ang
+              kalagayan niya at may layunin sa hinaharap.
+            </p>
+            <p>
+              Ikalawa, hindi ginamit ni Joseph ang kapangyarihan niya para
+              maghiganti. Sa halip, pinili niya ang
+              <span class="font-semibold">pagpapatawad</span>. Gaya ng madalas
+              ipaliwanag sa ating mga publikasyon, pinapakita nito na mahalaga
+              kay Jehovah ang pusong handang magpatawad at hindi humawak ng
+              sama ng loob.
+            </p>
+            <p>
+              Ikatlo, ipinakita ni Joseph na sa lahat ng sitwasyon, dapat pa ring
+              iparangal ang pangalan ni Jehovah. Sa harap ni Paraon, sinabi niya
+              na kay Diyos nagmumula ang tunay na karunungan. Ipinapaalala nito
+              sa atin na hindi atin ang papuri; kay Jehovah ito.
+            </p>
+            <p>
+              Sa wakas, natututuhan natin na kayang gawing mabuti ni Jehovah
+              ang isang sitwasyong puno ng sakit at problema. Ginamit ni Jehovah
+              ang maling gawain ng mga kapatid ni Joseph para magbunga ng
+              kaligtasan sa panahon ng taggutom. Kaya kahit may pagsubok tayo,
+              makakatiyak tayong may mas malawak na layunin si Jehovah.
+            </p>
           </div>
         </section>
 
-        <!-- Back to main lab -->
-        <p class="mt-6 text-center">
+        <!-- Back link (to main lab) -->
+        <p class="mt-4 text-center">
           <a
             href="../index.html"
             class="inline-flex items-center text-xs md:text-sm font-semibold text-sky-700 hover:text-sky-900"
@@ -407,55 +271,5 @@
         </p>
       </section>
     </main>
-
-    <script>
-      const blankAnswers = {
-        b1: ["makulay"],
-        b2: ["nagselos"],
-        b3: ["nanaginip"],
-        b4: ["makulay"],
-        b5: ["hukay"],
-        b6: ["mangangalakal", "mga mangangalakal"],
-        b7: ["potiphar"],
-        b8: ["nagtatagumpay"],
-        b9: ["bilangguan"],
-        b10: ["diyos", "jehovah"],
-        b11: ["taggutom"],
-        b12: ["ehipto"],
-        b13: ["nakilala"],
-        b14: ["magpatawad", "pinatawad"],
-        b15: ["jehovah"],
-      };
-
-      document.querySelectorAll("[data-blank]").forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-blank");
-          const input = document.getElementById(id);
-          const fb = document.getElementById("fb-" + id);
-          if (!input || !fb) return;
-
-          const user = input.value.trim().toLowerCase();
-          const expected = blankAnswers[id] || [];
-          const model = expected[0] || "";
-          if (!user) {
-            fb.textContent = "Mag-type muna ng sagot.";
-            fb.className = "mt-2 text-xs md:text-sm text-amber-700";
-            return;
-          }
-
-          const isCorrect = expected.includes(user);
-          if (isCorrect) {
-            fb.textContent = "Tama! Halimbawa ng sagot: " + model + ".";
-            fb.className = "mt-2 text-xs md:text-sm text-emerald-700";
-          } else {
-            fb.textContent =
-              "Hindi eksakto, pero puwede pa rin kung tama ang ideya. Halimbawa ng sagot: " +
-              model +
-              ".";
-            fb.className = "mt-2 text-xs md:text-sm text-rose-700";
-          }
-        });
-      });
-    </script>
   </body>
 </html>
