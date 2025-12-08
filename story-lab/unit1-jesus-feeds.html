@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>Story Lab – Unit 1: Pinakain ni Jesus ang mga Tao</title>
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -17,391 +14,483 @@
     </style>
   </head>
   <body class="min-h-screen bg-[#fff7ed]">
-    <div class="min-h-screen flex items-start justify-center py-8 md:py-10">
-      <main
-        class="w-full max-w-5xl bg-white rounded-3xl shadow-[0_22px_60px_rgba(30,64,175,0.18)] overflow-hidden"
+    <main
+      class="max-w-4xl mx-auto my-6 md:my-10 rounded-3xl bg-white shadow-xl shadow-orange-100 border border-orange-100"
+    >
+      <!-- Top ribbon -->
+      <header
+        class="rounded-t-3xl bg-gradient-to-r from-orange-500 via-pink-500 to-fuchsia-500 px-6 py-4 text-sm text-orange-50 flex items-center justify-between"
       >
-        <!-- TOP BAR / LOGO -->
-        <header
-          class="bg-gradient-to-r from-[#f97316] via-[#ec4899] to-[#6366f1] px-6 md:px-10 py-4 md:py-5 flex items-center justify-between text-white"
-        >
-          <div class="flex items-center gap-3">
-            <div
-              class="w-10 h-10 md:w-11 md:h-11 rounded-full border border-white/40 bg-white/10 flex items-center justify-center"
-            >
-              <span class="text-xs md:text-sm font-bold tracking-tight"
-                >TML</span
-              >
+        <div class="flex items-center gap-3">
+          <div
+            class="h-9 w-9 rounded-full bg-orange-100/90 flex items-center justify-center text-orange-700 font-bold text-xs"
+          >
+            TML
+          </div>
+          <div>
+            <div class="uppercase tracking-wide text-[11px] font-semibold">
+              Level 1 · Bible Story Verb Lab
             </div>
-            <div>
-              <p
-                class="text-[10px] md:text-xs font-semibold uppercase tracking-[0.16em] text-white/80"
-              >
-                Level 1 · Bible Story Verb Lab
-              </p>
-              <p class="text-[11px] md:text-xs text-white/90">
-                Mga pandiwang <span class="font-semibold">kumain</span>,
-                <span class="font-semibold">umupo</span>,
-                <span class="font-semibold">naglakad</span>
-              </p>
+            <div class="text-xs opacity-90">
+              Mga pandiwang <span class="font-semibold">kumain</span>,
+              <span class="font-semibold">umupo</span>,
+              <span class="font-semibold">naglakad</span>
             </div>
           </div>
+        </div>
 
-          <div class="hidden md:block text-right">
-            <p
-              class="text-[10px] font-semibold uppercase tracking-[0.18em] text-white/70"
-            >
-              Tagalog Mastery Lab
-            </p>
-            <p class="text-xs text-white/90">
-              Praktikal na Tagalog sa browser
-            </p>
-          </div>
-        </header>
+        <p class="hidden sm:block text-[11px] font-medium">
+          Tagalog Mastery Lab
+        </p>
+      </header>
 
-        <div class="px-6 md:px-10 pt-6 md:pt-8 pb-8 md:pb-10">
-          <!-- TITLE -->
-          <section class="text-center mb-6 md:mb-8">
-            <h1
-              class="text-xl md:text-2xl lg:text-[1.7rem] font-extrabold tracking-tight text-slate-900"
-            >
-              Story Lab – Unit 1:
-              <span class="text-[#f97316]"
-                >Pinakain ni Jesus ang mga Tao</span
-              >
-            </h1>
-            <p
-              class="mt-3 text-sm md:text-[15px] leading-relaxed text-slate-600 max-w-2xl mx-auto"
-            >
-              Sa unit na ito, gagamitin natin ang mga pandiwang
-              <span class="font-semibold">kumain</span>,
-              <span class="font-semibold">umupo</span>,
-              <span class="font-semibold">naglakad</span> sa isang
-              maikling kuwento tungkol kay Jesus at sa maraming tao.
-            </p>
-          </section>
-
-          <!-- STEP CHIPS -->
-          <nav
-            class="flex flex-wrap gap-2 justify-center mb-6 md:mb-8"
-            aria-label="Mga hakbang sa unit"
-          >
-            <button
-              type="button"
-              data-step-target="#step1-top"
-              class="px-3 py-1 rounded-full bg-slate-100 text-[11px] md:text-xs font-semibold text-slate-600 hover:bg-slate-200 transition"
-            >
-              1 · Pasimula (Warm-up Verbs)
-            </button>
-            <button
-              type="button"
-              data-step-target="#step2-story"
-              class="px-3 py-1 rounded-full bg-slate-100 text-[11px] md:text-xs font-semibold text-slate-600 hover:bg-slate-200 transition"
-            >
-              2 · Kuwento
-            </button>
-            <button
-              type="button"
-              data-step-target="#step3-questions"
-              class="px-3 py-1 rounded-full bg-slate-100 text-[11px] md:text-xs font-semibold text-slate-600 hover:bg-slate-200 transition"
-            >
-              3 · Tanong
-            </button>
-            <button
-              type="button"
-              data-step-target="#step4-ikaw"
-              class="px-3 py-1 rounded-full bg-indigo-600 text-[11px] md:text-xs font-semibold text-white hover:bg-indigo-700 transition"
-            >
-              4 · Ikaw Naman – Sariling Pangungusap
-            </button>
-          </nav>
-
-          <!-- invisible anchor for step 1 -->
-          <div id="step1-top"></div>
-
-          <!-- STEP 1: WARM-UP (very light text, just reminder) -->
-          <section
-            aria-label="Pasimula"
-            class="mb-6 md:mb-8 text-sm text-slate-600"
-          >
-            <p class="mb-2 font-semibold text-slate-700">
-              1. Pasimula (Warm-up Verbs)
-            </p>
-            <p class="leading-relaxed">
-              Bago basahin ang kuwento, alalahanin muna ang ating tatlong
-              pandiwa:
-              <span class="font-semibold">kumain</span>,
-              <span class="font-semibold">umupo</span>,
-              <span class="font-semibold">naglakad</span>. Sa kuwento, hanapin
-              kung sino ang kumain, sino ang umupo, at sino ang naglakad.
-            </p>
-          </section>
-
-          <!-- STEP 2: STORY -->
-          <section
-            id="step2-story"
-            aria-label="Kuwento"
-            class="mb-8 md:mb-10 text-sm md:text-[15px] leading-relaxed text-slate-800"
-          >
-            <p class="mb-2 font-semibold text-slate-700">2. Kuwento</p>
-
-            <p class="mb-3">
-              Maagang dumating si Jesus sa burol. Maraming tao ang
-              <span class="font-semibold">naglakad</span> papunta sa kaniya.
-              Pagod ang mga tao at gutom din sila, pero gusto pa rin nilang
-              marinig ang turo ni Jesus.
-            </p>
-
-            <p class="mb-3">
-              Pinaupo ni Jesus ang mga tao sa damuhan. Ang ilan ay
-              <span class="font-semibold">umupo</span> malapit sa kaniya. Ang
-              iba naman ay <span class="font-semibold">umupo</span> sa likod,
-              pero tahimik pa rin silang nakikinig.
-            </p>
-
-            <p class="mb-3">
-              Pagkalipas ng ilang oras, lalo silang nagutom. May batang lalaki
-              na may limang tinapay at dalawang isda. Kinuha ni Jesus ang
-              pagkain at taimtim na nanalangin.
-            </p>
-
-            <p class="mb-3">
-              Pagkatapos, inabot ni Jesus ang tinapay at isda sa kanyang mga
-              alagad. Ibinigay naman ng mga alagad sa mga tao. Lahat sila ay
-              <span class="font-semibold">kumain</span> hanggang mabusog. May
-              natira pang maraming piraso ng pagkain.
-            </p>
-
-            <p class="mb-1">
-              Pagkatapos <span class="font-semibold">kumain</span>, tumayo ang
-              mga tao. Muli silang
-              <span class="font-semibold">naglakad</span> pauwi. Masaya sila
-              dahil busog ang tiyan at busog din ang puso nila sa itinuro ni
-              Jesus.
-            </p>
-          </section>
-
-          <!-- STEP 3: QUESTIONS -->
-          <section
-            id="step3-questions"
-            aria-label="Mga Tanong"
-            class="mb-8 md:mb-10 text-sm text-slate-800"
-          >
-            <p class="mb-3 font-semibold text-slate-700">3. Tanong</p>
-
-            <ol class="space-y-2 list-decimal list-inside">
-              <li>
-                Sino ang <span class="font-semibold">naglakad</span> papunta
-                kay Jesus?
-              </li>
-              <li>
-                Ano ang ginawa ng mga tao bago kumain? Sila ba ay
-                <span class="font-semibold">umupo</span> o tumakbo?
-              </li>
-              <li>
-                Ano ang ginawa ni Jesus sa tinapay at isda bago ito ibinigay sa
-                mga tao?
-              </li>
-              <li>
-                Ano ang naramdaman ng mga tao pagkatapos nilang
-                <span class="font-semibold">kumain</span>?
-              </li>
-            </ol>
-
-            <p class="mt-4 text-[13px] text-slate-600 italic">
-              (Maaaring sagutin nang pasalita sa klase, o isulat sa papel.)
-            </p>
-          </section>
-
-          <!-- STEP 4: IKAW NAMAN – sentence builder -->
-          <section
-            id="step4-ikaw"
-            aria-label="Ikaw Naman"
-            class="mb-8 md:mb-10 text-sm text-slate-800"
-          >
-            <p class="mb-3 font-semibold text-slate-700">
-              4. Ikaw Naman – Sariling Pangungusap
-            </p>
-
-            <p class="mb-4 text-slate-700">
-              Ngayon naman, gumawa tayo ng pangungusap tungkol sa
-              <span class="font-semibold">iyo</span>, sa ibang tao, o sa
-              inyong pamilya. Piliin muna ang paksa, pagkatapos ang pandiwa.
-            </p>
-
-            <!-- SUBJECT CHIPS -->
-            <div class="mb-4">
-              <p class="mb-1 text-slate-700 font-medium">
-                A. Piliin kung sino:
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  class="subject-chip px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition"
-                  data-subject="Ako"
-                >
-                  Ako
-                </button>
-                <button
-                  type="button"
-                  class="subject-chip px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition"
-                  data-subject="Siya"
-                >
-                  Siya
-                </button>
-                <button
-                  type="button"
-                  class="subject-chip px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition"
-                  data-subject="Kami"
-                >
-                  Kami
-                </button>
-              </div>
-            </div>
-
-            <!-- VERB CHIPS -->
-            <div class="mb-4">
-              <p class="mb-1 text-slate-700 font-medium">
-                B. Piliin ang pandiwa:
-              </p>
-              <div class="flex flex-wrap gap-2">
-                <button
-                  type="button"
-                  class="verb-chip px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition"
-                  data-verb="kumain"
-                >
-                  kumain
-                </button>
-                <button
-                  type="button"
-                  class="verb-chip px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition"
-                  data-verb="umupo"
-                >
-                  umupo
-                </button>
-                <button
-                  type="button"
-                  class="verb-chip px-3 py-1 rounded-full border border-slate-200 bg-slate-50 text-xs font-semibold text-slate-700 hover:bg-slate-100 transition"
-                  data-verb="naglakad"
-                >
-                  naglakad
-                </button>
-              </div>
-            </div>
-
-            <!-- SENTENCE OUTPUT -->
-            <div
-              class="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-200"
-            >
-              <p class="text-xs font-semibold uppercase text-slate-500 mb-1">
-                Pangungusap mo
-              </p>
-              <p
-                id="sentence-output"
-                class="text-sm md:text-[15px] font-semibold text-slate-800"
-              >
-                Pumili muna ng “sino” at pandiwa sa itaas.
-              </p>
-              <p class="mt-2 text-[12px] text-slate-500">
-                Tip: Pagkatapos, palitan ang isang salita. Halimbawa:
-                <span class="italic">“Ako kumain sa bahay.”</span> → Gawin mong
-                “Kami kumain sa parke.”
-              </p>
-            </div>
-          </section>
-
-          <!-- BACK LINK -->
-          <p class="mt-6 text-center">
-            <a
-              href="../index.html"
-              class="inline-flex items-center text-sm font-semibold text-[#1d4ed8] hover:text-[#1e40af] transition"
-            >
-              Bumalik sa Tagalog Mastery Lab
-            </a>
+      <section class="px-6 md:px-10 pt-6 pb-8 md:pb-10">
+        <!-- Title -->
+        <div class="text-center mb-6 md:mb-8">
+          <h1 class="text-xl md:text-2xl font-extrabold text-slate-900">
+            Story Lab – Unit 1:
+            <span class="text-orange-600">
+              Pinakain ni Jesus ang mga Tao
+            </span>
+          </h1>
+          <p class="mt-3 text-sm md:text-base text-slate-700 max-w-2xl mx-auto">
+            Sa unit na ito, gagamitin natin ang mga pandiwang
+            <span class="font-semibold">kumain</span>,
+            <span class="font-semibold">umupo</span>,
+            <span class="font-semibold">naglakad</span> sa isang simpleng
+            kuwento tungkol kay Jesus at sa maraming tao.
           </p>
         </div>
-      </main>
-    </div>
 
-    <!-- SCRIPT -->
+        <!-- 1. Kuwento -->
+        <section class="mb-8">
+          <h2 class="text-base md:text-lg font-semibold text-slate-900 mb-3">
+            1. Kuwento
+          </h2>
+          <div class="space-y-3 text-sm md:text-base leading-relaxed text-slate-800">
+            <p>
+              Maagang dumating si Jesus sa isang burol. Maraming tao ang
+              <span class="font-semibold">naglakad</span> papunta sa kaniya.
+              Pagod at gutom na sila, pero gusto pa rin nilang makinig kay
+              Jesus.
+            </p>
+            <p>
+              Umupo ang mga lalaki, babae, at mga bata sa damuhan.
+              <span class="font-semibold">Umupo</span> sila sa malalaking grupo
+              at tahimik na nakinig sa mga itinuturo ni Jesus.
+            </p>
+            <p>
+              Pagkalipas ng ilang oras, lalo silang nagutom. May batang lalaki
+              na may limang tinapay at dalawang isda. Kinuhang ni Jesus ang
+              pagkain at <span class="font-semibold">nagdasal</span>. Nagpasalamat
+              siya sa Diyos para sa simpleng pagkain.
+            </p>
+            <p>
+              Pagkatapos, pinaghati-hati ni Jesus ang tinapay at isda. Ibinigay
+              niya ito sa mga alagad, at ipinasa naman ng mga alagad sa mga tao.
+              <span class="font-semibold">Kumain</span> ang lahat hanggang
+              mabusog. May natira pang maraming piraso ng pagkain.
+            </p>
+            <p>
+              Pagkatapos kumain, tumayo ang mga tao. Muli silang
+              <span class="font-semibold">naglakad</span> pauwi. Masaya sila
+              dahil busog na busog ang kanilang tiyan at puno ng pag-asa ang
+              kanilang puso dahil sa mga turo ni Jesus.
+            </p>
+          </div>
+        </section>
+
+        <!-- 2. Tanong – show answer -->
+        <section class="mb-8">
+          <h2 class="text-base md:text-lg font-semibold text-slate-900 mb-3">
+            2. Tanong – Pindutin para makita ang sagot
+          </h2>
+          <p class="text-xs md:text-sm text-slate-600 mb-4">
+            Subukan munang sagutin sa isip o malakas, tapos pindutin ang
+            <span class="font-semibold">“Ipakita ang sagot”</span> para
+            ikumpara.
+          </p>
+
+          <div class="space-y-3">
+            <!-- Q1 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                1. Saan maagang dumating si Jesus?
+              </p>
+              <button
+                data-answer="ans1"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans1"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Sa isang <span class="font-semibold">burol</span>.
+              </p>
+            </div>
+
+            <!-- Q2 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                2. Ano ang nararamdaman ng mga tao bago sila kumain?
+              </p>
+              <button
+                data-answer="ans2"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans2"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Sila ay <span class="font-semibold">pagod at
+                gutom</span>.
+              </p>
+            </div>
+
+            <!-- Q3 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                3. Ano pa rin ang gusto ng mga tao kahit pagod na sila?
+              </p>
+              <button
+                data-answer="ans3"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans3"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Gusto pa rin nilang <span class="font-semibold"
+                  >makinig kay Jesus</span
+                >.
+              </p>
+            </div>
+
+            <!-- Q4 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                4. Saan <span class="font-semibold">umupo</span> ang mga tao?
+              </p>
+              <button
+                data-answer="ans4"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans4"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Umupo sila sa <span class="font-semibold">damuhan</span>,
+                sa malalaking grupo.
+              </p>
+            </div>
+
+            <!-- Q5 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                5. Ilang tinapay ang dala ng batang lalaki? Ilang isda?
+              </p>
+              <button
+                data-answer="ans5"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans5"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: May <span class="font-semibold">limang tinapay</span> at
+                <span class="font-semibold">dalawang isda</span>.
+              </p>
+            </div>
+
+            <!-- Q6 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                6. Ano ang ginawa ni Jesus bago ipamigay ang pagkain?
+              </p>
+              <button
+                data-answer="ans6"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans6"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Siya ay <span class="font-semibold">nagdasal</span> at
+                <span class="font-semibold">nagpasalamat sa Diyos</span>.
+              </p>
+            </div>
+
+            <!-- Q7 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                7. Ano ang ginawa ni Jesus sa tinapay at isda?
+              </p>
+              <button
+                data-answer="ans7"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans7"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Pinaghati-hati niya ang mga ito at
+                <span class="font-semibold">ipinamigay sa mga tao</span>.
+              </p>
+            </div>
+
+            <!-- Q8 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                8. Ano ang ginawa ng mga tao pagkatapos kumain?
+              </p>
+              <button
+                data-answer="ans8"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans8"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Tumayo sila at muling
+                <span class="font-semibold">naglakad pauwi</span>.
+              </p>
+            </div>
+
+            <!-- Q9 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                9. Ano ang naramdaman ng mga tao habang umuuwi?
+              </p>
+              <button
+                data-answer="ans9"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans9"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Sila ay <span class="font-semibold">masaya</span> at
+                <span class="font-semibold">busog</span>.
+              </p>
+            </div>
+
+            <!-- Q10 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <p class="text-sm md:text-base font-medium">
+                10. Bakit puno ng pag-asa ang puso ng mga tao?
+              </p>
+              <button
+                data-answer="ans10"
+                class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans10"
+                class="mt-2 text-xs md:text-sm text-slate-700 hidden"
+              >
+                Sagot: Dahil sa mga <span class="font-semibold">turo ni
+                Jesus</span> na kanilang narinig.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. Gamitin sa pangungusap – fill in the blanks -->
+        <section class="mb-8">
+          <h2 class="text-base md:text-lg font-semibold text-slate-900 mb-3">
+            3. Gamitin sa Pangungusap – Punan ang Patlang
+          </h2>
+          <p class="text-xs md:text-sm text-slate-600 mb-4">
+            Isulat ang pandiwa sa patlang. Pindutin ang
+            <span class="font-semibold">“Suriin”</span>. Ipapakita ng programa
+            kung tama ang iyong sagot at magbibigay ng halimbawa.
+          </p>
+
+          <div class="space-y-4 text-sm md:text-base">
+            <!-- B1 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <label for="b1" class="block mb-2">
+                1. Si Jesus ay maagang ________ sa burol.
+              </label>
+              <input
+                id="b1"
+                type="text"
+                class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+                placeholder="Isulat ang pandiwa (hal. dumating)"
+              />
+              <button
+                data-blank="b1"
+                class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+              >
+                Suriin
+              </button>
+              <p id="fb-b1" class="mt-2 text-xs md:text-sm text-slate-700"></p>
+            </div>
+
+            <!-- B2 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <label for="b2" class="block mb-2">
+                2. Maraming tao ang ________ papunta kay Jesus.
+              </label>
+              <input
+                id="b2"
+                type="text"
+                class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+                placeholder="Isulat ang pandiwa (hal. naglakad)"
+              />
+              <button
+                data-blank="b2"
+                class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+              >
+                Suriin
+              </button>
+              <p id="fb-b2" class="mt-2 text-xs md:text-sm text-slate-700"></p>
+            </div>
+
+            <!-- B3 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <label for="b3" class="block mb-2">
+                3. Ang mga tao ay ________ sa damuhan.
+              </label>
+              <input
+                id="b3"
+                type="text"
+                class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+                placeholder="Isulat ang pandiwa (hal. umupo)"
+              />
+              <button
+                data-blank="b3"
+                class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+              >
+                Suriin
+              </button>
+              <p id="fb-b3" class="mt-2 text-xs md:text-sm text-slate-700"></p>
+            </div>
+
+            <!-- B4 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <label for="b4" class="block mb-2">
+                4. Kinuhang ni Jesus ang pagkain at ________ sa Diyos.
+              </label>
+              <input
+                id="b4"
+                type="text"
+                class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+                placeholder="Isulat ang pandiwa (hal. nagdasal)"
+              />
+              <button
+                data-blank="b4"
+                class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+              >
+                Suriin
+              </button>
+              <p id="fb-b4" class="mt-2 text-xs md:text-sm text-slate-700"></p>
+            </div>
+
+            <!-- B5 -->
+            <div class="border border-slate-200 rounded-xl p-3 md:p-4">
+              <label for="b5" class="block mb-2">
+                5. Pagkatapos kumain, ang mga tao ay ________ pauwi.
+              </label>
+              <input
+                id="b5"
+                type="text"
+                class="w-full md:w-72 px-3 py-1.5 rounded-lg border border-slate-300 text-sm md:text-base"
+                placeholder="Isulat ang pandiwa (hal. naglakad)"
+              />
+              <button
+                data-blank="b5"
+                class="mt-2 inline-flex items-center px-3 py-1.5 rounded-full bg-orange-500 text-white text-xs md:text-sm font-medium hover:bg-orange-600"
+              >
+                Suriin
+              </button>
+              <p id="fb-b5" class="mt-2 text-xs md:text-sm text-slate-700"></p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Back link -->
+        <p class="mt-6 text-center">
+          <a
+            href="../index.html"
+            class="inline-flex items-center text-xs md:text-sm font-semibold text-sky-700 hover:text-sky-900"
+          >
+            Bumalik sa Tagalog Mastery Lab
+          </a>
+        </p>
+      </section>
+    </main>
+
+    <!-- Simple JS for toggles and checking answers -->
     <script>
-      (function () {
-        // SUBJECT & VERB CHIP LOGIC
-        const subjectButtons = document.querySelectorAll(".subject-chip");
-        const verbButtons = document.querySelectorAll(".verb-chip");
-        const outputEl = document.getElementById("sentence-output");
+      // Show-answer buttons
+      document.querySelectorAll("[data-answer]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-answer");
+          const p = document.getElementById(id);
+          if (!p) return;
+          p.classList.toggle("hidden");
+        });
+      });
 
-        let currentSubject = null;
-        let currentVerb = null;
+      // Expected answers for blanks (lowercase)
+      const blankAnswers = {
+        b1: ["dumating"],
+        b2: ["naglakad", "pumunta"],
+        b3: ["umupo"],
+        b4: ["nagdasal", "nagpasalamat"],
+        b5: ["naglakad", "umuwi"],
+      };
 
-        function updateSentence() {
-          if (!currentSubject && !currentVerb) {
-            outputEl.textContent =
-              "Pumili muna ng “sino” at pandiwa sa itaas.";
+      document.querySelectorAll("[data-blank]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const id = btn.getAttribute("data-blank");
+          const input = document.getElementById(id);
+          const fb = document.getElementById("fb-" + id);
+          if (!input || !fb) return;
+
+          const user = input.value.trim().toLowerCase();
+          const expected = blankAnswers[id] || [];
+          const isCorrect = expected.includes(user);
+
+          if (!user) {
+            fb.textContent = "Mag-type muna ng sagot.";
+            fb.className = "mt-2 text-xs md:text-sm text-amber-700";
             return;
           }
-          if (!currentSubject) {
-            outputEl.textContent =
-              "Pumili muna kung sino: Ako, Siya, o Kami.";
-            return;
+
+          if (isCorrect) {
+            fb.textContent =
+              "Tama! Halimbawa ng sagot: " + expected[0] + ".";
+            fb.className = "mt-2 text-xs md:text-sm text-emerald-700";
+          } else {
+            fb.textContent =
+              "Hindi eksakto, pero puwede pa rin kung tama ang ideya. Halimbawa ng sagot: " +
+              expected[0] +
+              ".";
+            fb.className = "mt-2 text-xs md:text-sm text-rose-700";
           }
-          if (!currentVerb) {
-            outputEl.textContent = "Pumili ng pandiwa: kumain, umupo, o naglakad.";
-            return;
-          }
-
-          let sentence = `${currentSubject} ${currentVerb} kahapon.`;
-          outputEl.textContent = sentence;
-        }
-
-        subjectButtons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            subjectButtons.forEach((b) =>
-              b.classList.remove("bg-indigo-600", "text-white")
-            );
-            subjectButtons.forEach((b) =>
-              b.classList.add("bg-slate-50", "text-slate-700")
-            );
-
-            btn.classList.remove("bg-slate-50", "text-slate-700");
-            btn.classList.add("bg-indigo-600", "text-white");
-
-            currentSubject = btn.getAttribute("data-subject");
-            updateSentence();
-          });
         });
-
-        verbButtons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            verbButtons.forEach((b) =>
-              b.classList.remove("bg-indigo-600", "text-white")
-            );
-            verbButtons.forEach((b) =>
-              b.classList.add("bg-slate-50", "text-slate-700")
-            );
-
-            btn.classList.remove("bg-slate-50", "text-slate-700");
-            btn.classList.add("bg-indigo-600", "text-white");
-
-            currentVerb = btn.getAttribute("data-verb");
-            updateSentence();
-          });
-        });
-
-        // STEP CHIPS: smooth scroll
-        const stepButtons = document.querySelectorAll("[data-step-target]");
-        stepButtons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const targetSelector = btn.getAttribute("data-step-target");
-            const target = document.querySelector(targetSelector);
-            if (!target) return;
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          });
-        });
-      })();
+      });
     </script>
   </body>
 </html>
