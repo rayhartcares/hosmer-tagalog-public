@@ -427,15 +427,16 @@
       });
 
       // Verb use examples
-      const verbExamplePanel = document.getElementById("verb-example-panel");
-      const verbExamples = {
-        kumain:
-          "Halimbawa: Kumain kami ng tinapay kagabi. Ngayon, gumawa ng pangungusap tungkol sa pagkain mo.",
-        umupo:
-          "Halimbawa: Umupo ang mga bata sa sahig ng klase. Gumawa ng pangungusap tungkol sa kung saan ka umuupo.",
-        naglakad:
-          "Halimbawa: Naglakad kami papunta sa Kingdom Hall. Gumawa ng pangungusap tungkol sa lugar na nilalakaran mo."
-      };
+     const verbExamplePanel = document.getElementById("verb-example-panel");
+const verbExamples = {
+  kumain:
+    "Halimbawa sa kuwento: Kumain ang mga tao ng tinapay at isda. Ikaw naman: Isulat o sabihin ang isang pangungusap tungkol sa pagkain mo. Halimbawa: “Kumain ako ng ________ kahapon.”",
+  umupo:
+    "Halimbawa sa kuwento: Umupo ang mga tao sa damuhan. Ikaw naman: Gumawa ng pangungusap tungkol sa kung saan ka madalas umuupo. Halimbawa: “Umupo ako sa ________.”",
+  naglakad:
+    "Halimbawa sa kuwento: Naglakad ang mga tao papunta kay Jesus. Ikaw naman: Gumawa ng pangungusap tungkol sa lugar na nilalakaran mo. Halimbawa: “Naglakad ako papunta sa ________.”"
+};
+
 
       document.querySelectorAll(".verb-use-btn").forEach((btn) => {
         btn.addEventListener("click", () => {
