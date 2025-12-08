@@ -32,4 +32,202 @@
 
       <section class="px-5 py-6 md:px-10 md:py-10">
         <!-- header -->
-        <header class="flex flex-
+        <header class="flex flex-col md:flex-row md:items-center gap-5 md:gap-8 mb-8">
+          <!-- Logo -->
+          <div
+            class="flex md:flex-col items-center md:items-start gap-4 md:gap-3"
+          >
+            <!-- TML logo badge -->
+            <div
+              class="relative w-16 h-16 flex items-center justify-center"
+              aria-hidden="true"
+            >
+              <div
+                class="absolute inset-0 rounded-full bg-gradient-to-br from-[#f97316] via-[#facc15] to-[#6366f1] opacity-90 shadow-lg shadow-[#f97316]/40"
+              ></div>
+
+              <div
+                class="relative inset-0 m-[3px] flex items-center justify-center rounded-full bg-white border border-white/80"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 64 64"
+                  class="w-11 h-11"
+                >
+                  <circle cx="32" cy="32" r="30" fill="#fef9f5" />
+                  <path
+                    d="M20 23c4.5-2.5 8.5-2.5 13 0 4.5-2.5 8.5-2.5 13 0v14c-4.5-2.5-8.5-2.5-13 0-4.5-2.5-8.5-2.5-13 0V23z"
+                    fill="#f97316"
+                    fill-opacity="0.9"
+                  />
+                  <path
+                    d="M22 25.5v9.5c3.6-1.7 7.1-1.7 11 0v-9.5c-3.9-1.7-7.4-1.7-11 0z"
+                    fill="#fff7ed"
+                  />
+                  <path
+                    d="M43 20c3.2 0 5.5 2.2 5.5 5s-2.3 5-5.5 5a6.6 6.6 0 0 1-1.7-.2l-2.1 1.7.5-2.7A4.8 4.8 0 0 1 37.5 25c0-2.8 2.3-5 5.5-5z"
+                    fill="#6366f1"
+                    fill-opacity="0.95"
+                  />
+                  <text
+                    x="17"
+                    y="49"
+                    font-size="9"
+                    font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif"
+                    fill="#111827"
+                    font-weight="700"
+                    letter-spacing="1"
+                  >
+                    TML
+                  </text>
+                </svg>
+              </div>
+            </div>
+
+            <div>
+              <p
+                class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#a3a3a3]"
+              >
+                Level 1 · Tagalog core skills
+              </p>
+              <h1
+                class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#111827]"
+              >
+                Tagalog Mastery Lab
+              </h1>
+              <p class="mt-1 text-sm md:text-base text-[#4b5563] max-w-3xl">
+                Praktikal na Tagalog school sa browser. Maliit na kuwento, malinaw na
+                halimbawa, maraming pagsasanay – para sa tunay na pag-unlad, hindi
+                lang memorization.
+              </p>
+            </div>
+          </div>
+        </header>
+
+        <!-- intro line -->
+        <p class="text-xs md:text-sm text-[#6b7280] mb-5 md:mb-7">
+          Pumili ng isang activity sa ibaba. Maaaring gamitin ito sa self-study o bilang
+          interactive na bahagi ng klase.
+        </p>
+
+        <!-- cards -->
+        <div
+          class="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 mb-8"
+        >
+          <!-- Verb Tutor card -->
+          <a
+            href="verb-tutor/"
+            class="group relative block rounded-3xl bg-white/95 border border-[#e5e7eb] hover:border-[#f97316] hover:shadow-xl hover:shadow-[#f97316]/20 transition overflow-hidden"
+          >
+            <div
+              class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#f97316] via-[#fb923c] to-[#facc15]"
+            ></div>
+
+            <div class="p-5 pb-6 md:p-6">
+              <p
+                class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9ca3af] mb-1"
+              >
+                Lab 1 · Verb Tutor
+              </p>
+              <h2
+                class="text-base md:text-lg font-bold text-[#111827] mb-2 group-hover:text-[#f97316]"
+              >
+                Verb Tutor – Action Characters
+              </h2>
+              <p class="text-xs md:text-sm text-[#4b5563] mb-3">
+                Hulaan ang kilos mula sa character, alamin ang tamang pandiwa sa
+                Tagalog, at gamitin ito sa maikling pangungusap. Tamang-tama para sa
+                warm-up o mabilis na review ng pandiwa.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 text-[11px] text-[#6b7280]">
+                <span
+                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
+                  >Level 1</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
+                  >Verbs</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
+                  >Present · Past · Ongoing</span
+                >
+              </div>
+            </div>
+          </a>
+
+          <!-- Story Lab Unit 1 card -->
+          <a
+            href="story-lab/unit1-jesus-feeds.html"
+            class="group relative block rounded-3xl bg-white/95 border border-[#e5e7eb] hover:border-[#6366f1] hover:shadow-xl hover:shadow-[#6366f1]/20 transition overflow-hidden"
+          >
+            <div
+              class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899]"
+            ></div>
+
+            <div class="p-5 pb-6 md:p-6">
+              <p
+                class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9ca3af] mb-1"
+              >
+                Lab 2 · Story Lab
+              </p>
+              <h2
+                class="text-base md:text-lg font-bold text-[#111827] mb-2 group-hover:text-[#6366f1]"
+              >
+                Unit 1: Pinakain ni Jesus ang mga Tao
+              </h2>
+              <p class="text-xs md:text-sm text-[#4b5563] mb-3">
+                Maikling kuwento na gumagamit ng mga pandiwang
+                <strong>kumain, umupo, naglakad</strong>. Basahin ang kuwento,
+                intindihin ang sitwasyon, at sagutin ang mga simpleng tanong.
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 text-[11px] text-[#6b7280]">
+                <span
+                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
+                  >Level 1</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
+                  >Bible Story Verb Lab</span
+                >
+                <span
+                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
+                  >Reading · Comprehension</span
+                >
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Coming next -->
+        <section
+          class="mt-2 pt-4 border-t border-dashed border-[#e5e7eb] grid gap-4 md:grid-cols-3 text-xs md:text-sm text-[#6b7280]"
+        >
+          <div>
+            <h3 class="font-semibold text-[#111827] mb-1">Story Lab</h3>
+            <p>
+              Units 2–4 na may iba pang Bible at daily-life scenes. Parehong simple ang
+              Tagalog, dagdag lang na pandiwa at sitwasyon.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-[#111827] mb-1">Dialog Lab</h3>
+            <p>
+              Mga simpleng tanong at sagot para sa tunay na usapan – pamilya, paaralan,
+              ministeryo, palengke.
+            </p>
+          </div>
+          <div>
+            <h3 class="font-semibold text-[#111827] mb-1">Reading Lab</h3>
+            <p>
+              Mas mahahabang kuwento na may guided na pag-unawa, pag-retell, at
+              pagbabago ng pandiwa.
+            </p>
+          </div>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>
