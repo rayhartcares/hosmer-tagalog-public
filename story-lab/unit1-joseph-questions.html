@@ -2,7 +2,7 @@
 <html lang="tl">
   <head>
     <meta charset="UTF-8" />
-    <title>Story Lab – Joseph – Mga Tanong</title>
+    <title>Story Lab – Unit 1: Joseph – Mga Tanong</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -23,381 +23,466 @@
       >
         <div class="flex items-center gap-3">
           <div
-            class="h-9 w-9 rounded-full bg-orange-100/90 flex items-center justify-center text-orange-700 font-bold text-xs"
+            class="h-10 w-10 rounded-full bg-orange-100/20 flex items-center justify-center text-xs font-bold tracking-[0.16em]"
           >
             TML
           </div>
           <div>
-            <div class="uppercase tracking-wide text-[11px] font-semibold">
+            <p
+              class="uppercase tracking-[0.18em] text-[10px] md:text-[11px] opacity-90"
+            >
               Story Lab · Unit 1
-            </div>
-            <div class="text-xs opacity-90">
-              Joseph – Mga Tanong sa Kuwento
-            </div>
+            </p>
+            <p class="text-xs md:text-sm font-medium">
+              Joseph – Mula sa Hukay Hanggang sa Palasyo
+            </p>
           </div>
         </div>
-
-        <p class="hidden sm:block text-[11px] font-medium">
+        <p class="hidden md:block text-[11px] opacity-90">
           Tagalog Mastery Lab
         </p>
       </header>
 
-      <section class="px-6 md:px-10 pt-6 pb-8 md:pb-10">
-        <!-- Page title + nav -->
-        <div class="mb-6 md:mb-8">
-          <h1
-            class="text-xl md:text-2xl font-extrabold text-slate-900 text-center"
-          >
-            Joseph – Mga Tanong sa Kuwento
+      <!-- Nav row: 4 separate pages -->
+      <nav
+        class="px-6 md:px-10 pt-5 flex flex-wrap gap-2 text-xs font-semibold text-slate-600"
+      >
+        <a
+          href="unit1-joseph-story.html"
+          class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
+        >
+          1 · Kuwento
+        </a>
+        <a
+          href="unit1-joseph-questions.html"
+          class="px-3 py-1.5 rounded-full bg-violet-600 text-white shadow-sm"
+        >
+          2 · Tanong
+        </a>
+        <a
+          href="unit1-joseph-blanks.html"
+          class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
+        >
+          3 · Punan ang Patlang
+        </a>
+        <a
+          href="unit1-joseph-quiz.html"
+          class="px-3 py-1.5 rounded-full bg-slate-100 text-slate-700 hover:bg-slate-200"
+        >
+          4 · Quiz
+        </a>
+      </nav>
+
+      <!-- Title & instructions -->
+      <section class="px-6 md:px-10 pt-4 pb-2">
+        <div class="text-center mb-6 md:mb-8">
+          <h1 class="text-xl md:text-2xl font-extrabold text-slate-900">
+            Mga Tanong Tungkol sa Kuwento ni Joseph
           </h1>
           <p
-            class="mt-3 text-sm md:text-base text-slate-700 max-w-2xl mx-auto text-center"
+            class="mt-3 text-sm md:text-base text-slate-700 max-w-2xl mx-auto"
           >
-            Basahin muna ang kuwento ni Joseph sa
-            <span class="font-semibold">Story page</span>, tapos sagutin ang
-            mga tanong na ito. Puwede mong sagutin nang malakas o sa isip.
-            Pagkatapos, pindutin ang
-            <span class="font-semibold">“Ipakita ang sagot”</span>.
+            Sagutin muna ang tanong sa isip mo o sa notebook. Pagkatapos, pindutin
+            ang <span class="font-semibold">“Ipakita ang sagot”</span> para
+            makita ang mungkahing sagot. Huwag mag-alala kung hindi eksaktong
+            pareho – ang mahalaga, tama ang ideya batay sa kuwento.
           </p>
-
-          <!-- Simple local nav -->
-         <nav class="mt-6 flex flex-wrap justify-center gap-2 text-xs font-semibold text-slate-600">
-  <a
-    href="unit1-joseph-story.html"
-    class="rounded-full bg-slate-100 px-3 py-1 text-slate-700 hover:bg-slate-200"
-  >
-    1 · Kuwento
-  </a>
-
-  <!-- ACTIVE here: Questions -->
-  <a
-    href="unit1-joseph-questions.html"
-    class="rounded-full bg-slate-900 px-3 py-1 text-white shadow-sm"
-  >
-    2 · Tanong
-  </a>
-
-  <a
-    href="unit1-joseph-blanks.html"
-    class="rounded-full bg-slate-100 px-3 py-1 text-slate-700 hover:bg-slate-200"
-  >
-    3 · Punan ang Patlang
-  </a>
-
-  <a
-    href="unit1-joseph-quiz.html"
-    class="rounded-full bg-slate-100 px-3 py-1 text-slate-700 hover:bg-slate-200"
-  >
-    4 · Quiz
-  </a>
-</nav>
-
         </div>
+      </section>
 
-        <!-- Questions -->
-        <section class="space-y-3 text-sm md:text-base">
+      <!-- Questions -->
+      <section class="px-6 md:px-10 pb-8">
+        <ol class="space-y-6 text-sm md:text-base text-slate-800">
           <!-- Q1 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
+          <li>
+            <p class="font-semibold">
               1. Bakit nagselos ang mga kuya ni Joseph sa kaniya?
             </p>
-            <button
-              data-answer="q1"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q1" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Dahil mahal siya nang lalo ni Jacob at may
-              <span class="font-semibold">makulay na damit</span>, at ikinuwento
-              pa niya ang mga panaginip na parang magiging pinuno siya.
-            </p>
-          </div>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo (opsyonal)…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans1"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans1"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Paborito si Joseph ni Jacob at binigyan siya ng espesyal na
+                damit, kaya nagselos at nagalit ang mga kuya niya.
+              </p>
+            </div>
+          </li>
 
           <!-- Q2 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              2. Ano ang nakita ni Joseph sa unang panaginip niya?
+          <li>
+            <p class="font-semibold">
+              2. Ano ang nakita ni Joseph sa mga panaginip niya, at bakit
+              nakadagdag ito sa galit ng mga kapatid?
             </p>
-            <button
-              data-answer="q2"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q2" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Nakita niya ang mga
-              <span class="font-semibold">bigkis ng trigo</span>; nakatayo ang
-              bigkis niya at yumuyuko sa kaniya ang mga bigkis ng mga kapatid
-              niya.
-            </p>
-          </div>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans2"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans2"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Sa unang panaginip, yumuko ang bigkis ng trigo ng mga kapatid sa
+                bigkis ni Joseph. Sa ikalawa, parang yumuko sa kaniya ang araw,
+                buwan, at labing-isang bituin. Inisip ng mga kuya na magiging
+                mas mataas siya kaysa sa kanila, kaya lalo silang nagalit.
+              </p>
+            </div>
+          </li>
 
           <!-- Q3 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              3. Ano naman ang nakita niya sa pangalawang panaginip?
+          <li>
+            <p class="font-semibold">
+              3. Ano ang ginawa ng mga kapatid kay Joseph nang puntahan niya
+              sila sa pastulan?
             </p>
-            <button
-              data-answer="q3"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q3" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Nakita niya ang
-              <span class="font-semibold">araw, buwan, at labing-isang
-                bituin</span> na parang yumuyuko sa kaniya.
-            </p>
-          </div>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans3"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans3"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Ibinagsak nila si Joseph sa isang malalim na hukay at
+                pagkatapos ay ibinenta siya bilang alipin sa mga mangangalakal na
+                papuntang Ehipto.
+              </p>
+            </div>
+          </li>
 
           <!-- Q4 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              4. Ano ang plano ng mga kapatid ni Joseph nang makita nila siyang
-              papalapit?
-            </p>
-            <button
-              data-answer="q4"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q4" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: May ilan na gustong
-              <span class="font-semibold">patayin</span> siya, pero iminungkahi
-              ni Ruben na ihulog na lang siya sa hukay para hindi siya
-              mapatay.
-            </p>
-          </div>
-
-          <!-- Q5 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              5. Ano ang ginawa nila kay Joseph bago siya ihulog sa hukay?
-            </p>
-            <button
-              data-answer="q5"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q5" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Hinubaran nila siya ng
-              <span class="font-semibold">makulay na damit</span> at saka siya
-              inihulog sa isang malalim at tuyong
-              <span class="font-semibold">hukay</span>.
-            </p>
-          </div>
-
-          <!-- Q6 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              6. Paano napunta si Joseph sa Ehipto?
-            </p>
-            <button
-              data-answer="q6"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q6" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Ipinagbili siya ng mga kapatid sa
-              <span class="font-semibold">mga mangangalakal</span> na
-              naglalakbay papuntang <span class="font-semibold">Ehipto</span>.
-            </p>
-          </div>
-
-          <!-- Q7 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              7. Sino ang bumili kay Joseph sa Ehipto at ano ang trabaho nito?
-            </p>
-            <button
-              data-answer="q7"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q7" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Binili siya ni
-              <span class="font-semibold">Potiphar</span>, isang opisyal ni
-              Paraon sa Ehipto.
-            </p>
-          </div>
-
-          <!-- Q8 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              8. Ano ang napansin ni Potiphar tungkol kay Joseph?
-            </p>
-            <button
-              data-answer="q8"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q8" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Napansin niya na
-              <span class="font-semibold">laging nagtatagumpay</span> si Joseph
-              sa mga gawain at nasa kaniya ang pagpapala ni Jehovah.
-            </p>
-          </div>
-
-          <!-- Q9 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              9. Bakit napunta sa bilangguan si Joseph kahit wala siyang ginawang
-              masama?
-            </p>
-            <button
-              data-answer="q9"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q9" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Dahil may
-              <span class="font-semibold">maling akusasyon</span> laban sa kaniya
-              sa bahay ni Potiphar, kaya siya ipinakulong.
-            </p>
-          </div>
-
-          <!-- Q10 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              10. Paano naging kapaki-pakinabang si Joseph kahit nasa bilangguan?
-            </p>
-            <button
-              data-answer="q10"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q10" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Nakita ng bantay na maaasahan siya kaya
-              <span class="font-semibold">inatasan siyang tumulong</span> sa pag-aalaga
-              ng ibang bilanggo.
-            </p>
-          </div>
-
-          <!-- Q11 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              11. Ano ang sinabi ni Joseph tungkol sa pagpapaliwanag ng mga
-              panaginip?
-            </p>
-            <button
-              data-answer="q11"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q11" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Sinabi niya na ang pagpapaliwanag ng panaginip ay
-              <span class="font-semibold">nagmumula kay Diyos</span>, hindi sa
-              kaniya.
-            </p>
-          </div>
-
-          <!-- Q12 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              12. Ano ang nilalaman ng panaginip ni Paraon ayon sa paliwanag ni
+          <li>
+            <p class="font-semibold">
+              4. Paano nilinlang ng mga kapatid si Jacob tungkol sa nangyari kay
               Joseph?
             </p>
-            <button
-              data-answer="q12"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q12" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Magkakaroon ng
-              <span class="font-semibold">pitong taon ng kasaganaan</span> at
-              susundan ng <span class="font-semibold">pitong taon ng matinding
-              taggutom</span>.
-            </p>
-          </div>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans4"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans4"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Dinumihan nila ng dugo ng kambing ang damit ni Joseph at
+                ipinakita kay Jacob, kaya inakala niya na kinain na si Joseph ng
+                mabangis na hayop.
+              </p>
+            </div>
+          </li>
 
-          <!-- Q13 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              13. Ano ang praktikal na mungkahi ni Joseph kay Paraon?
+          <!-- Q5 -->
+          <li>
+            <p class="font-semibold">
+              5. Kahit alipin sa bahay ni Potiphar, paano ipinakita ni Joseph na
+              kasama niya si Jehovah?
             </p>
-            <button
-              data-answer="q13"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q13" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Mag-<span class="font-semibold">ipon ng pagkain</span> sa
-              pitong mabubuting taon para may makain ang mga tao sa pitong taon
-              ng taggutom.
-            </p>
-          </div>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans5"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans5"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Tapat at masipag si Joseph, kaya pinagpala ni Jehovah ang bahay
+                ni Potiphar. Naging tagapangasiwa siya sa buong sambahayan dahil
+                mapagkakatiwalaan siya.
+              </p>
+            </div>
+          </li>
 
-          <!-- Q14 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              14. Paano nakilala ni Joseph ang mga kapatid niya nang pumunta
-              sila sa Ehipto, at ano ang ginawa niya?
+          <!-- Q6 -->
+          <li>
+            <p class="font-semibold">
+              6. Ano ang nangyari kay Joseph dahil sa kasinungalingan ng asawa
+              ni Potiphar?
             </p>
-            <button
-              data-answer="q14"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q14" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Siya ang
-              <span class="font-semibold">nakakilala</span> sa kanila, pero hindi
-              nila siya nakilala. Sinubok niya sila para makita kung nagbago na
-              ang ugali nila.
-            </p>
-          </div>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans6"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans6"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Inakusahan siya ng masama kahit wala siyang kasalanan, kaya
+                ipinakulong siya. Pero hindi siya iniwan ni Jehovah sa bilangguan.
+              </p>
+            </div>
+          </li>
 
-          <!-- Q15 -->
-          <div class="border border-slate-200 rounded-xl p-3 md:p-4">
-            <p class="font-medium">
-              15. Ano ang sinabi ni Joseph tungkol sa masamang ginawa sa kaniya
-              at sa layunin ni Jehovah?
+          <!-- Q7 -->
+          <li>
+            <p class="font-semibold">
+              7. Sino ang dalawang lingkod ni Paraon na nakasama ni Joseph sa
+              kulungan, at ano ang ginawa niya para sa kanila?
             </p>
-            <button
-              data-answer="q15"
-              class="mt-2 text-xs md:text-sm px-3 py-1 rounded-full bg-slate-900 text-slate-50 hover:bg-slate-800"
-            >
-              Ipakita ang sagot
-            </button>
-            <p id="q15" class="mt-2 text-xs md:text-sm text-slate-700 hidden">
-              Sagot: Sinabi niya na binalak ng mga kapatid na
-              <span class="font-semibold">gawin ang masama</span>, pero ginamit
-              iyon ni Jehovah para sa <span class="font-semibold">mabuti</span>,
-              para mailigtas ang maraming buhay sa panahon ng taggutom.
-            </p>
-          </div>
-        </section>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans7"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans7"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Kasama niya ang tagapagdala ng kopa at ang panadero ni Paraon.
+                Pareho silang nanaginip, at ipinaliwanag ni Joseph ang kahulugan
+                ng mga panaginip nila sa tulong ni Jehovah.
+              </p>
+            </div>
+          </li>
 
-        <!-- Back to main lab -->
-        <p class="mt-6 text-center">
-          <a
-            href="../index.html"
-            class="inline-flex items-center text-xs md:text-sm font-semibold text-sky-700 hover:text-sky-900"
-          >
-            Bumalik sa Tagalog Mastery Lab
-          </a>
-        </p>
+          <!-- Q8 -->
+          <li>
+            <p class="font-semibold">
+              8. Ano ang sinabi ni Joseph tungkol sa panaginip ni Paraon
+              tungkol sa pitong matabang baka at pitong payat na baka (at mga
+              uhay)?
+            </p>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans8"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans8"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Ipinaliwanag ni Joseph na may pitong taon ng kasaganaan sa
+                Ehipto na susundan ng pitong taon ng matinding taggutom. Binigyan
+                siya ni Jehovah ng kaunawaan para maipaliwanag ito.
+              </p>
+            </div>
+          </li>
+
+          <!-- Q9 -->
+          <li>
+            <p class="font-semibold">
+              9. Paano nagbago ang kalagayan ni Joseph pagkatapos niyang
+              ipaliwanag ang panaginip ni Paraon?
+            </p>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans9"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans9"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Ginawa siyang mataas na tagapamahala ni Paraon, pangalawa sa
+                hari. Siya ang namahala sa pag-iipon ng pagkain at sa pamamahala
+                sa buong Ehipto.
+              </p>
+            </div>
+          </li>
+
+          <!-- Q10 -->
+          <li>
+            <p class="font-semibold">
+              10. Nang makita muli ni Joseph ang mga kapatid niya, paano niya
+              sila tratuhin sa huli?
+            </p>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans10"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans10"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Sinubok niya muna ang puso nila, pero sa huli, ipinakilala niya
+                ang sarili, niyakap sila, at pinatawad. Inalagaan niya ang buong
+                pamilya sa panahon ng taggutom.
+              </p>
+            </div>
+          </li>
+
+          <!-- Q11 -->
+          <li>
+            <p class="font-semibold">
+              11. Ano ang sinabi ni Joseph tungkol sa motibo ng mga kapatid at
+              sa ginagawa ni Jehovah?
+            </p>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="2"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat dito ang sagot mo…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans11"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang sagot
+              </button>
+              <p
+                id="ans11"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Sinabi ni Joseph na binalak nilang gawin sa kaniya ang masama,
+                pero ginamit iyon ni Jehovah para sa mabuti upang maligtas ang
+                maraming tao sa taggutom.
+              </p>
+            </div>
+          </li>
+
+          <!-- Q12 – application -->
+          <li>
+            <p class="font-semibold">
+              12. Batay sa kuwento, ano ang natututuhan mo tungkol sa paraan ni
+              Jehovah ng pagtulong sa tapat na mga lingkod niya?
+            </p>
+            <div class="mt-2 space-y-2">
+              <textarea
+                rows="3"
+                class="w-full rounded-xl border border-slate-200 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
+                placeholder="Isulat ang sariling sagot mo rito…"
+              ></textarea>
+              <button
+                type="button"
+                data-answer-id="ans12"
+                class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-semibold bg-slate-900 text-white hover:bg-slate-700"
+              >
+                Ipakita ang mungkahing sagot
+              </button>
+              <p
+                id="ans12"
+                class="hidden text-sm text-emerald-800 bg-emerald-50 border border-emerald-200 rounded-xl px-3 py-2"
+              >
+                Makikita na hindi agad inaalis ni Jehovah ang lahat ng problema,
+                pero hindi niya iniiwan ang tapat sa kaniya. Kahit sa hukay,
+                bilangguan, o palasyo, kasama niya si Joseph at ginamit siya para
+                tuparin ang magandang layunin ni Jehovah.
+              </p>
+            </div>
+          </li>
+        </ol>
       </section>
+
+      <!-- Back link -->
+      <div class="px-6 md:px-10 pb-6 text-center">
+        <a
+          href="../index.html"
+          class="inline-flex items-center text-xs font-semibold text-sky-700 hover:text-sky-900"
+        >
+          Bumalik sa Tagalog Mastery Lab
+        </a>
+      </div>
     </main>
 
     <script>
-      document.querySelectorAll("[data-answer]").forEach((btn) => {
+      // Simple show/hide for suggested answers
+      document.querySelectorAll("[data-answer-id]").forEach((btn) => {
         btn.addEventListener("click", () => {
-          const id = btn.getAttribute("data-answer");
+          const id = btn.getAttribute("data-answer-id");
           const p = document.getElementById(id);
           if (!p) return;
-          p.classList.toggle("hidden");
+
+          const isHidden = p.classList.contains("hidden");
+          // hide all others? optional; for now we just toggle this one
+          if (isHidden) {
+            p.classList.remove("hidden");
+            btn.textContent = "Itago ang sagot";
+          } else {
+            p.classList.add("hidden");
+            btn.textContent = "Ipakita ang sagot";
+          }
         });
       });
     </script>
