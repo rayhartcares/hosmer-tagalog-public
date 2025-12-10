@@ -826,13 +826,14 @@
         loadVerb(currentIndex);
       });
 
-      exitBtn.addEventListener("click", () => {
-        if (window.history.length > 1) {
-          window.history.back();
-        } else {
-          alert("You can now close this tab or window.");
-        }
-      });
+            // Exit → go to goodbye page in the same folder
+      if (exitBtn) {
+        exitBtn.addEventListener("click", () => {
+          // index.html and goodbye.html are both in /verb-tutor/
+          window.location.href = "goodbye.html";
+        });
+      }
+
 
       // Play sentence audio (tries .m4a then .mp3)
       if (playSentenceBtn) {
