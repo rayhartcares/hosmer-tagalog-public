@@ -169,4 +169,528 @@
 
             <button
               id="exit-btn"
-              class="mt-3 w-full
+              class="mt-3 w-full px-3 py-2 rounded-xl border border-slate-300 text-sm text-slate-700 bg-white"
+            >
+              Bumalik sa listahan ng mga lab
+            </button>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <!-- LOGIC + DATA -->
+    <script>
+      // 1. VERB DATA (your list, once only)
+      const verbs = [
+        {
+          english: "run",
+          emoji: "🏃‍♂️",
+          root: "takbo",
+          past: "tumakbo",
+          prog: "tumatakbo",
+          exampleRoot: "Gusto kong tumakbo sa umaga.",
+          examplePast: "Kanina, tumakbo siya sa parke.",
+          exampleProg: "Tumatakbo siya papunta sa eskuwela ngayon.",
+        },
+        {
+          english: "jump",
+          emoji: "🦘",
+          root: "talon",
+          past: "tumalon",
+          prog: "tumatalon",
+          exampleRoot: "Gusto kong tumalon sa trampoline.",
+          examplePast: "Tumalon siya sa tuwa.",
+          exampleProg: "Tumatalon sila sa laro.",
+        },
+        {
+          english: "eat",
+          emoji: "🍽️😋",
+          root: "kain",
+          past: "kumain",
+          prog: "kumakain",
+          exampleRoot: "Gusto kong kumain ng saging.",
+          examplePast: "Kumain kami ng hapunan kagabi.",
+          exampleProg: "Kumakain siya ngayon.",
+        },
+        {
+          english: "drink",
+          emoji: "🥤",
+          root: "inom",
+          past: "uminom",
+          prog: "umiinom",
+          exampleRoot: "Kailangan mong uminom ng tubig.",
+          examplePast: "Uminom siya ng gatas kanina.",
+          exampleProg: "Umiinom sila ng juice.",
+        },
+        {
+          english: "sleep",
+          emoji: "😴",
+          root: "tulog",
+          past: "natulog",
+          prog: "natutulog",
+          exampleRoot: "Gusto kong matulog nang maaga.",
+          examplePast: "Natulog siya nang maaga kagabi.",
+          exampleProg: "Natutulog pa ang bata.",
+        },
+        {
+          english: "read",
+          emoji: "👓📖",
+          root: "basa",
+          past: "nagbasa",
+          prog: "nagbabasa",
+          exampleRoot: "Gusto kong magbasa ng libro.",
+          examplePast: "Nagbasa siya ng komiks kahapon.",
+          exampleProg: "Nagbabasa sila ng kuwento.",
+        },
+        {
+          english: "write",
+          emoji: "✍️",
+          root: "sulat",
+          past: "sumulat",
+          prog: "sumusulat",
+          exampleRoot: "Kailangan kong sumulat ng liham.",
+          examplePast: "Sumulat siya ng liham.",
+          exampleProg: "Sumusulat siya sa kuwaderno.",
+        },
+        {
+          english: "sing",
+          emoji: "🎤🎵",
+          root: "kanta",
+          past: "kumanta",
+          prog: "kumakanta",
+          exampleRoot: "Gusto niyang kumanta sa entablado.",
+          examplePast: "Kumanta sila sa programa.",
+          exampleProg: "Kumakanta ang bata sa entablado.",
+        },
+        {
+          english: "dance",
+          emoji: "💃",
+          root: "sayaw",
+          past: "sumayaw",
+          prog: "sumasayaw",
+          exampleRoot: "Gusto nilang sumayaw sa pista.",
+          examplePast: "Sumayaw sila kagabi.",
+          exampleProg: "Sumasayaw siya sa harap.",
+        },
+        {
+          english: "walk",
+          emoji: "🚶‍♂️",
+          root: "lakad",
+          past: "naglakad",
+          prog: "naglalakad",
+          exampleRoot: "Gusto kong maglakad sa parke.",
+          examplePast: "Naglakad kami kahapon.",
+          exampleProg: "Naglalakad siya papunta sa bahay.",
+        },
+        {
+          english: "play",
+          emoji: "⚽🧒👧",
+          root: "laro",
+          past: "naglaro",
+          prog: "naglalaro",
+          exampleRoot: "Gusto nilang maglaro sa labas.",
+          examplePast: "Naglaro sila sa labas.",
+          exampleProg: "Naglalaro ang mga bata.",
+        },
+        {
+          english: "swim",
+          emoji: "🏊‍♂️",
+          root: "langoy",
+          past: "lumangoy",
+          prog: "lumalangoy",
+          exampleRoot: "Gusto niyang lumangoy sa dagat.",
+          examplePast: "Lumangoy kami sa dagat.",
+          exampleProg: "Lumalangoy siya sa pool.",
+        },
+        {
+          english: "talk",
+          emoji: "🗣️💬👂",
+          root: "usap",
+          past: "nag-usap",
+          prog: "nag-uusap",
+          exampleRoot: "Kailangan nating mag-usap mamaya.",
+          examplePast: "Nag-usap sila kagabi.",
+          exampleProg: "Nag-uusap ang magkaibigan.",
+        },
+        {
+          english: "listen",
+          emoji: "🎧👂",
+          root: "kinig",
+          past: "nakinig",
+          prog: "nakikinig",
+          exampleRoot: "Kailangan mong makinig sa klase.",
+          examplePast: "Nakinig siya sa guro.",
+          exampleProg: "Nakikinig sila sa musika.",
+        },
+        {
+          english: "watch",
+          emoji: "📺",
+          root: "nood",
+          past: "nanood",
+          prog: "nanonood",
+          exampleRoot: "Gusto kong manood ng pelikula.",
+          examplePast: "Nanood kami ng sine.",
+          exampleProg: "Nanonood sila ng TV.",
+        },
+        {
+          english: "cook",
+          emoji: "🍳",
+          root: "luto",
+          past: "nagluto",
+          prog: "nagluluto",
+          exampleRoot: "Gusto kong magluto ng adobo.",
+          examplePast: "Nagluto siya ng adobo.",
+          exampleProg: "Nagluluto sila sa kusina.",
+        },
+        {
+          english: "draw",
+          emoji: "✏️🎨",
+          root: "guhit",
+          past: "gumuhit",
+          prog: "gumuguhit",
+          exampleRoot: "Gusto niyang gumuhit ng larawan.",
+          examplePast: "Gumuhit siya ng puso.",
+          exampleProg: "Gumuguhit ang bata ngayon.",
+        },
+        {
+          english: "open",
+          emoji: "🚪➡️",
+          root: "bukas",
+          past: "binuksan",
+          prog: "binubuksan",
+          exampleRoot: "Paki-buksan ang pinto.",
+          examplePast: "Binuksan niya ang bintana.",
+          exampleProg: "Binubuksan niya ang kahon.",
+        },
+        {
+          english: "close",
+          emoji: "🚪⬅️",
+          root: "sara",
+          past: "sinara",
+          prog: "sinasara",
+          exampleRoot: "Paki-sara ang pinto.",
+          examplePast: "Sinara niya ang libro.",
+          exampleProg: "Sinasara niya ang bag.",
+        },
+        {
+          english: "help",
+          emoji: "🙋‍♂️🤝🙋‍♀️",
+          root: "tulong",
+          past: "tumulong",
+          prog: "tumutulong",
+          exampleRoot: "Gusto kong tumulong sa inyo.",
+          examplePast: "Tumulong siya sa kapitbahay.",
+          exampleProg: "Tumutulong sila sa paglilinis.",
+        },
+        {
+          english: "clean",
+          emoji: "🧽🧹💦",
+          root: "linis",
+          past: "naglinis",
+          prog: "naglilinis",
+          exampleRoot: "Kailangan kong maglinis ng kuwarto.",
+          examplePast: "Naglinis sila ng kuwarto.",
+          exampleProg: "Naglilinis siya ng mesa.",
+        },
+        {
+          english: "buy",
+          emoji: "🛒",
+          root: "bili",
+          past: "bumili",
+          prog: "bumibili",
+          exampleRoot: "Gusto kong bumili ng tinapay.",
+          examplePast: "Bumili siya ng tinapay.",
+          exampleProg: "Bumibili sila sa palengke.",
+        },
+        {
+          english: "sell",
+          emoji: "🏪💰🛍️",
+          root: "benta",
+          past: "nagbenta",
+          prog: "nagbebenta",
+          exampleRoot: "Gusto niyang magbenta ng prutas.",
+          examplePast: "Nagbenta siya ng prutas.",
+          exampleProg: "Nagbebenta sila ng isda.",
+        },
+        {
+          english: "sit",
+          emoji: "🪑",
+          root: "upo",
+          past: "umupo",
+          prog: "umuupo",
+          exampleRoot: "Kailangan mong umupo rito.",
+          examplePast: "Umupo siya sa silya.",
+          exampleProg: "Umuupo ang mga bata sa sahig.",
+        },
+        {
+          english: "stand",
+          emoji: "🧍‍♂️",
+          root: "tayo",
+          past: "tumayo",
+          prog: "tumatayo",
+          exampleRoot: "Kailangan nating tumayo ngayon.",
+          examplePast: "Tumayo siya sa harapan.",
+          exampleProg: "Tumatayo sila sa pila.",
+        },
+        {
+          english: "smile",
+          emoji: "😊",
+          root: "ngiti",
+          past: "ngumiti",
+          prog: "ngumingiti",
+          exampleRoot: "Gusto kong ngumiti sa iyo.",
+          examplePast: "Ngumiti siya sa iyo.",
+          exampleProg: "Ngumingiti sila sa larawan.",
+        },
+        {
+          english: "laugh",
+          emoji: "😂",
+          root: "tawa",
+          past: "tumawa",
+          prog: "tumatawa",
+          exampleRoot: "Gusto kong tumawa sa biro.",
+          examplePast: "Tumawa sila sa biro.",
+          exampleProg: "Tumatawa siya ngayon.",
+        },
+        {
+          english: "drive",
+          emoji: "🚗",
+          root: "maneho",
+          past: "nagmaneho",
+          prog: "nagmamaneho",
+          exampleRoot: "Gusto niyang matutong magmaneho.",
+          examplePast: "Nagmaneho siya kahapon.",
+          exampleProg: "Nagmamaneho siya papunta sa bayan.",
+        },
+        {
+          english: "study",
+          emoji: "👨‍🎓📚",
+          root: "aral",
+          past: "nag-aral",
+          prog: "nag-aaral",
+          exampleRoot: "Kailangan kong mag-aral ngayon.",
+          examplePast: "Nag-aral siya kagabi.",
+          exampleProg: "Nag-aaral sila ngayon.",
+        },
+        {
+          english: "work",
+          emoji: "💼⌨️📊",
+          root: "trabaho",
+          past: "nagtrabaho",
+          prog: "nagtatrabaho",
+          exampleRoot: "Kailangan niyang magtrabaho bukas.",
+          examplePast: "Nagtrabaho siya buong araw.",
+          exampleProg: "Nagtatrabaho sila ngayon.",
+        },
+      ];
+
+      let currentIndex = 0;
+      let answerShown = false;
+
+      const emojiDisplay = document.getElementById("emoji-display");
+      const englishVerbText = document.getElementById("english-verb-text");
+      const verbIndexEl = document.getElementById("verb-index");
+      const verbTotalEl = document.getElementById("verb-total");
+      const showAnswerBtn = document.getElementById("show-answer-btn");
+      const tagalogRootChip = document.getElementById("tagalog-root");
+      const tagalogPastChip = document.getElementById("tagalog-past");
+      const tagalogProgChip = document.getElementById("tagalog-prog");
+      const tagalogMainVerbEl = document.getElementById("tagalog-main-verb");
+      const btnPresent = document.getElementById("btn-present");
+      const btnPast = document.getElementById("btn-past");
+      const btnProg = document.getElementById("btn-prog");
+      const exampleSentenceTextEl = document.getElementById(
+        "example-sentence-text"
+      );
+      const playSentenceBtn = document.getElementById("play-sentence-audio");
+      const nextVerbBtn = document.getElementById("next-verb-btn");
+      const prevVerbBtn = document.getElementById("prev-verb-btn");
+      const exitBtn = document.getElementById("exit-btn");
+
+      let currentAudioBase = null; // e.g. "run"
+      let currentAudioForm = null; // "basic" | "past" | "prog"
+      let sentenceAudio = null;
+
+      function resetAudioContext() {
+        currentAudioBase = null;
+        currentAudioForm = null;
+        if (sentenceAudio) {
+          sentenceAudio.pause();
+        }
+        if (playSentenceBtn) {
+          playSentenceBtn.disabled = true;
+        }
+      }
+
+      function loadVerb(index) {
+        const v = verbs[index];
+        if (!v) return;
+
+        answerShown = false;
+
+        emojiDisplay.textContent = v.emoji;
+        englishVerbText.textContent = v.english;
+        verbIndexEl.textContent = index + 1;
+        verbTotalEl.textContent = verbs.length.toString();
+
+        tagalogRootChip.textContent = v.root;
+        tagalogPastChip.textContent = v.past;
+        tagalogProgChip.textContent = v.prog;
+        tagalogMainVerbEl.textContent = "";
+        tagalogMainVerbEl.setAttribute("aria-label", "");
+
+        exampleSentenceTextEl.textContent =
+          "Pindutin muna ang “Ipakita ang pandiwa”, tapos pumili ng anyo sa itaas para makita ang pangungusap.";
+
+        showAnswerBtn.disabled = false;
+        showAnswerBtn.textContent = "Ipakita ang pandiwa";
+
+        [btnPresent, btnPast, btnProg].forEach((btn) => {
+          btn.disabled = true;
+          btn.classList.add("opacity-50", "cursor-not-allowed");
+        });
+
+        resetAudioContext();
+      }
+
+      function showSentenceForForm(form) {
+        const v = verbs[currentIndex];
+        if (!v) return;
+
+        if (form === "root") {
+          exampleSentenceTextEl.textContent = v.exampleRoot;
+        } else if (form === "past") {
+          exampleSentenceTextEl.textContent = v.examplePast;
+        } else if (form === "prog") {
+          exampleSentenceTextEl.textContent = v.exampleProg;
+        }
+      }
+
+      function setAudioContext(formKey) {
+        if (!playSentenceBtn) return;
+        const v = verbs[currentIndex];
+        if (!v) return;
+        currentAudioBase = v.english.toLowerCase().replace(/\s+/g, "-");
+        currentAudioForm = formKey; // "basic" | "past" | "prog"
+        playSentenceBtn.disabled = false;
+      }
+
+      showAnswerBtn.addEventListener("click", () => {
+        const v = verbs[currentIndex];
+        if (!v) return;
+        answerShown = true;
+        tagalogMainVerbEl.textContent = v.root.toUpperCase();
+        tagalogMainVerbEl.setAttribute(
+          "aria-label",
+          "Tagalog verb " + v.root
+        );
+        [btnPresent, btnPast, btnProg].forEach((btn) => {
+          btn.disabled = false;
+          btn.classList.remove("opacity-50", "cursor-not-allowed");
+        });
+        resetAudioContext();
+      });
+
+      btnPresent.addEventListener("click", () => {
+        if (!answerShown) return;
+        const v = verbs[currentIndex];
+        tagalogMainVerbEl.textContent = v.root.toUpperCase();
+        showSentenceForForm("root");
+        setAudioContext("basic");
+      });
+
+      btnPast.addEventListener("click", () => {
+        if (!answerShown) return;
+        const v = verbs[currentIndex];
+        tagalogMainVerbEl.textContent = v.past.toUpperCase();
+        showSentenceForForm("past");
+        setAudioContext("past");
+      });
+
+      btnProg.addEventListener("click", () => {
+        if (!answerShown) return;
+        const v = verbs[currentIndex];
+        tagalogMainVerbEl.textContent = v.prog.toUpperCase();
+        showSentenceForForm("prog");
+        setAudioContext("prog");
+      });
+
+      nextVerbBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % verbs.length;
+        loadVerb(currentIndex);
+      });
+
+      prevVerbBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + verbs.length) % verbs.length;
+        loadVerb(currentIndex);
+      });
+
+      exitBtn.addEventListener("click", () => {
+        if (window.history.length > 1) {
+          window.history.back();
+        } else {
+          window.location.href = "../index.html";
+        }
+      });
+
+      if (playSentenceBtn) {
+        playSentenceBtn.addEventListener("click", () => {
+          if (!currentAudioBase || !currentAudioForm) {
+            alert("Pumili muna ng anyo ng pandiwa.");
+            return;
+          }
+
+          const base = currentAudioBase;
+          const suffix = currentAudioForm;
+          const srcM4a = `../assets/audio/vt-${base}-${suffix}.m4a`;
+          const srcMp3 = `../assets/audio/vt-${base}-${suffix}.mp3`;
+
+          if (!sentenceAudio) {
+            sentenceAudio = new Audio();
+          }
+
+          let triedMp3 = false;
+
+          function playSource(src) {
+            sentenceAudio.src = src;
+            sentenceAudio.play().catch((err) => {
+              console.error("Audio play error:", err);
+              if (!triedMp3 && src === srcM4a) {
+                triedMp3 = true;
+                playSource(srcMp3);
+              } else {
+                alert("Wala pang audio file para sa pangungusap na ito.");
+              }
+            });
+          }
+
+          playSource(srcM4a);
+        });
+      }
+
+      [
+        showAnswerBtn,
+        btnPresent,
+        btnPast,
+        btnProg,
+        nextVerbBtn,
+        prevVerbBtn,
+        exitBtn,
+        playSentenceBtn,
+      ].forEach((btn) => {
+        if (!btn) return;
+        btn.addEventListener("focus", () =>
+          btn.classList.add("focus-outline")
+        );
+        btn.addEventListener("blur", () =>
+          btn.classList.remove("focus-outline")
+        );
+      });
+
+      loadVerb(currentIndex);
+    </script>
+  </body>
+</html>
+
+
+        
