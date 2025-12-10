@@ -873,6 +873,13 @@
           playSource(srcM4a);
         });
       }
+      // Exit → go to goodbye page in the same folder
+      if (exitBtn) {
+        exitBtn.addEventListener("click", () => {
+          // index.html and goodbye.html are both in /verb-tutor/
+          window.location.href = "goodbye.html";
+        });
+      }
 
       // Focus outline helper
       [
