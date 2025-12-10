@@ -156,7 +156,8 @@
             Verb Tutor – Action Sentences
           </h1>
           <p id="subtitle-text" class="mt-1 opacity-90 text-[#2d2a26]">
-            Guess the action, see the Tagalog verb, then use it in a sentence.
+            Guess the action, then reveal and use the Tagalog verb in a
+            sentence.
           </p>
         </div>
 
@@ -221,11 +222,11 @@
           </div>
         </section>
 
-        <!-- Step 2: Tagalog verb forms -->
+        <!-- Step 2: Tagalog verb forms (HIDDEN UNTIL CLICK) -->
         <section
           aria-label="Tagalog verb forms"
           id="step2-section"
-          class="rounded-2xl px-4 py-4 flex flex-col gap-3 bg-[#f5f3ed]"
+          class="hidden rounded-2xl px-4 py-4 flex flex-col gap-3 bg-[#f5f3ed]"
         >
           <div class="flex flex-col gap-1">
             <p class="text-sm font-medium text-[#2d2a26]">
@@ -273,11 +274,11 @@
           </div>
         </section>
 
-        <!-- Step 3: Use it in Tagalog -->
+        <!-- Step 3: Use it in Tagalog (HIDDEN UNTIL CLICK) -->
         <section
           aria-label="Use the verb in Tagalog"
           id="step3-section"
-          class="rounded-2xl px-4 py-4 flex flex-col gap-3 bg-[#f5f3ed]"
+          class="hidden rounded-2xl px-4 py-4 flex flex-col gap-3 bg-[#f5f3ed]"
         >
           <div class="flex flex-col gap-1">
             <p id="use-it-in-question" class="font-medium text-[#2d2a26]">
@@ -324,7 +325,7 @@
               Click a form above to see a sample Tagalog sentence.
             </p>
 
-            <!-- NEW: audio play button -->
+            <!-- Audio play button -->
             <button
               id="play-sentence-audio"
               type="button"
@@ -699,8 +700,10 @@
       const nextVerbBtn = document.getElementById("next-verb-btn");
       const prevVerbBtn = document.getElementById("prev-verb-btn");
       const exitBtn = document.getElementById("exit-btn");
+      const step2Section = document.getElementById("step2-section");
+      const step3Section = document.getElementById("step3-section");
 
-      // NEW: audio button + state
+      // Audio button + state
       const playSentenceBtn =
         document.getElementById("play-sentence-audio");
       let currentAudioBase = null; // e.g. "run"
@@ -756,6 +759,9 @@
         });
 
         resetAudioContext();
+
+        if (step2Section) step2Section.classList.add("hidden");
+        if (step3Section) step3Section.classList.add("hidden");
       }
 
       function showSentenceForForm(form) {
@@ -775,6 +781,10 @@
           "aria-label",
           "Tagalog verb " + v.root
         );
+
+        if (step2Section) step2Section.classList.remove("hidden");
+        if (step3Section) step3Section.classList.remove("hidden");
+
         [btnPresent, btnPast, btnProg].forEach((btn) => {
           btn.disabled = false;
           btn.classList.remove("opacity-50", "cursor-not-allowed");
@@ -877,7 +887,9 @@
       ].forEach((btn) => {
         if (!btn) return;
         btn.addEventListener("focus", () => btn.classList.add("focus-outline"));
-        btn.addEventListener("blur", () => btn.classList.remove("focus-outline"));
+        btn.addEventListener("blur", () =>
+          btn.classList.remove("focus-outline")
+        );
       });
 
       // Init
