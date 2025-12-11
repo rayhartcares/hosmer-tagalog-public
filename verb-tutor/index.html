@@ -16,14 +16,16 @@
   </head>
 
   <body class="text-slate-100 min-h-screen">
-    <!-- PASSWORD SCREEN -->
+    <!-- ==========================
+         PASSWORD SCREEN
+         ========================== -->
     <div id="login-screen" class="min-h-screen flex items-center justify-center">
       <div class="w-full max-w-md bg-slate-800 rounded-2xl shadow-xl p-8 space-y-6">
         <h1 class="text-2xl font-bold text-center">
           Tagalog Mastery Lab
         </h1>
         <p class="text-sm text-slate-300 text-center">
-          Ilagay ang password para makapasok sa main menu.
+          Ilagay ang password para makapasok sa Verb Tutor.
         </p>
 
         <form id="password-form" class="space-y-4">
@@ -39,10 +41,7 @@
             />
           </div>
 
-          <p
-            id="password-error"
-            class="text-sm text-red-400 h-5"
-          ></p>
+          <p id="password-error" class="text-sm text-red-400 h-5"></p>
 
           <button
             type="submit"
@@ -58,11 +57,15 @@
       </div>
     </div>
 
-    <!-- PROTECTED CONTENT (MAIN APP) -->
-    <div id="protected-content" class="hidden min-h-screen">
+    <!-- ==========================
+         PROTECTED CONTENT
+         ========================== -->
+    <div id="protected-content" class="hidden min-h-screen flex flex-col">
       <!-- HEADER -->
       <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur">
-        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+        <div
+          class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between"
+        >
           <div>
             <h1 class="text-lg sm:text-xl font-semibold">
               Tagalog Mastery Lab
@@ -72,26 +75,28 @@
             </p>
           </div>
           <div class="text-xs text-slate-400">
-            Protected Access
+            Password: Shibboleth
           </div>
         </div>
       </header>
 
       <!-- MAIN CONTENT -->
-      <main class="max-w-5xl mx-auto px-4 py-6 space-y-6">
-        <!-- Intro / Instructions -->
+      <main class="flex-1 max-w-5xl mx-auto px-4 py-6 space-y-6">
+        <!-- Instructions -->
         <section class="bg-slate-900/80 rounded-2xl shadow-lg p-4 sm:p-6 space-y-3">
           <h2 class="text-base sm:text-lg font-semibold">
             Paano gamitin ang Verb Tutor
           </h2>
           <p class="text-sm text-slate-300">
-            Tingnan ang larawan at English verb. Subukan munang hulaan ang
-            pandiwa sa Tagalog. Pagkatapos, i-click ang
+            Tingnan ang larawan at English verb. Huwag munang tignan ang sagot.
+            Ipahula muna sa estudyante ang Tagalog na pandiwa. Pagkatapos,
+            i-click ang
             <span class="font-semibold">“Ipakita ang Pandiwa”</span>
-            para makita ang salitang-ugat at mga anyo ng pandiwa.
+            para lumabas ang salitang-ugat at mga anyo ng pandiwa.
           </p>
           <p class="text-xs text-slate-400">
-            Maaaring gamitin sa klase: isang estudyante ang huhula, tapos ipapakita ang sagot at ipapabasa ang mga anyo.
+            Papel ng guro: pumili ng estudyanteng sasagot, ipabasa ang mga anyo,
+            at ipagamit sa pangungusap.
           </p>
         </section>
 
@@ -99,7 +104,7 @@
         <section
           class="bg-slate-900/80 rounded-2xl shadow-xl p-4 sm:p-6 space-y-4 sm:space-y-6"
         >
-          <!-- Top: emoji + English + root -->
+          <!-- Top row: Emoji + English -->
           <div class="flex flex-col sm:flex-row sm:items-center gap-4">
             <div
               class="flex items-center justify-center w-32 h-32 sm:w-40 sm:h-40 bg-slate-800 rounded-2xl text-5xl sm:text-6xl"
@@ -118,16 +123,17 @@
               </div>
               <div>
                 <p class="text-xs uppercase tracking-wide text-slate-400">
-                  Hulaang Pandiwa (Tagalog root)
+                  Tagubilin sa Estudyante
                 </p>
-                <p id="verb-root-hint" class="text-base text-slate-200">
-                  (Hulaan muna bago magpakita ng sagot)
+                <p class="text-sm text-slate-200">
+                  Hulaan muna ang salitang-ugat sa Tagalog. Huwag munang
+                  i-click ang button.
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Button: show conjugations -->
+          <!-- Button -->
           <div class="pt-2">
             <button
               id="show-verb-btn"
@@ -137,20 +143,28 @@
             </button>
           </div>
 
-          <!-- ANSWER AREA (ALWAYS JUST BELOW THE BUTTON) -->
+          <!-- ANSWER PANEL: directly under button (for phone) -->
           <div
             id="answer-panel"
-            class="mt-3 sm:mt-4 bg-slate-800/80 rounded-xl p-3 sm:p-4 space-y-3 hidden"
+            class="mt-3 sm:mt-4 bg-slate-800/80 rounded-xl p-3 sm:p-4 space-y-4 hidden"
           >
+            <!-- Root in big capital letters -->
             <div>
               <p class="text-xs uppercase tracking-wide text-emerald-300">
                 Salitang-ugat
               </p>
-              <p id="verb-root" class="text-lg font-semibold">
-                takbo
+              <p
+                id="verb-root-big"
+                class="text-3xl sm:text-4xl font-black tracking-wide"
+              >
+                TAKBO
+              </p>
+              <p id="verb-root-small" class="text-sm text-slate-300">
+                (root form: takbo)
               </p>
             </div>
 
+            <!-- Tenses -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
               <div class="bg-slate-900/70 rounded-lg p-3">
                 <p class="text-xs uppercase tracking-wide text-slate-400">
@@ -178,12 +192,23 @@
               </div>
             </div>
 
+            <!-- Infinitive -->
             <div class="bg-slate-900/70 rounded-lg p-3 text-sm">
               <p class="text-xs uppercase tracking-wide text-slate-400">
                 Pangngalang Pandiwa / Infinitive
               </p>
               <p id="verb-infinitive" class="text-base font-medium">
                 pagtakbo
+              </p>
+            </div>
+
+            <!-- Example sentence -->
+            <div class="bg-slate-900/70 rounded-lg p-3 text-sm">
+              <p class="text-xs uppercase tracking-wide text-slate-400">
+                Halimbawa sa pangungusap
+              </p>
+              <p id="verb-example" class="text-base">
+                Tumakbo siya sa parke kahapon.
               </p>
             </div>
           </div>
@@ -213,32 +238,189 @@
           </div>
         </section>
 
-        <!-- Footer / Notes -->
+        <!-- Footer notes -->
         <footer class="pb-6 text-xs text-slate-500">
           <p>
-            Tip: Maaari mong ipahula muna ang Tagalog root, tapos ipasulat ng
-            estudyante ang tatlong pangunahing anyo (nakalipas, kasalukuyan,
-            hinaharap).
+            Tip para sa guro: Ipahula muna ang salitang-ugat, tapos ipasulat ng
+            estudyante ang tatlong anyo (nakalipas, kasalukuyan, hinaharap) sa
+            papel o whiteboard bago i-click ang “Ipakita ang Pandiwa”.
           </p>
         </footer>
       </main>
     </div>
 
-    <!-- SCRIPT: PASSWORD + APP LOGIC -->
+    <!-- ==========================
+         SCRIPT: PASSWORD + APP LOGIC
+         ========================== -->
     <script>
-      // ---------------------------
-      // PASSWORD GATE
-      // ---------------------------
-      const CORRECT_PASSWORD = "Shibboleth"; // case-sensitive
+      // PASSWORD (case-sensitive)
+      const CORRECT_PASSWORD = "Shibboleth";
+
+      // VERB DATA
+      const verbs = [
+        {
+          english: "run",
+          emoji: "🏃‍♂️",
+          root: "takbo",
+          past: "tumakbo",
+          present: "tumatakbo",
+          future: "tatakbo",
+          infinitive: "pagtakbo",
+          example: "Tumakbo siya sa parke kahapon.",
+        },
+        {
+          english: "eat",
+          emoji: "🍽️",
+          root: "kain",
+          past: "kumain",
+          present: "kumakain",
+          future: "kakain",
+          infinitive: "pagkain",
+          example: "Kumakain sila ng hapunan tuwing alas-siyete.",
+        },
+        {
+          english: "write",
+          emoji: "✍️",
+          root: "sulat",
+          past: "sumulat",
+          present: "sumusulat",
+          future: "susulat",
+          infinitive: "pagsulat",
+          example: "Sumusulat siya ng liham para sa kaniyang kaibigan.",
+        },
+        {
+          english: "read",
+          emoji: "📖",
+          root: "basa",
+          past: "bumasa",
+          present: "bumabasa",
+          future: "babasa",
+          infinitive: "pagbasa",
+          example: "Bumabasa siya ng Bibliya bago matulog.",
+        },
+        {
+          english: "sleep",
+          emoji: "😴",
+          root: "tulog",
+          past: "natulog",
+          present: "natutulog",
+          future: "matutulog",
+          infinitive: "pagtulog",
+          example: "Natulog siya nang maaga kagabi.",
+        },
+        {
+          english: "speak",
+          emoji: "🗣️",
+          root: "salita",
+          past: "nagsalita",
+          present: "nagsasalita",
+          future: "magsasalita",
+          infinitive: "pagsasalita",
+          example: "Magsasalita siya sa pulong mamayang gabi.",
+        },
+        {
+          english: "walk",
+          emoji: "🚶‍♂️",
+          root: "lakad",
+          past: "naglakad",
+          present: "naglalakad",
+          future: "maglalakad",
+          infinitive: "paglalakad",
+          example: "Naglalakad sila papunta sa paaralan.",
+        },
+        {
+          english: "study",
+          emoji: "📚",
+          root: "aral",
+          past: "nag-aral",
+          present: "nag-aaral",
+          future: "mag-aaral",
+          infinitive: "pag-aaral",
+          example: "Nag-aaral siya ng Tagalog gabi-gabi.",
+        },
+      ];
+
+      let currentIndex = 0;
+
+      function renderVerb(index, hideAnswer) {
+        const verb = verbs[index];
+
+        const emojiEl = document.getElementById("verb-emoji");
+        const englishEl = document.getElementById("verb-english");
+        const rootBigEl = document.getElementById("verb-root-big");
+        const rootSmallEl = document.getElementById("verb-root-small");
+        const pastEl = document.getElementById("verb-past");
+        const presentEl = document.getElementById("verb-present");
+        const futureEl = document.getElementById("verb-future");
+        const infinitiveEl = document.getElementById("verb-infinitive");
+        const exampleEl = document.getElementById("verb-example");
+        const answerPanel = document.getElementById("answer-panel");
+
+        emojiEl.textContent = verb.emoji;
+        englishEl.textContent = verb.english;
+
+        // Root in big caps
+        rootBigEl.textContent = verb.root.toUpperCase();
+        rootSmallEl.textContent = "(root form: " + verb.root + ")";
+
+        pastEl.textContent = verb.past;
+        presentEl.textContent = verb.present;
+        futureEl.textContent = verb.future;
+        infinitiveEl.textContent = verb.infinitive;
+        exampleEl.textContent = verb.example;
+
+        if (hideAnswer) {
+          answerPanel.classList.add("hidden");
+        }
+      }
 
       document.addEventListener("DOMContentLoaded", () => {
+        // Elements for password gate
         const loginScreen = document.getElementById("login-screen");
         const protectedContent = document.getElementById("protected-content");
         const passwordForm = document.getElementById("password-form");
         const passwordInput = document.getElementById("password-input");
         const passwordError = document.getElementById("password-error");
 
-        // Skip password if already logged in for this session
+        // Elements for Verb Tutor
+        const answerPanel = document.getElementById("answer-panel");
+        const showBtn = document.getElementById("show-verb-btn");
+        const prevBtn = document.getElementById("prev-verb-btn");
+        const nextBtn = document.getElementById("next-verb-btn");
+        const randomBtn = document.getElementById("random-verb-btn");
+
+        // Initialize first verb
+        renderVerb(currentIndex, true);
+
+        // Show answer (desktop + phone: scroll to answer so hindi kailangan mag-scroll paitaas)
+        showBtn.addEventListener("click", () => {
+          answerPanel.classList.remove("hidden");
+          answerPanel.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        // Navigation
+        prevBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex - 1 + verbs.length) % verbs.length;
+          renderVerb(currentIndex, true);
+        });
+
+        nextBtn.addEventListener("click", () => {
+          currentIndex = (currentIndex + 1) % verbs.length;
+          renderVerb(currentIndex, true);
+        });
+
+        randomBtn.addEventListener("click", () => {
+          let newIndex = currentIndex;
+          if (verbs.length > 1) {
+            while (newIndex === currentIndex) {
+              newIndex = Math.floor(Math.random() * verbs.length);
+            }
+          }
+          currentIndex = newIndex;
+          renderVerb(currentIndex, true);
+        });
+
+        // PASSWORD LOGIC
         if (sessionStorage.getItem("tml-logged-in") === "true") {
           loginScreen.classList.add("hidden");
           protectedContent.classList.remove("hidden");
@@ -258,136 +440,6 @@
             passwordInput.value = "";
             passwordInput.focus();
           }
-        });
-      });
-
-      // ---------------------------
-      // VERB TUTOR LOGIC
-      // ---------------------------
-
-      const verbs = [
-        {
-          english: "run",
-          emoji: "🏃‍♂️",
-          root: "takbo",
-          past: "tumakbo",
-          present: "tumatakbo",
-          future: "tatakbo",
-          infinitive: "pagtakbo",
-        },
-        {
-          english: "eat",
-          emoji: "🍽️",
-          root: "kain",
-          past: "kumain",
-          present: "kumakain",
-          future: "kakain",
-          infinitive: "pagkain",
-        },
-        {
-          english: "write",
-          emoji: "✍️",
-          root: "sulat",
-          past: "sumulat",
-          present: "sumusulat",
-          future: "susulat",
-          infinitive: "pagsulat",
-        },
-        {
-          english: "read",
-          emoji: "📖",
-          root: "basa",
-          past: "bumasa",
-          present: "bumabasa",
-          future: "babasa",
-          infinitive: "pagbasa",
-        },
-        {
-          english: "sleep",
-          emoji: "😴",
-          root: "tulog",
-          past: "natulog",
-          present: "natutulog",
-          future: "matutulog",
-          infinitive: "pagtulog",
-        },
-        {
-          english: "speak",
-          emoji: "🗣️",
-          root: "salita",
-          past: "nagsalita",
-          present: "nagsasalita",
-          future: "magsasalita",
-          infinitive: "pagsasalita",
-        },
-      ];
-
-      let currentIndex = 0;
-
-      function showVerb(index, hideAnswer = true) {
-        const verb = verbs[index];
-
-        const emojiEl = document.getElementById("verb-emoji");
-        const englishEl = document.getElementById("verb-english");
-        const rootHintEl = document.getElementById("verb-root-hint");
-        const rootEl = document.getElementById("verb-root");
-        const pastEl = document.getElementById("verb-past");
-        const presentEl = document.getElementById("verb-present");
-        const futureEl = document.getElementById("verb-future");
-        const infinitiveEl = document.getElementById("verb-infinitive");
-        const answerPanel = document.getElementById("answer-panel");
-
-        emojiEl.textContent = verb.emoji;
-        englishEl.textContent = verb.english;
-        rootHintEl.textContent =
-          "Subukan hulaan: " + verb.root.toUpperCase() + " (salitang-ugat).";
-
-        rootEl.textContent = verb.root;
-        pastEl.textContent = verb.past;
-        presentEl.textContent = verb.present;
-        futureEl.textContent = verb.future;
-        infinitiveEl.textContent = verb.infinitive;
-
-        if (hideAnswer) {
-          answerPanel.classList.add("hidden");
-        }
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-        // Initialize first verb
-        showVerb(currentIndex, true);
-
-        const showBtn = document.getElementById("show-verb-btn");
-        const answerPanel = document.getElementById("answer-panel");
-        const prevBtn = document.getElementById("prev-verb-btn");
-        const nextBtn = document.getElementById("next-verb-btn");
-        const randomBtn = document.getElementById("random-verb-btn");
-
-        showBtn.addEventListener("click", () => {
-          // Answer always appears directly under the button,
-          // so students on phone do not need to scroll up.
-          answerPanel.classList.remove("hidden");
-        });
-
-        prevBtn.addEventListener("click", () => {
-          currentIndex = (currentIndex - 1 + verbs.length) % verbs.length;
-          showVerb(currentIndex, true);
-        });
-
-        nextBtn.addEventListener("click", () => {
-          currentIndex = (currentIndex + 1) % verbs.length;
-          showVerb(currentIndex, true);
-        });
-
-        randomBtn.addEventListener("click", () => {
-          let newIndex = currentIndex;
-          if (verbs.length > 1) {
-            while (newIndex === currentIndex) {
-              newIndex = Math.floor(Math.random() * verbs.length);
-            }
-          }
-          currentIndex = newIndex;
-          showVerb(currentIndex, true);
         });
       });
     </script>
