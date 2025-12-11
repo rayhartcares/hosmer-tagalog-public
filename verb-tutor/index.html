@@ -237,23 +237,24 @@
             </p>
           </div>
           <div id="tagalog-answer-box" class="flex flex-wrap items-center gap-2">
+            <!-- chips are visible on ALL screen sizes now -->
             <span
               id="tagalog-root"
-              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              class="inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
               aria-label="root form"
             >
               tumakbo
             </span>
             <span
               id="tagalog-past"
-              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              class="inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
               aria-label="past form"
             >
               tumakbo (past)
             </span>
             <span
               id="tagalog-prog"
-              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              class="inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
               aria-label="progressive form"
             >
               tumatakbo
@@ -347,14 +348,15 @@
         <div class="text-xs opacity-80 text-[#2d2a26]" id="footer-text">
           30 high-frequency English verbs with simple Tagalog equivalents.
         </div>
-        
-                <button
-          id="exit-btn"
-          type="button"
-          class="px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200"
-        >
-          Exit
-        </button>
+
+        <div class="flex items-center gap-2">
+          <button
+            id="exit-btn"
+            type="button"
+            class="px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200"
+          >
+            Exit
+          </button>
 
           <button
             id="prev-verb-btn"
@@ -785,11 +787,18 @@
         if (step2Section) step2Section.classList.remove("hidden");
         if (step3Section) step3Section.classList.remove("hidden");
 
+        // enable form buttons
         [btnPresent, btnPast, btnProg].forEach((btn) => {
           btn.disabled = false;
           btn.classList.remove("opacity-50", "cursor-not-allowed");
         });
+
         resetAudioContext();
+
+        // MOBILE FIX: scroll answer into view so learners see it
+        if (step2Section && typeof step2Section.scrollIntoView === "function") {
+          step2Section.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
       });
 
       btnPresent.addEventListener("click", () => {
@@ -826,14 +835,12 @@
         loadVerb(currentIndex);
       });
 
-            // Exit → go to goodbye page in the same folder
+      // Exit → go to goodbye page in the same folder
       if (exitBtn) {
         exitBtn.addEventListener("click", () => {
-          // index.html and goodbye.html are both in /verb-tutor/
           window.location.href = "goodbye.html";
         });
       }
-
 
       // Play sentence audio (tries .m4a then .mp3)
       if (playSentenceBtn) {
@@ -872,13 +879,6 @@
           }
 
           playSource(srcM4a);
-        });
-      }
-      // Exit → go to goodbye page in the same folder
-      if (exitBtn) {
-        exitBtn.addEventListener("click", () => {
-          // index.html and goodbye.html are both in /verb-tutor/
-          window.location.href = "goodbye.html";
         });
       }
 
