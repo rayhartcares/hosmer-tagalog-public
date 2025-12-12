@@ -282,9 +282,11 @@
     </main>
 
     <!-- PASSWORD SCRIPT -->
+        <!-- PASSWORD SCRIPT -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const CORRECT_PASSWORD = "Shibboleth"; // your chosen password
+        const ACCESS_KEY = "tml-access-granted"; // session flag
 
         const overlay = document.getElementById("tml-password-overlay");
         const input = document.getElementById("tml-password-input");
@@ -297,14 +299,35 @@
           return;
         }
 
+        // 1. If already unlocked in this browser session, hide overlay immediately
+        try {
+          const alreadyGranted =
+            window.sessionStorage.getItem(ACCESS_KEY) === "yes";
+          if (alreadyGranted) {
+            overlay.classList.add("hidden");
+            return;
+          }
+        } catch (e) {
+          console.warn("Session storage not available:", e);
+        }
+
+        function unlock() {
+          overlay.classList.add("hidden");
+          error.textContent = "";
+          input.value = "";
+          try {
+            window.sessionStorage.setItem(ACCESS_KEY, "yes");
+          } catch (e) {
+            console.warn("Could not write to sessionStorage:", e);
+          }
+        }
+
         function checkPassword() {
           const value = (input.value || "").trim();
 
-          // Case-insensitive match: Shibboleth / shibboleth / SHIBBOLETH all OK
+          // Case-insensitive match
           if (value.toLowerCase() === CORRECT_PASSWORD.toLowerCase()) {
-            overlay.classList.add("hidden"); // hide overlay
-            error.textContent = "";
-            input.value = "";
+            unlock();
           } else {
             error.textContent = "Mali ang access code. Pakisubukang muli.";
           }
