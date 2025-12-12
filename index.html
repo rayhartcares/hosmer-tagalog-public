@@ -44,7 +44,48 @@
       });
     })();
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const CORRECT_PASSWORD = "Shibboleth"; // your chosen password
+
+      const overlay = document.getElementById("tml-password-overlay");
+      const input = document.getElementById("tml-password-input");
+      const submit = document.getElementById("tml-password-submit");
+      const error = document.getElementById("tml-password-error");
+
+      // Safety check: if something is missing, don't break the page
+      if (!overlay || !input || !submit || !error) {
+        console.warn("Password gate not fully initialized (missing elements).");
+        return;
+      }
+
+      function checkPassword() {
+        const value = (input.value || "").trim();
+
+        // Case-insensitive match: "Shibboleth", "shibboleth", "SHIBBOLETH" all ok
+        if (value.toLowerCase() === CORRECT_PASSWORD.toLowerCase()) {
+          overlay.classList.add("hidden"); // hide overlay
+          error.textContent = "";
+          input.value = "";
+        } else {
+          error.textContent = "Mali ang access code. Pakisubukang muli.";
+        }
+      }
+
+      submit.addEventListener("click", checkPassword);
+
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          checkPassword();
+        }
+      });
+    });
+  </script>
 </body>
+</html>
+
+    
+    </body>
 </html>
 
       body {
