@@ -113,21 +113,40 @@
       <main class="space-y-4">
 
         <!-- Talata 1 -->
-       <!-- Talata 1 -->
-        <section class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm">
-          <div class="flex items-center justify-between mb-2 gap-2">
-            <h2 class="text-sm font-semibold text-slate-900">Talata 1</h2>
-            <div class="flex items-center gap-2">
-              <span class="text-xs text-slate-600">Pakinggan muna:</span>
-              <audio
-                controls
-                preload="none"
-                class="h-8"
-                src="/assets/audio/joseph-u1-t01.m4a"
-                <!-- OR whatever your actual Talata-1 file path is -->
-              ></audio>
-            </div>
-          </div>
+      <!-- Talata 1 -->
+<section class="bg-white border border-slate-200 rounded-xl p-4 shadow-sm mt-4">
+  <!-- Header row with title + audio -->
+  <div class="flex items-center justify-between mb-2 gap-2">
+    <h2 class="text-sm font-semibold text-slate-900">Talata 1</h2>
+
+    <div class="flex items-center gap-2">
+      <span class="text-xs text-slate-600">Pakinggan muna:</span>
+      <audio controls preload="none" class="h-8">
+        <source
+          src="/assets/audio/joseph/joseph-u1-t01.m4a"
+          type="audio/mp4"
+        />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </div>
+
+  <!-- Tagalog paragraph INSIDE the same card -->
+  <p class="text-sm md:text-base text-slate-800 mb-2">
+    Si Jose ay isang binatang Hebreo na mga labimpitong taóng gulang. Isa siya
+    sa mga anak ni Jacob at tumutulong siya sa pag-aalaga ng mga kawan ng
+    kanilang pamilya. Mula sa lahat ng anak, si Jose ang pinakaminamahal ni
+    Jacob.
+  </p>
+
+  <!-- English translation INSIDE the same card -->
+  <p class="text-xs md:text-sm text-slate-600 italic bg-green-50 border-l-4 border-green-300 px-3 py-1 rounded">
+    Joseph was a seventeen-year-old Hebrew youth. He was one of Jacob’s sons
+    and helped take care of his family’s flocks. Out of all his sons, Jacob
+    loved Joseph the most.
+  </p>
+</section>
+
         
           <!-- keep your existing Talata 1 Tagalog + English paragraphs here -->
         </section>   
