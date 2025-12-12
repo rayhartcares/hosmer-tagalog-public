@@ -8,7 +8,34 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+  <script>
+  function playJosephTalata(num) {
+    const audio = document.getElementById("joseph-player");
+    if (!audio) return;
+
+    // 1 → "01", 2 → "02", ..., 12 → "12"
+    const padded = String(num).padStart(2, "0");
+
+    const basePath = "../assets/audio/joseph/";
+    const filename = "joseph-u1-t" + padded + ".m4a";
+    const newSrc = basePath + filename;
+
+    // Change source only if needed
+    if (!audio.src.endsWith(filename)) {
+      audio.src = newSrc;
+    }
+
+    audio.currentTime = 0;
+    audio.play().catch((err) => {
+      console.error("Joseph audio error:", err);
+    });
+  }
+</script>
+
   <body class="min-h-screen bg-slate-100">
+    <!-- Shared audio player for all Joseph talata (hidden) -->
+  <audio id="joseph-player"></audio>
+
     <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6">
       <!-- Header -->
       <header class="mb-6">
