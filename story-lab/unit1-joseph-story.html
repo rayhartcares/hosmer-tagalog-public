@@ -33,8 +33,12 @@
 </script>
 
   <body class="min-h-screen bg-slate-100">
-    <!-- Shared audio player for all Joseph talata (hidden) -->
+  <body class="min-h-screen bg-slate-100">
+  <!-- Shared audio player for all Joseph talata (hidden) -->
   <audio id="joseph-player"></audio>
+
+  <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6">
+    ...
 
     <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6">
       <!-- Header -->
@@ -115,12 +119,14 @@
             <div class="flex items-center gap-2">
               <span class="text-xs text-slate-600">Pakinggan muna:</span>
               <!-- TODO: change  to your real audio file -->
-              <audio
-                controls
-                preload="none"
-                class="h-8"
-                src="/assets/audio/joseph-u1-talata1.mp3"
-              ></audio>
+              <audio controls preload="none" class="w-full max-w-xs mb-3">
+              <source
+                src="/assets/audio/joseph/joseph-u1-t01.m4a"
+                type="audio/mp4"
+              />
+              Your browser does not support the audio element.
+            </audio>
+
             </div>
           </div>
 
