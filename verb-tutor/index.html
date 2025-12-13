@@ -21,19 +21,17 @@
         background: #fef3e2;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
           sans-serif;
-        font-size: 18px; /* bigger base font */
+        font-size: 18px;
       }
 
-      /* Make Tailwind's small text classes larger for readability */
       .text-xs {
-        font-size: 16px; /* helper text, footer, small labels */
+        font-size: 16px;
       }
 
       .text-sm {
-        font-size: 18px; /* English label, section labels, etc. */
+        font-size: 18px;
       }
 
-      /* Ensure all instructional texts are comfortably big */
       #helper-text-1,
       #helper-text-2,
       #helper-text-3,
@@ -42,7 +40,6 @@
         font-size: 18px;
       }
 
-      /* Emoji bounce */
       @keyframes gentle-bounce {
         0%,
         100% {
@@ -57,7 +54,6 @@
         animation: gentle-bounce 0.8s ease-in-out infinite;
       }
 
-      /* Focus outline */
       .focus-outline {
         outline: 2px solid #f97316;
         outline-offset: 2px;
@@ -79,7 +75,6 @@
             id="class-name"
             class="text-xl font-bold mb-2 flex items-center justify-center gap-2 text-[#f97316]"
           >
-            <!-- Simple TML logo -->
             <svg
               id="class-icon"
               width="60"
@@ -175,7 +170,7 @@
         class="flex-1 px-6 pb-6 pt-4 flex flex-col gap-4 overflow-y-auto"
         aria-label="Tagalog verb training steps"
       >
-        <!-- Step 1: Emoji + Question -->
+        <!-- Step 1 -->
         <section
           aria-label="Guess the action"
           class="rounded-2xl px-4 py-4 flex flex-col md:flex-row items-center gap-4 bg-[#fde68a]"
@@ -200,7 +195,7 @@
                 id="helper-text-1"
                 class="text-xs mt-1 opacity-80 text-[#2d2a26]"
               >
-                Look at the character and think of the Tagalog verb.
+                Look at the emoji and think of the Tagalog verb.
               </p>
             </div>
           </div>
@@ -222,7 +217,7 @@
           </div>
         </section>
 
-        <!-- Step 2: Tagalog verb forms (HIDDEN UNTIL CLICK) -->
+        <!-- Step 2 (hidden until click) -->
         <section
           aria-label="Tagalog verb forms"
           id="step2-section"
@@ -237,24 +232,23 @@
             </p>
           </div>
           <div id="tagalog-answer-box" class="flex flex-wrap items-center gap-2">
-            <!-- chips are visible on ALL screen sizes now -->
             <span
               id="tagalog-root"
-              class="inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
               aria-label="root form"
             >
               tumakbo
             </span>
             <span
               id="tagalog-past"
-              class="inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
               aria-label="past form"
             >
               tumakbo (past)
             </span>
             <span
               id="tagalog-prog"
-              class="inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
+              class="hidden md:inline-block px-4 py-2 rounded-full text-lg font-semibold text-[#2d2a26]"
               aria-label="progressive form"
             >
               tumatakbo
@@ -275,7 +269,7 @@
           </div>
         </section>
 
-        <!-- Step 3: Use it in Tagalog (HIDDEN UNTIL CLICK) -->
+        <!-- Step 3 (hidden until click) -->
         <section
           aria-label="Use the verb in Tagalog"
           id="step3-section"
@@ -342,47 +336,41 @@
 
       <!-- Footer -->
       <footer
-        class="px-6 py-3 border-t flex items-center justify-between gap-2 bg-[#fef3e2]"
+        class="px-6 py-3 border-t bg-[#fef3e2]"
         aria-label="Footer controls"
       >
-        <div class="text-xs opacity-80 text-[#2d2a26]" id="footer-text">
-          30 high-frequency English verbs with simple Tagalog equivalents.
+        <div class="w-full flex items-center justify-between gap-2">
+          <div class="text-xs opacity-80 text-[#2d2a26]" id="footer-text">
+            30 high-frequency English verbs with simple Tagalog equivalents.
+          </div>
+
+          <div class="flex items-center gap-2">
+            <button
+              id="btn-exit"
+              type="button"
+              class="px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200"
+            >
+              Exit
+            </button>
+
+            <button
+              id="prev-verb-btn"
+              type="button"
+              class="px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
+            >
+              Previous verb
+            </button>
+            <button
+              id="next-verb-btn"
+              type="button"
+              class="px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#f97316] text-[#2d2a26]"
+            >
+              Next verb
+            </button>
+          </div>
         </div>
-
-        <div class="flex items-center gap-2">
-  <!-- New Main Menu button -->
-  <a
-    href="../index.html"
-    class="px-4 py-2 rounded-full text-sm font-semibold bg-sky-600 text-white hover:bg-sky-700"
-  >
-    Main Menu
-  </a>
-
-  <!-- Existing Exit (you can keep or remove) -->
-  <button
-    id="exit-btn"
-    type="button"
-    class="px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200"
-  >
-    Exit
-  </button>
-
-  <button
-    id="prev-verb-btn"
-    type="button"
-    class="px-3 py-1.5 rounded-full text-xs md:text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#cbd5e1] text-[#2d2a26]"
-  >
-    Previous verb
-  </button>
-
-  <button
-    id="next-verb-btn"
-    type="button"
-    class="px-4 py-1.5 rounded-full text-xs md:text-sm font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 bg-[#f97316] text-[#2d2a26]"
-  >
-    Next verb
-  </button>
-</div>
+      </footer>
+    </div>
 
     <!-- SCRIPT -->
     <script>
@@ -708,14 +696,14 @@
       const exampleSentenceTextEl =
         document.getElementById("example-sentence-text");
       const nextVerbBtn = document.getElementById("next-verb-btn");
-      const prevVerbBtn = document.getElementById("prev-verb-btn");
-      const exitBtn = document.getElementById("exit-btn");
+      const prevVerbBtn = document.getElementElementById
+        ? document.getElementById("prev-verb-btn")
+        : document.querySelector("#prev-verb-btn");
+      const exitBtn = document.getElementById("btn-exit");
       const step2Section = document.getElementById("step2-section");
       const step3Section = document.getElementById("step3-section");
+      const playSentenceBtn = document.getElementById("play-sentence-audio");
 
-      // Audio button + state
-      const playSentenceBtn =
-        document.getElementById("play-sentence-audio");
       let currentAudioBase = null; // e.g. "run"
       let currentAudioForm = null; // "basic" | "past" | "prog"
       let sentenceAudio = null;
@@ -737,6 +725,7 @@
         if (!v) return;
         currentAudioBase = v.english.toLowerCase().replace(/\s+/g, "-");
         currentAudioForm = formKey; // "basic" | "past" | "prog"
+        playSentenceBtn.disabled = true; // will enable once sentence text shows
         playSentenceBtn.disabled = false;
       }
 
@@ -795,18 +784,11 @@
         if (step2Section) step2Section.classList.remove("hidden");
         if (step3Section) step3Section.classList.remove("hidden");
 
-        // enable form buttons
         [btnPresent, btnPast, btnProg].forEach((btn) => {
           btn.disabled = false;
           btn.classList.remove("opacity-50", "cursor-not-allowed");
         });
-
         resetAudioContext();
-
-        // MOBILE FIX: scroll answer into view so learners see it
-        if (step2Section && typeof step2Section.scrollIntoView === "function") {
-          step2Section.scrollIntoView({ behavior: "smooth", block: "start" });
-        }
       });
 
       btnPresent.addEventListener("click", () => {
@@ -843,7 +825,7 @@
         loadVerb(currentIndex);
       });
 
-      // Exit → go to goodbye page in the same folder
+      // Exit → goodbye page in same folder
       if (exitBtn) {
         exitBtn.addEventListener("click", () => {
           window.location.href = "goodbye.html";
@@ -858,10 +840,10 @@
             return;
           }
 
-          const base = currentAudioBase;
-          const suffix = currentAudioForm;
-          const srcM4a = `../assets/audio/vit-${base}-${suffix}.m4a`;
-          const srcMp3 = `../assets/audio/vit-${base}-${suffix}.mp3`;
+          const base = currentAudioBase; // e.g. "run"
+          const suffix = currentAudioForm; // "basic" | "past" | "prog"
+          const srcM4a = `../assets/audio/vt-${base}-${suffix}.m4a`;
+          const srcMp3 = `../assets/audio/vt-${base}-${suffix}.mp3`;
 
           if (!sentenceAudio) {
             sentenceAudio = new Audio();
@@ -869,28 +851,33 @@
 
           let triedMp3 = false;
 
-          function playSource(src) {
+          function playSource(srcLabel, src) {
             sentenceAudio.src = src;
             sentenceAudio
               .play()
               .catch((err) => {
-                console.error("Audio play error:", err);
-                if (!triedMp3 && src === srcM4a) {
+                console.error("Audio play error:", srcLabel, err);
+                if (!triedMp3 && srcLabel === "m4a") {
                   triedMp3 = true;
-                  playSource(srcMp3);
+                  playSource("mp3", srcMp3);
                 } else {
                   alert(
-                    "Wala pang audio file para sa pangungusap na ito."
+                    "Wala pang audio file para sa pangungusap na ito.\n" +
+                      "Hinahanap ko: vt-" +
+                      base +
+                      "-" +
+                      suffix +
+                      ".m4a o .mp3 sa /assets/audio/"
                   );
                 }
               });
           }
 
-          playSource(srcM4a);
+          playSource("m4a", srcM4a);
         });
       }
 
-      // Focus outline helper
+      // focus outline helper
       [
         showAnswerBtn,
         btnPresent,
@@ -908,7 +895,7 @@
         );
       });
 
-      // Init
+      // init
       loadVerb(currentIndex);
     </script>
   </body>
