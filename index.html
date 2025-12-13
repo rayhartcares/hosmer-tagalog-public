@@ -11,16 +11,18 @@
       name="description"
       content="Tagalog Mastery Lab – praktikal na Tagalog school sa browser. Mga kuwento, pandiwa, at simpleng pagsasanay para sa tunay na pag-unlad."
     />
+
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <style>
       body {
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-          sans-serif;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
         background: radial-gradient(circle at top, #fef3c7 0, #f9fafb 45%, #f1f5f9 100%);
       }
     </style>
   </head>
+
   <body class="min-h-screen flex items-start md:items-center justify-center px-4 md:px-6 py-8">
     <!-- Password overlay for Tagalog Mastery Lab main menu -->
     <div
@@ -59,30 +61,19 @@
       class="w-full max-w-6xl bg-white/90 backdrop-blur rounded-[32px] shadow-[0_30px_80px_rgba(15,23,42,0.18)] border border-white/70 overflow-hidden"
     >
       <!-- top accent bar -->
-      <div
-        class="h-1.5 w-full bg-gradient-to-r from-[#f97316] via-[#facc15] to-[#6366f1]"
-      ></div>
+      <div class="h-1.5 w-full bg-gradient-to-r from-[#f97316] via-[#facc15] to-[#6366f1]"></div>
 
       <section class="px-5 py-6 md:px-10 md:py-10">
-        <!-- HERO: centered logo + level + title -->
+        <!-- HERO -->
         <header class="flex flex-col items-center text-center gap-3 mb-8">
           <!-- TML logo badge -->
-          <div
-            class="relative w-16 h-16 flex items-center justify-center"
-            aria-hidden="true"
-          >
+          <div class="relative w-16 h-16 flex items-center justify-center" aria-hidden="true">
             <div
               class="absolute inset-0 rounded-full bg-gradient-to-br from-[#f97316] via-[#facc15] to-[#6366f1] opacity-90 shadow-lg shadow-[#f97316]/40"
             ></div>
 
-            <div
-              class="relative inset-0 m-[3px] flex items-center justify-center rounded-full bg-white border border-white/80"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 64 64"
-                class="w-11 h-11"
-              >
+            <div class="relative inset-0 m-[3px] flex items-center justify-center rounded-full bg-white border border-white/80">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="w-11 h-11">
                 <circle cx="32" cy="32" r="30" fill="#fef9f5" />
                 <path
                   d="M20 23c4.5-2.5 8.5-2.5 13 0 4.5-2.5 8.5-2.5 13 0v14c-4.5-2.5-8.5-2.5-13 0-4.5-2.5-8.5-2.5-13 0V23z"
@@ -113,144 +104,96 @@
             </div>
           </div>
 
-          <!-- level + title -->
-          <p
-            class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f97316]"
-          >
+          <p class="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#f97316]">
             Level 1 · Tagalog Core Skills
           </p>
-          <h1
-            class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#111827]"
-          >
+
+          <h1 class="text-2xl md:text-3xl font-extrabold tracking-tight text-[#111827]">
             Tagalog Mastery Lab
           </h1>
+
           <p class="mt-1 max-w-3xl text-sm md:text-base text-[#4b5563]">
-            Praktikal na Tagalog school sa browser. Maliit na kuwento, malinaw na
-            halimbawa, maraming pagsasanay – para sa tunay na pag-unlad, hindi lang
-            memorization.
+            Praktikal na Tagalog school sa browser. Maliit na kuwento, malinaw na halimbawa,
+            maraming pagsasanay – para sa tunay na pag-unlad, hindi lang memorization.
           </p>
+
           <p class="mt-2 text-xs md:text-sm text-[#6b7280]">
             Pumili ng isang activity sa ibaba. Maaaring gamitin sa self-study o bilang
             interactive na bahagi ng klase.
           </p>
         </header>
 
-        <!-- CARDS -->
-        <div class="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 mb-8">
+        <!-- CARDS (FIXED: both are inside the same 2-col grid on desktop) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-8 items-stretch">
           <!-- Verb Tutor card -->
           <a
-            href="verb-tutor/"
-            class="group relative block rounded-3xl bg-white/95 border border-[#e5e7eb] hover:border-[#f97316] hover:shadow-xl hover:shadow-[#f97316]/20 transition overflow-hidden"
+            href="verbtutor/"
+            class="group relative block h-full rounded-3xl bg-white/95 border border-[#e5e7eb] hover:border-[#f97316] hover:shadow-xl hover:shadow-[#f97316]/20 transition overflow-hidden"
           >
-            <div
-              class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#f97316] via-[#fb923c] to-[#facc15]"
-            ></div>
+            <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#f97316] via-[#fb923c] to-[#facc15]"></div>
 
-            <div class="p-5 pb-6 md:p-6">
-              <p
-                class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9ca3af] mb-1"
-              >
+            <div class="p-5 pb-6 md:p-6 h-full flex flex-col">
+              <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9ca3af] mb-1">
                 Lab 1 · Verb Tutor
               </p>
-              <h2
-                class="text-base md:text-lg font-bold text-[#111827] mb-2 group-hover:text-[#f97316]"
-              >
+
+              <h2 class="text-base md:text-lg font-bold text-[#111827] mb-2 group-hover:text-[#f97316]">
                 Verb Tutor – Action Characters
               </h2>
+
               <p class="text-xs md:text-sm text-[#4b5563] mb-3">
-                Hulaan ang kilos mula sa character, alamin ang tamang pandiwa sa
-                Tagalog, at gamitin ito sa maikling pangungusap. Tamang-tama para sa
-                warm-up o mabilis na review ng pandiwa.
+                Hulaan ang kilos mula sa character, alamin ang tamang pandiwa sa Tagalog,
+                at gamitin ito sa maikling pangungusap. Tamang-tama para sa warm-up o mabilis
+                na review ng pandiwa.
               </p>
 
-              <div class="flex flex-wrap gap-1.5 text-[11px] text-[#6b7280]">
-                <span
-                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
-                  >Level 1</span
-                >
-                <span
-                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
-                  >Verbs</span
-                >
-                <span
-                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
-                  >Present · Past · Ongoing</span
-                >
+              <div class="mt-auto flex flex-wrap gap-1.5 text-[11px] text-[#6b7280]">
+                <span class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]">
+                  Level 1
+                </span>
+                <span class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]">
+                  Verbs
+                </span>
+                <span class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]">
+                  Present · Past · Ongoing
+                </span>
               </div>
             </div>
           </a>
 
-          <!-- Story Lab Unit 1 card (Jesus) – currently commented out -->
-          <!--
+          <!-- Story Lab – Joseph card (moved INTO the grid so it sits beside Verb Tutor on desktop) -->
           <a
-            href="story-lab/unit1-jesus-feeds.html"
-            class="group relative block rounded-3xl bg-white/95 border border-[#e5e7eb] hover:border-[#6366f1] hover:shadow-xl hover:shadow-[#6366f1]/20 transition overflow-hidden"
+            href="story-lab/unit1-joseph-story.html"
+            class="group relative block h-full rounded-3xl bg-white/95 border border-[#e5e7eb] hover:border-[#6366f1] hover:shadow-xl hover:shadow-[#6366f1]/20 transition overflow-hidden"
           >
-            <div
-              class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899]"
-            ></div>
+            <div class="absolute inset-x-0 top-0 h-1.5 bg-gradient-to-r from-[#6366f1] via-[#8b5cf6] to-[#ec4899]"></div>
 
-            <div class="p-5 pb-6 md:p-6">
-              <p
-                class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9ca3af] mb-1"
-              >
-                Lab 2 · Story Lab
+            <div class="p-5 pb-6 md:p-6 h-full flex flex-col">
+              <p class="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9ca3af] mb-1">
+                Level 1 · Story Lab
               </p>
-              <h2
-                class="text-base md:text-lg font-bold text-[#111827] mb-2 group-hover:text-[#6366f1]"
-              >
-                Unit 1: Pinakain ni Jesus ang mga Tao
+
+              <h2 class="text-base md:text-lg font-bold text-[#111827] mb-2 group-hover:text-[#6366f1]">
+                Story Lab – Unit 1: Joseph sa Egipto
               </h2>
+
               <p class="text-xs md:text-sm text-[#4b5563] mb-3">
-                Maikling kuwento na gumagamit ng mga pandiwang
-                <strong>kumain, umupo, naglakad</strong>. Basahin ang kuwento,
-                intindihin ang sitwasyon, at sagutin ang mga simpleng tanong.
+                Mas mahabang kuwento tungkol kay Jose – mula sa balon hanggang sa palasyo –
+                gamit ang mga pandiwang kumain, umupo, at naglakad, kasama ang iba pang
+                kilos sa pang-araw-araw na buhay.
               </p>
 
-              <div class="flex flex-wrap gap-1.5 text-[11px] text-[#6b7280]">
-                <span
-                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
-                  >Level 1</span
-                >
-                <span
-                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
-                  >Bible Story Verb Lab</span
-                >
-                <span
-                  class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]"
-                  >Reading · Comprehension</span
-                >
+              <div class="mt-auto flex flex-wrap gap-1.5 text-[11px] text-[#6b7280]">
+                <span class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb] text-orange-600 font-semibold">
+                  Bible Story
+                </span>
+                <span class="inline-flex items-center rounded-full border border-[#e5e7eb] px-2 py-0.5 bg-[#f9fafb]">
+                  Reading · Tanong · Quiz
+                </span>
               </div>
             </div>
           </a>
-          -->
         </div>
-
-        <!-- Coming next – Joseph Story Lab -->
-        <a
-          href="story-lab/unit1-joseph-story.html"
-          class="group block rounded-3xl border border-slate-200 bg-white/90 px-6 py-5 shadow-sm transition hover:-translate-y-1 hover:border-orange-300 hover:shadow-lg"
-        >
-          <p class="text-[11px] font-semibold tracking-[0.18em] uppercase text-slate-400">
-            Level 1 · Story Lab
-          </p>
-          <h3 class="mt-1 text-lg font-semibold text-slate-900 group-hover:text-orange-600">
-            Story Lab – Unit 1: Joseph sa Egipto
-          </h3>
-          <p class="mt-1 text-sm leading-relaxed text-slate-600">
-            Mas mahabang kuwento tungkol kay Jose – mula sa balon hanggang sa palasyo –
-            gamit ang mga pandiwang kumain, umupo, at naglakad, kasama ang iba pang
-            kilos sa pang-araw-araw na buhay.
-          </p>
-          <div class="mt-3 flex flex-wrap gap-2 text-[11px]">
-            <span class="rounded-full bg-orange-50 px-2.5 py-1 font-semibold text-orange-600">
-              Bible Story
-            </span>
-            <span class="rounded-full bg-slate-50 px-2.5 py-1 font-semibold text-slate-500">
-              Reading · Tanong · Quiz
-            </span>
-          </div>
-        </a>
 
         <!-- Next labs info -->
         <section
@@ -259,10 +202,11 @@
           <div class="text-center md:text-left">
             <h3 class="font-semibold text-[#111827] mb-1">Story Lab</h3>
             <p>
-              Units 2–4 na may iba pang Bible at daily-life scenes. Parehong simple
-              ang Tagalog, dagdag lang na pandiwa at sitwasyon.
+              Units 2–4 na may iba pang Bible at daily-life scenes. Parehong simple ang Tagalog,
+              dagdag lang na pandiwa at sitwasyon.
             </p>
           </div>
+
           <div class="text-center md:text-left">
             <h3 class="font-semibold text-[#111827] mb-1">Dialog Lab</h3>
             <p>
@@ -270,11 +214,11 @@
               ministeryo, palengke.
             </p>
           </div>
+
           <div class="text-center md:text-left">
             <h3 class="font-semibold text-[#111827] mb-1">Reading Lab</h3>
             <p>
-              Mas mahahabang kuwento na may guided na pag-unawa, pag-retell, at
-              pagbabago ng pandiwa.
+              Mas mahahabang kuwento na may guided na pag-unawa, pag-retell, at pagbabago ng pandiwa.
             </p>
           </div>
         </section>
@@ -282,7 +226,6 @@
     </main>
 
     <!-- PASSWORD SCRIPT -->
-        <!-- PASSWORD SCRIPT -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const CORRECT_PASSWORD = "8318"; // your chosen password
@@ -293,16 +236,14 @@
         const submit = document.getElementById("tml-password-submit");
         const error = document.getElementById("tml-password-error");
 
-        // Safety check: if something is missing, don't break the page
         if (!overlay || !input || !submit || !error) {
           console.warn("Password gate not fully initialized (missing elements).");
           return;
         }
 
-        // 1. If already unlocked in this browser session, hide overlay immediately
+        // If already unlocked in this browser session, hide overlay immediately
         try {
-          const alreadyGranted =
-            window.sessionStorage.getItem(ACCESS_KEY) === "yes";
+          const alreadyGranted = window.sessionStorage.getItem(ACCESS_KEY) === "yes";
           if (alreadyGranted) {
             overlay.classList.add("hidden");
             return;
@@ -324,8 +265,6 @@
 
         function checkPassword() {
           const value = (input.value || "").trim();
-
-          // Case-insensitive match
           if (value.toLowerCase() === CORRECT_PASSWORD.toLowerCase()) {
             unlock();
           } else {
@@ -336,9 +275,7 @@
         submit.addEventListener("click", checkPassword);
 
         input.addEventListener("keydown", function (e) {
-          if (e.key === "Enter") {
-            checkPassword();
-          }
+          if (e.key === "Enter") checkPassword();
         });
       });
     </script>
