@@ -105,12 +105,18 @@
     </div>
 
     <!-- Output -->
-   <div class="border rounded-2xl p-4 bg-slate-50">
+  <div class="border rounded-2xl p-4 bg-slate-50">
   <p class="text-sm text-slate-700 mb-2">
-    Buoin ang pangungusap (subukan mo muna):
+    Buoin ang pangungusap (isulat mo mismo):
   </p>
 
-  <div class="text-lg font-semibold text-slate-900 min-h-[1.5em]" id="studentAttempt"></div>
+  <input
+    id="studentInput"
+    type="text"
+    class="w-full border rounded-lg px-3 py-2 text-sm"
+    placeholder="Halimbawa: Ako ay kumakain."
+    autocomplete="off"
+  />
 
   <p id="feedback" class="text-sm font-semibold mt-2"></p>
 
