@@ -203,13 +203,18 @@
   }
 
   // ===== Checking =====
-  function normalize(s) {
-    return (s || "")
-      .trim()
-      .replace(/\s+/g, " ")
-      .replace(/\s+\./g, ".")
-      .toLowerCase();
-  }
+ function normalize(s) {
+  return (s || "")
+    .replace(/[\u200B-\u200D\uFEFF]/g, "") // invisible chars
+    .replace(/\u00A0/g, " ")              // non-breaking spaces
+    .trim()
+    .replace(/[‐-‒–—−]/g, "-")            // normalize dashes
+    .replace(/\s+/g, " ")                 // collapse spaces
+    .replace(/\s+\./g, ".")               // remove space before period
+    .replace(/[.]+$/g, "")                // IGNORE ending periods
+    .toLowerCase();
+}
+
 
   function clearFeedback() {
     feedbackEl.textContent = "";
@@ -219,31 +224,34 @@
   }
 
   function checkAnswer() {
-    const correct = getCorrectSentence();
+  const correct = getCorrectSentence();
 
-    // Must choose subject + verb first
-    if (!correct) {
-      feedbackEl.textContent = "Piliin muna ang gumagawa at pandiwa.";
-      feedbackEl.className = "text-sm font-semibold mt-2 text-red-700";
-      correctBox.classList.add("hidden");
-      correctEl.textContent = "";
-      return;
-    }
-
-    const typed = studentInput.value || "";
-
-    if (normalize(typed) === normalize(correct)) {
-      feedbackEl.textContent = "Tama.";
-      feedbackEl.className = "text-sm font-semibold mt-2 text-green-700";
-      correctBox.classList.add("hidden");
-      correctEl.textContent = "";
-    } else {
-      feedbackEl.textContent = "Mali. Subukan ulit.";
-      feedbackEl.className = "text-sm font-semibold mt-2 text-red-700";
-      correctBox.classList.remove("hidden");
-      correctEl.textContent = correct;
-    }
+  if (!correct) {
+    feedbackEl.textContent = "Piliin muna ang gumagawa at pandiwa.";
+    feedbackEl.className = "text-sm font-semibold mt-2 text-red-700";
+    correctBox.classList.add("hidden");
+    correctEl.textContent = "";
+    return;
   }
+
+  const typed = studentInput.value || "";
+
+  const nTyped = normalize(typed);
+  const nCorrect = normalize(correct);
+
+  if (nTyped === nCorrect) {
+    feedbackEl.textContent = "Tama.";
+    feedbackEl.className = "text-sm font-semibold mt-2 text-green-700";
+    correctBox.classList.add("hidden");
+    correctEl.textContent = "";
+  } else {
+    feedbackEl.textContent = "Mali. Subukan ulit.";
+    feedbackEl.className = "text-sm font-semibold mt-2 text-red-700";
+    correctBox.classList.remove("hidden");
+    correctEl.textContent = correct;
+  }
+}
+
 
   // ===== UI mode switching =====
   function syncModeUI() {
