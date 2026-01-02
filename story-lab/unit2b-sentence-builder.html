@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="tl">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab 2B – Bumuo ng Pangungusap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #fff7ed;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex justify-center px-4 py-8">
+
+<main class="w-full max-w-3xl bg-white rounded-3xl shadow border border-orange-200 p-6">
+
+  <!-- Header -->
+  <header class="mb-6">
+    <p class="text-xs uppercase tracking-widest text-orange-500 font-semibold">
+      Level 2 · Lab 2B
+    </p>
+    <h1 class="text-2xl font-bold text-slate-900 mt-1">
+      Bumuo ng Pangungusap
+    </h1>
+    <p class="text-sm text-slate-600 mt-2">
+      Pagsamahin ang gumagawa at pandiwa para makabuo ng kumpletong pangungusap.
+    </p>
+  </header>
+
+  <!-- Sentence Rule -->
+  <section class="border rounded-2xl p-4 bg-orange-50 mb-6">
+    <p class="text-sm text-slate-700 mb-2">
+      Gamitin lamang ang pormang ito:
+    </p>
+    <div class="font-mono text-sm bg-white border rounded-lg px-3 py-2 inline-block">
+      [Subject] + ay + [Verb]
+    </div>
+  </section>
+
+  <!-- Builder -->
+  <section class="space-y-5">
+
+    <div class="border rounded-2xl p-4">
+      <p class="text-sm text-slate-700 mb-2">
+        Piliin ang <strong>gumagawa</strong>:
+      </p>
+      <select id="subjectSelect"
+        class="border rounded-lg px-3 py-2 text-sm w-full">
+        <option value="">— piliin —</option>
+        <option value="Ako">Ako</option>
+        <option value="Ikaw">Ikaw</option>
+        <option value="Siya">Siya</option>
+        <option value="Sila">Sila</option>
+      </select>
+    </div>
+
+    <div class="border rounded-2xl p-4">
+      <p class="text-sm text-slate-700 mb-2">
+        Piliin ang <strong>pandiwa</strong>:
+      </p>
+      <select id="verbSelect"
+        class="border rounded-lg px-3 py-2 text-sm w-full">
+        <option value="">— piliin —</option>
+        <option value="kumakain">kumakain</option>
+        <option value="umiinom">umiinom</option>
+        <option value="natutulog">natutulog</option>
+        <option value="naglalakad">naglalakad</option>
+        <option value="tumatakbo">tumatakbo</option>
+      </select>
+    </div>
+
+    <!-- Output -->
+    <div class="border rounded-2xl p-4 bg-slate-50">
+      <p class="text-sm text-slate-700 mb-1">
+        Buong pangungusap:
+      </p>
+      <div id="sentenceOutput"
+        class="text-lg font-semibold text-slate-900 min-h-[1.5em]">
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <div class="flex gap-3">
+      <button id="buildBtn"
+        class="px-4 py-2 rounded-lg bg-orange-500 text-white text-sm font-semibold hover:bg-orange-600">
+        Buoin
+      </button>
+
+      <button id="resetBtn"
+        class="px-4 py-2 rounded-lg border text-sm hover:bg-slate-50">
+        Reset
+      </button>
+    </div>
+
+  </section>
+
+</main>
+
+<script>
+  const subjectSelect = document.getElementById("subjectSelect");
+  const verbSelect = document.getElementById("verbSelect");
+  const output = document.getElementById("sentenceOutput");
+
+  document.getElementById("buildBtn").addEventListener("click", () => {
+    const subject = subjectSelect.value;
+    const verb = verbSelect.value;
+
+    if (!subject || !verb) {
+      output.textContent = "";
+      return;
+    }
+
+    output.textContent = `${subject} ay ${verb}.`;
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    subjectSelect.value = "";
+    verbSelect.value = "";
+    output.textContent = "";
+  });
+</script>
+
+</body>
+</html>
