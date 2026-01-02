@@ -149,14 +149,23 @@
 </main>
 
 <script>
+  // ===== Elements =====
   const subjectSelect = document.getElementById("subjectSelect");
   const verbSelect = document.getElementById("verbSelect");
-  const output = document.getElementById("sentenceOutput");
 
   const pronounBlock = document.getElementById("pronounBlock");
   const nameBlock = document.getElementById("nameBlock");
   const nameInput = document.getElementById("nameInput");
 
+  const studentInput = document.getElementById("studentInput");
+  const feedbackEl = document.getElementById("feedback");
+  const correctBox = document.getElementById("correctAnswerBox");
+  const correctEl = document.getElementById("correctAnswer");
+
+  const buildBtn = document.getElementById("buildBtn");
+  const resetBtn = document.getElementById("resetBtn");
+
+  // ===== Data =====
   const verbs30 = [
     "kumakain","umiinom","natutulog","naglalakad","tumatakbo",
     "umuupo","tumatayo","nag-aaral","nagtatrabaho","nagbabasa",
@@ -172,8 +181,10 @@
       verbs30.map(v => `<option value="${v}">${v}</option>`).join("");
   }
 
+  // ===== Subject logic =====
   function getSubject() {
-    const mode = document.querySelector('input[name="subjectMode"]:checked').value;
+    const modeEl = document.querySelector('input[name="subjectMode"]:checked');
+    const mode = modeEl ? modeEl.value : "pronoun";
 
     if (mode === "pronoun") {
       return (subjectSelect.value || "").trim();
@@ -184,26 +195,61 @@
     return `Si ${name.replace(/\s+/g, " ")}`;
   }
 
-  function buildSentence() {
+  function getCorrectSentence() {
     const subject = getSubject();
     const verb = (verbSelect.value || "").trim();
+    if (!subject || !verb) return "";
+    return `${subject} ay ${verb}.`;
+  }
 
-    if (!subject || !verb) {
-      output.textContent = "";
+  // ===== Checking =====
+  function normalize(s) {
+    return (s || "")
+      .trim()
+      .replace(/\s+/g, " ")
+      .replace(/\s+\./g, ".")
+      .toLowerCase();
+  }
+
+  function clearFeedback() {
+    feedbackEl.textContent = "";
+    feedbackEl.className = "text-sm font-semibold mt-2";
+    correctBox.classList.add("hidden");
+    correctEl.textContent = "";
+  }
+
+  function checkAnswer() {
+    const correct = getCorrectSentence();
+
+    // Must choose subject + verb first
+    if (!correct) {
+      feedbackEl.textContent = "Piliin muna ang gumagawa at pandiwa.";
+      feedbackEl.className = "text-sm font-semibold mt-2 text-red-700";
+      correctBox.classList.add("hidden");
+      correctEl.textContent = "";
       return;
     }
-    output.textContent = `${subject} ay ${verb}.`;
+
+    const typed = studentInput.value || "";
+
+    if (normalize(typed) === normalize(correct)) {
+      feedbackEl.textContent = "Tama.";
+      feedbackEl.className = "text-sm font-semibold mt-2 text-green-700";
+      correctBox.classList.add("hidden");
+      correctEl.textContent = "";
+    } else {
+      feedbackEl.textContent = "Mali. Subukan ulit.";
+      feedbackEl.className = "text-sm font-semibold mt-2 text-red-700";
+      correctBox.classList.remove("hidden");
+      correctEl.textContent = correct;
+    }
   }
 
-  function resetAll() {
-    subjectSelect.value = "";
-    nameInput.value = "";
-    verbSelect.value = "";
-    output.textContent = "";
-  }
-
+  // ===== UI mode switching =====
   function syncModeUI() {
-    const mode = document.querySelector('input[name="subjectMode"]:checked').value;
+    const modeEl = document.querySelector('input[name="subjectMode"]:checked');
+    const mode = modeEl ? modeEl.value : "pronoun";
+
     if (mode === "pronoun") {
       pronounBlock.classList.remove("hidden");
       nameBlock.classList.add("hidden");
@@ -211,23 +257,39 @@
       pronounBlock.classList.add("hidden");
       nameBlock.classList.remove("hidden");
     }
-    buildSentence();
+    clearFeedback();
   }
 
+  // ===== Reset =====
+  function resetAll() {
+    subjectSelect.value = "";
+    nameInput.value = "";
+    verbSelect.value = "";
+    studentInput.value = "";
+    clearFeedback();
+  }
+
+  // ===== Events =====
   document.querySelectorAll('input[name="subjectMode"]').forEach(r => {
     r.addEventListener("change", syncModeUI);
   });
 
-  document.getElementById("buildBtn").addEventListener("click", buildSentence);
-  document.getElementById("resetBtn").addEventListener("click", resetAll);
+  subjectSelect.addEventListener("change", clearFeedback);
+  verbSelect.addEventListener("change", clearFeedback);
+  nameInput.addEventListener("input", clearFeedback);
+  studentInput.addEventListener("input", clearFeedback);
 
-  // Live update (feels responsive like Verb Tutor)
-  subjectSelect.addEventListener("change", buildSentence);
-  verbSelect.addEventListener("change", buildSentence);
-  nameInput.addEventListener("input", buildSentence);
+  buildBtn.addEventListener("click", checkAnswer);
+  resetBtn.addEventListener("click", resetAll);
 
+  studentInput.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") checkAnswer();
+  });
+
+  // ===== Init =====
   populateVerbs();
   syncModeUI();
+  clearFeedback();
 </script>
 
 </body>
