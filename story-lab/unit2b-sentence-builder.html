@@ -105,12 +105,19 @@
     </div>
 
     <!-- Output -->
-    <div class="border rounded-2xl p-4 bg-slate-50">
-      <p class="text-sm text-slate-700 mb-1">
-        Buong pangungusap:
-      </p>
-      <div id="sentenceOutput" class="text-lg font-semibold text-slate-900 min-h-[1.5em]"></div>
-    </div>
+   <div class="border rounded-2xl p-4 bg-slate-50">
+  <p class="text-sm text-slate-700 mb-2">
+    Buoin ang pangungusap (subukan mo muna):
+  </p>
+
+  <div class="text-lg font-semibold text-slate-900 min-h-[1.5em]" id="studentAttempt"></div>
+
+  <p id="feedback" class="text-sm font-semibold mt-2"></p>
+
+  <div id="correctAnswerBox" class="hidden mt-2 text-sm text-slate-700">
+    Tamang sagot: <span id="correctAnswer" class="font-semibold"></span>
+  </div>
+</div>
 
     <!-- Controls -->
     <div class="flex gap-3">
