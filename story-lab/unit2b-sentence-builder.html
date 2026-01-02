@@ -123,23 +123,84 @@
   const verbSelect = document.getElementById("verbSelect");
   const output = document.getElementById("sentenceOutput");
 
-  document.getElementById("buildBtn").addEventListener("click", () => {
-    const subject = subjectSelect.value;
-    const verb = verbSelect.value;
+  const pronounBlock = document.getElementById("pronounBlock");
+  const nameBlock = document.getElementById("nameBlock");
+  const nameInput = document.getElementById("nameInput");
+
+  const verbs30 = [
+    "kumakain","umiinom","natutulog","naglalakad","tumatakbo",
+    "umuupo","tumatayo","nag-aaral","nagtatrabaho","nagbabasa",
+    "sumusulat","nagsasalita","nakikinig","nanonood","nagluluto",
+    "naglilinis","naliligo","nagbibihis","bumibili","nagbabayad",
+    "nagbubukas","nagsasara","pumapasok","lumalabas","dumarating",
+    "umaalis","tumatawag","nagtatanong","sumasagot","naghihintay"
+  ];
+
+  function populateVerbs() {
+    verbSelect.innerHTML = `<option value="">— piliin —</option>` +
+      verbs30.map(v => `<option value="${v}">${v}</option>`).join("");
+  }
+
+  function getSubject() {
+    const mode = document.querySelector('input[name="subjectMode"]:checked').value;
+
+    if (mode === "pronoun") {
+      return (subjectSelect.value || "").trim();
+    }
+
+    const name = (nameInput.value || "").trim();
+    if (!name) return "";
+    // Clean up double spaces, keep user capitalization as typed
+    return `Si ${name.replace(/\s+/g, " ")}`;
+  }
+
+  function buildSentence() {
+    const subject = getSubject();
+    const verb = (verbSelect.value || "").trim();
 
     if (!subject || !verb) {
       output.textContent = "";
       return;
     }
-
     output.textContent = `${subject} ay ${verb}.`;
-  });
+  }
 
-  document.getElementById("resetBtn").addEventListener("click", () => {
+  function resetAll() {
     subjectSelect.value = "";
+    nameInput.value = "";
     verbSelect.value = "";
     output.textContent = "";
+  }
+
+  // Mode switching
+  function syncModeUI() {
+    const mode = document.querySelector('input[name="subjectMode"]:checked').value;
+    if (mode === "pronoun") {
+      pronounBlock.classList.remove("hidden");
+      nameBlock.classList.add("hidden");
+    } else {
+      pronounBlock.classList.add("hidden");
+      nameBlock.classList.remove("hidden");
+    }
+    buildSentence();
+  }
+
+  document.querySelectorAll('input[name="subjectMode"]').forEach(r => {
+    r.addEventListener("change", syncModeUI);
   });
+
+  document.getElementById("buildBtn").addEventListener("click", buildSentence);
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    resetAll();
+  });
+
+  // Optional: live-update sentence as they select/type
+  subjectSelect.addEventListener("change", buildSentence);
+  verbSelect.addEventListener("change", buildSentence);
+  nameInput.addEventListener("input", buildSentence);
+
+  populateVerbs();
+  syncModeUI();
 </script>
 
 </body>
